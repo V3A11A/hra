@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2orr0nnkq4w6"]
+
+[ext_resource type="Script" path="res://Scripts/Drag Area.gd" id="1_byj2p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4gsmb"]
+size = Vector2(750, 750)
+
+[node name="Drag Area" type="Area2D"]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_byj2p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4gsmb")

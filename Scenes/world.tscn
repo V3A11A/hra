@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjcsa0ixl3x2y"]
+
+[ext_resource type="PackedScene" uid="uid://oakkxncsd881" path="res://Scenes/Player/Player.tscn" id="1_quql6"]
+[ext_resource type="PackedScene" uid="uid://d2orr0nnkq4w6" path="res://Scenes/Drag Area.tscn" id="2_3xmcj"]
+
+[node name="World" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_quql6")]
+position = Vector2(402, 571)
+
+[node name="Drag Area" parent="." instance=ExtResource("2_3xmcj")]
+position = Vector2(957, 379)
+drag = 0.0
+
+[node name="Drag Area2" parent="." instance=ExtResource("2_3xmcj")]
+position = Vector2(1416, 846)
+drag = 2.0

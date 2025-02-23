@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://oakkxncsd881"]
+
+[ext_resource type="Texture2D" uid="uid://cc86ryvvl37wi" path="res://icon.svg" id="1_3bl86"]
+[ext_resource type="PackedScene" uid="uid://uao8gqlr5nnx" path="res://Scenes/Player/Movement/Movement.tscn" id="1_rw6wu"]
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(600, 350)
+collision_mask = 0
+
+[node name="Movement" parent="." instance=ExtResource("1_rw6wu")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3bl86")

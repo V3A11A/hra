@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://uao8gqlr5nnx"]
+
+[ext_resource type="Script" path="res://Scripts/Player/Movement/Movement.gd" id="1_n0e1g"]
+[ext_resource type="Script" path="res://Scripts/Player/Movement/Run.gd" id="2_agen2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jex01"]
+size = Vector2(100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1ped"]
+size = Vector2(120, 120)
+
+[node name="Movement" type="CollisionShape2D"]
+shape = SubResource("RectangleShape2D_jex01")
+script = ExtResource("1_n0e1g")
+
+[node name="Run" type="Node" parent="."]
+script = ExtResource("2_agen2")
+
+[node name="Drag Area Detector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drag Area Detector"]
+shape = SubResource("RectangleShape2D_e1ped")
+debug_color = Color(0.835944, 0.348588, 0.451567, 0.42)
+
+[connection signal="area_entered" from="Drag Area Detector" to="." method="_on_drag_area_detector_area_entered"]
+[connection signal="area_exited" from="Drag Area Detector" to="." method="_on_drag_area_detector_area_exited"]
