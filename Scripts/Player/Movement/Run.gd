@@ -21,7 +21,7 @@ var current_deceleration : float = DECELERATION
 
 
 
-var speed_multiplier : float = 1.0:
+var speed_multiplier : float = 1.5:
 	set(value):
 		speed_multiplier = value
 		Calculate_Bonuses()

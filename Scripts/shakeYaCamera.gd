@@ -14,7 +14,7 @@ func apply_shake(moveTime, intensity): # moveTime -> čím vyšší tím kratš�
 func _process(delta: float) -> void:
 	if shakeIntensity > 0:
 		shakeIntensity = lerpf(shakeIntensity, 0, shakeTime * delta) # Třesání kamery od intenzity do 0,po dobu času
-	$Camera2D.offset = randomOffset() # Nastavení offsetu u kamery
+	$Player/Camera2D.offset = randomOffset() # Nastavení offsetu u kamery
 
 func randomOffset() -> Vector2:
-	return Vector2(rng.randf_range(-shakeIntensity, shakeIntensity), rng.randf_range(-shakeIntensity, shakeIntensity)) # Random pohyb
+	return Vector2(rng.randf_range(-shakeIntensity, shakeIntensity), 0) # Random pohyb

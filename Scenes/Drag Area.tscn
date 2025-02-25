@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Drag Area.gd" id="1_byj2p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gsmb"]
-size = Vector2(750, 750)
+size = Vector2(2290, 2268)
 
 [node name="Drag Area" type="Area2D"]
 collision_layer = 8
