@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/shakeYaCamera.gd" id="1_h3807"]
 [ext_resource type="PackedScene" uid="uid://oakkxncsd881" path="res://Scenes/Player/Player.tscn" id="1_quql6"]
-[ext_resource type="PackedScene" uid="uid://d2orr0nnkq4w6" path="res://Scenes/Drag Area.tscn" id="2_3xmcj"]
+[ext_resource type="PackedScene" uid="uid://d2orr0nnkq4w6" path="res://Scenes/Player/Movement/Drag Area.tscn" id="2_3xmcj"]
 [ext_resource type="Script" path="res://Scenes/Player/plchldr.gd" id="3_yimlq"]
 
 [node name="World" type="Node2D"]
