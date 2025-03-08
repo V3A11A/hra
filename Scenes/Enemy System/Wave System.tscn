@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://tfb7lf5iow77"]
+[gd_scene load_steps=3 format=3 uid="uid://tfb7lf5iow77"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy System/Wave System.gd" id="1_t7aot"]
+[ext_resource type="Curve" uid="uid://fddye4vcntr6" path="res://Scenes/Enemy System/Spawn Probability.tres" id="2_82qdl"]
 
 [node name="Wave System" type="Node"]
 script = ExtResource("1_t7aot")
+spawn_probability = ExtResource("2_82qdl")
