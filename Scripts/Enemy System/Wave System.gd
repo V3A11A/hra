@@ -3,7 +3,7 @@ extends Node
 @export var spawn_probability : Curve
 
 
-##difficulty : preload("path/to/scene")
+##difficulty : preload("path/to/enemy.tscn")
 const Enemy_List : Dictionary = {
 	1 : preload("res://Scenes/Enemy System/Enemies/Enemy.tscn"),
 	2 : preload("res://Scenes/Enemy System/Enemies/Enemy.tscn"),
@@ -21,6 +21,8 @@ const Enemy_List : Dictionary = {
 
 var wave : int = 0
 var difficulty : int = 10
+##Difficulties prefer average enemies, so no matter if difficulty is high or low, count of enemies won't be high
+var wave_size_multiplier : float = 1.0
 
 ##Array of Enemy_List keys, remaining to be spawned in given wave
 var enemies_left_in_current_wave : Array[int]
@@ -34,7 +36,7 @@ func Start_Next_Wave() -> void:
 
 
 func Assign_Enemies_In_Current_Wave() -> void:
-	var difficulty_copy : int = difficulty
+	var difficulty_copy : int = roundi(difficulty * wave_size_multiplier)
 	
 	while difficulty_copy != 0:
 		var enemy_difficulty : int = Enemy_Closest_To(Sample_Curve()) #Randomized
@@ -86,8 +88,16 @@ func Sample_Curve() -> int:
 	return roundi(spawn_probability.sample_baked(randf()) * difficulty)
 
 
+
+
+
+
+
+
+
+
 func _ready() -> void:
-	for i in 100:
+	for i in 1:
 		Start_Next_Wave()
 		print(enemies_left_in_current_wave)
-		enemies_left_in_current_wave = []
+		#enemies_left_in_current_wave = []
