@@ -7,7 +7,16 @@
 script = ExtResource("1_t7aot")
 spawn_probability = ExtResource("2_82qdl")
 
-[node name="Next Horde CD" type="Timer" parent="."]
-
 [node name="Enemy Spawn CD" type="Timer" parent="."]
 wait_time = 0.5
+one_shot = true
+
+[node name="Next Horde CD" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="Next Wave CD" type="Timer" parent="."]
+wait_time = 20.0
+
+[connection signal="timeout" from="Next Horde CD" to="." method="_on_next_horde_cd_timeout"]
+[connection signal="timeout" from="Next Wave CD" to="." method="_on_next_wave_cd_timeout"]

@@ -5,4 +5,5 @@ extends Node2D
 
 
 func Spawn(enemy : CharacterBody2D):
+	enemy.global_position = global_position
 	enemy_spawn_location.add_child(enemy)
