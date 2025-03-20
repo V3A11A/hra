@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://hlc50hjqn64w"]
+[gd_scene load_steps=10 format=4 uid="uid://hlc50hjqn64w"]
 
 [ext_resource type="PackedScene" uid="uid://oakkxncsd881" path="res://Scenes/Player/Player.tscn" id="1_eedwo"]
 [ext_resource type="PackedScene" uid="uid://baedfwx1gh3h2" path="res://Scenes/Enemy System/Enemies/Enemy.tscn" id="1_kkucp"]
 [ext_resource type="Texture2D" uid="uid://cc86ryvvl37wi" path="res://icon.svg" id="2_wd2r2"]
 [ext_resource type="PackedScene" uid="uid://ci85eww70mwqw" path="res://Scenes/Enemy System/Enemy Spawner.tscn" id="3_4rgp5"]
+[ext_resource type="PackedScene" uid="uid://tfb7lf5iow77" path="res://Scenes/Enemy System/Wave System.tscn" id="5_7ywca"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_cvmee"]
 vertices = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)
@@ -61,3 +62,6 @@ position = Vector2(344, 434)
 position = Vector2(450, 266)
 
 [node name="Enemy Spawner" parent="." instance=ExtResource("3_4rgp5")]
+position = Vector2(417, 67)
+
+[node name="Wave System" parent="." instance=ExtResource("5_7ywca")]

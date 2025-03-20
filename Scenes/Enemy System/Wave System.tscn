@@ -6,3 +6,8 @@
 [node name="Wave System" type="Node"]
 script = ExtResource("1_t7aot")
 spawn_probability = ExtResource("2_82qdl")
+
+[node name="Next Horde CD" type="Timer" parent="."]
+
+[node name="Enemy Spawn CD" type="Timer" parent="."]
+wait_time = 0.5

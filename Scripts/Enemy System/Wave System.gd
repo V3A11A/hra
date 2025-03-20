@@ -22,16 +22,22 @@ const Enemy_List : Dictionary = {
 var wave : int = 0
 var difficulty : int = 10
 ##Difficulties prefer average enemies, so no matter if difficulty is high or low, count of enemies won't be high
-var wave_size_multiplier : float = 1.0
+var wave_size_multiplier : float = 10
+var hordes_in_wave : float = 5
 
 ##Array of Enemy_List keys, remaining to be spawned in given wave
 var enemies_left_in_current_wave : Array[int]
+##Number of enemies_left_in_current_wave elements from the beginning, remaining to be spawned in given horde
+var enemies_in_horde : int = 0
 
 
 
 func Start_Next_Wave() -> void:
 	wave += 1
+	#Set_Settings_For_Wave(wave)
 	Assign_Enemies_In_Current_Wave()
+	Calculate_Next_Horde()
+	Spawn_Next_Horde()
 
 
 
@@ -83,21 +89,33 @@ func Enemy_Closest_To(difficulty : int) -> int:
 
 
 
-
 func Sample_Curve() -> int:
 	return roundi(spawn_probability.sample_baked(randf()) * difficulty)
 
 
 
+func Calculate_Next_Horde() -> void:
+	enemies_left_in_current_wave.shuffle() #For even distribution
+	enemies_in_horde = roundi(enemies_left_in_current_wave.size() / hordes_in_wave)
 
 
 
+func Spawn_Next_Horde() -> void:
+	for i : int in enemies_in_horde:
+		Get_Random_Spawner().Spawn(Enemy_List[enemies_left_in_current_wave[0]].instantiate())
+		enemies_left_in_current_wave.remove_at(0)
+		enemies_in_horde -= 1
 
+
+
+func Get_Random_Spawner() -> Node:
+	return get_tree().get_nodes_in_group("Spawner").pick_random()
 
 
 
 func _ready() -> void:
 	for i in 1:
 		Start_Next_Wave()
+		printerr(wave)
 		print(enemies_left_in_current_wave)
 		#enemies_left_in_current_wave = []
