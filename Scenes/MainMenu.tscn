@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://gdagppmtsca"]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1226.0
+offset_top = 105.0
+offset_right = 1772.0
+offset_bottom = 296.0
+theme_override_font_sizes/font_size = 75
+text = "Main menu!!!"
+
+[node name="Buttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 216.0
+offset_top = 312.0
+offset_right = 1038.0
+offset_bottom = 1233.0
+
+[node name="ButtonPlay" type="Button" parent="Buttons"]
+offset_right = 356.0
+offset_bottom = 176.0
+theme_override_font_sizes/font_size = 70
+text = "Play"
+
+[node name="ButtonSaves" type="Button" parent="Buttons"]
+offset_top = 176.0
+offset_right = 356.0
+offset_bottom = 352.0
+theme_override_font_sizes/font_size = 70
+text = "Saves"
+
+[node name="ButtonSettings" type="Button" parent="Buttons"]
+offset_top = 352.0
+offset_right = 356.0
+offset_bottom = 528.0
+theme_override_font_sizes/font_size = 70
+text = "Settings"
