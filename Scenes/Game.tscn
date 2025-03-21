@@ -156,10 +156,10 @@ tile_set = SubResource("TileSet_8umon")
 z_index = 1
 
 [node name="Enemy" parent="Enemies" instance=ExtResource("1_kkucp")]
-position = Vector2(270, 153)
+position = Vector2(-1327, -644)
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource("1_kkucp")]
-position = Vector2(344, 434)
+position = Vector2(-1367, 452)
 
 [node name="Enemy3" parent="Enemies" instance=ExtResource("1_kkucp")]
-position = Vector2(450, 266)
+position = Vector2(-233, -246)
