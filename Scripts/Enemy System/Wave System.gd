@@ -1,5 +1,8 @@
 extends Node
 
+signal new_wave(wave : int)
+
+
 #TODO:
 	#killing enemies
 	#if all enemies are spawned AND are all killed, immediately start next wave
@@ -43,7 +46,13 @@ var enemies_in_horde : int = 0:
 	set(value):
 		enemies_in_horde = maxi(value, 1)
 ##Array of Enemy_List keys, remaining alive in a given wave
-var enemies_left_in_wave : Array[int]
+var enemies_left_in_wave : Array[int]:
+	set(value):
+		enemies_left_in_wave = value
+		if enemies_left_in_wave.is_empty() and enemies_to_spawn_in_current_wave.is_empty():
+			await get_tree().physics_frame
+			next_wave_CD.start()
+			Start_Next_Wave()
 
 
 
@@ -56,6 +65,9 @@ func Begin_Game() -> void:
 func Start_Next_Wave() -> void:
 	Stop_Timers()
 	Increment_Difficulty()
+	
+	new_wave.emit(wave)
+	
 	#print()
 	#printerr("wave:\t", wave)
 	#printerr("to spawn from previous:\t", enemies_to_spawn_in_current_wave)
@@ -141,7 +153,7 @@ func Spawn_Next_Horde() -> void:
 		if enemies_to_spawn_in_current_wave.is_empty():
 			return
 		
-		Get_Random_Spawner().Spawn(Enemy_List[enemies_to_spawn_in_current_wave[0]].instantiate())
+		Get_Random_Spawner().Spawn(Enemy_List[enemies_to_spawn_in_current_wave[0]].instantiate(), enemies_to_spawn_in_current_wave[0])
 		enemies_left_in_wave.append(enemies_to_spawn_in_current_wave[0])
 		enemies_to_spawn_in_current_wave.remove_at(0)
 		enemies_in_this_horde -= 1
@@ -173,3 +185,9 @@ func _on_next_wave_cd_timeout() -> void:
 func _ready() -> void:
 	await get_tree().physics_frame
 	Begin_Game()
+
+func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("ui_accept"):
+		if $"../Enemies".get_child(0) != null:
+			#print("killing:\t", $"../Enemies".get_child(0))
+			$"../Enemies".get_child(0).queue_free()

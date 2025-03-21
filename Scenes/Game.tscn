@@ -55,7 +55,7 @@ navigation_polygon = SubResource("NavigationPolygon_pfklj")
 [node name="Enemy Spawners" type="Node" parent="."]
 
 [node name="Enemy Spawner" parent="Enemy Spawners" instance=ExtResource("3_4rgp5")]
-position = Vector2(1100, -600)
+position = Vector2(2694, -381)
 
 [node name="Enemy Spawner2" parent="Enemy Spawners" instance=ExtResource("3_4rgp5")]
-position = Vector2(186, -645)
+position = Vector2(1780, -426)
