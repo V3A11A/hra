@@ -3,9 +3,6 @@ extends Node
 signal new_wave(wave : int)
 
 
-#TODO:
-	#killing enemies
-	#if all enemies are spawned AND are all killed, immediately start next wave
 
 @export var spawn_probability : Curve
 
