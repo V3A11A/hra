@@ -1,15 +1,17 @@
 [gd_scene load_steps=11 format=4 uid="uid://hlc50hjqn64w"]
 
 [ext_resource type="PackedScene" uid="uid://oakkxncsd881" path="res://Scenes/Player/Player.tscn" id="1_eedwo"]
-[ext_resource type="PackedScene" uid="uid://baedfwx1gh3h2" path="res://Scenes/Enemy System/Enemies/Enemy.tscn" id="1_kkucp"]
 [ext_resource type="Texture2D" uid="uid://cc86ryvvl37wi" path="res://icon.svg" id="2_wd2r2"]
 [ext_resource type="PackedScene" uid="uid://ci85eww70mwqw" path="res://Scenes/Enemy System/Enemy Spawner.tscn" id="3_4rgp5"]
+[ext_resource type="PackedScene" uid="uid://tfb7lf5iow77" path="res://Scenes/Enemy System/Wave System.tscn" id="5_7ywca"]
+
 [ext_resource type="Texture2D" uid="uid://dm4paglh10bw7" path="res://Sprites/tileset_test.png" id="3_81cv2"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_pfklj"]
 vertices = PackedVector2Array(342.359, 513.789, 135.813, 528.43, -420.117, 513.422, 131.359, 258.547, 344.094, 267.227, 515.07, 493.297, 1483.98, -1521.58, 1830.71, -2767.85, 1830.71, 988.531, 1460.48, -1290.97, -1738.2, -2770.47, 531.383, -1566.3, -1728.75, -1511.49, -238.109, -1257.25, -1372.99, -1275.93, 349.992, 4.95313, 877.227, 15.0469, 892.344, 488.047, 144.758, -300.063, -434.969, 233.633, -983.117, 238.859, -983.117, -262.383, -440.641, -506.477, 134.078, -493.367, -1352.16, -999.07, -442.609, -1009.3, -1210.94, -463.039, 515.188, -258.961, 334.523, -258.961, 336.492, -761.844, 723.883, -1258.51, 1081.57, -1263.48, 1091.41, -506.258, 725.813, -274.609, 1097.4, -271.992, 1286.3, -506.258, 133.406, 750.133, 131.328, 985.883, -1738.24, 993.648, -1190.07, 494.563, -1180.12, -237.453, -1230.03, -458.367, 1286.3, -1267.49, 1109.43, 756.742, 348.617, 1001.46, 515.07, 764.867, -222.359, -777.57, -1154.69, -249.094, -1356.42, -1017.95, -1369.17, -1036.56)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(10, 7, 6, 11), PackedInt32Array(12, 10, 11, 13, 14), PackedInt32Array(15, 16, 17, 5, 4), PackedInt32Array(18, 19, 20, 21, 22, 23), PackedInt32Array(24, 25, 22, 21, 26), PackedInt32Array(27, 28, 29, 11), PackedInt32Array(30, 31, 32, 33), PackedInt32Array(34, 33, 32, 35), PackedInt32Array(2, 36, 37, 38, 39), PackedInt32Array(2, 1, 36), PackedInt32Array(40, 39, 38, 12, 41), PackedInt32Array(42, 9, 8, 35), PackedInt32Array(34, 35, 8, 43), PackedInt32Array(43, 8, 44, 45), PackedInt32Array(45, 44, 0, 5), PackedInt32Array(3, 2, 19, 18), PackedInt32Array(29, 46, 13, 11), PackedInt32Array(21, 47, 26), PackedInt32Array(24, 26, 41, 12), PackedInt32Array(48, 24, 12, 49), PackedInt32Array(12, 14, 49)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-444.444, 243.717, -430.678, 503.159, -1179.94, 484.814, -1170.11, -238.476, -1347.1, -1022.04, -1738.45, -1593.34, -1748.28, 1003.7, 141.25, 995.835, 143.417, 750.234, 145.712, 537.748, 332.5, 524.508, 338.75, 1011.56, 1840.71, 998.455, 1840.71, -2777.85, -1748.28, -2780.48, -1738.45, -1470.17, -1358.9, -1019.42, -1362.83, -1265.76, -247.787, -1247.41, -232.055, -767.841, 326.45, -752.117, 324.484, -248.959, 525.073, -248.959, 541.25, -1555.83, 1472.96, -1512.1, 1451.33, -1299.83, 1276.3, -1276.24, 1276.3, -516.262, 1101.28, -516.262, 1091.44, -1273.62, 713.864, -1268.38, 715.831, -264.682, 1087.51, -262.062, 1099.31, 746.876, 525.073, 754.738, 525.073, 503.159, 902.654, 497.917, 886.922, 5.24121, 340.216, -5.24127, 334.316, 256.82, 141.593, 248.959, 154.762, -300.062, 143.559, -503.159, -430.678, -516.262, -432.645, -1019.42, -1364.8, -1008.94, -1162.24, -238.476, -993.117, -251.579, -993.117, 248.959)])
+
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_cvmee"]
 vertices = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)
