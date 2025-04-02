@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d2orr0nnkq4w6"]
 
-[ext_resource type="Script" path="res://Scripts/Drag Area.gd" id="1_byj2p"]
+[ext_resource type="Script" path="res://Scripts/Player/Movement/Drag Area.gd" id="1_byj2p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gsmb"]
 size = Vector2(2290, 2268)
