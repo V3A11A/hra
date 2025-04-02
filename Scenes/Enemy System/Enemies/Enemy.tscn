@@ -1,5 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://baedfwx1gh3h2"]
 
+[ext_resource type="Texture2D" uid="uid://cd7usbmuujk5w" path="res://Sprites/kuba.png" id="2_77h7x"]
 [ext_resource type="Script" path="res://Scripts/Enemy System/Enemy.gd" id="1_k8pfq"]
 [ext_resource type="PackedScene" uid="uid://c4ni0vy75q3fl" path="res://Scenes/Enemy System/Enemy Movement Core.tscn" id="2_kid5d"]
 
@@ -12,7 +13,9 @@ script = ExtResource("1_k8pfq")
 [node name="Enemy Movement Core" parent="." instance=ExtResource("2_kid5d")]
 
 [node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(0.78125, 0.78125)
+
+scale = Vector2(0.14125, 0.14125)
+texture = ExtResource("2_77h7x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_pily4")
