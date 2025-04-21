@@ -134,10 +134,6 @@ position = Vector2(-657, 240)
 scale = Vector2(0.5085, 0.381589)
 navigation_polygon = SubResource("NavigationPolygon_pfklj")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(270, 153)
-zoom = Vector2(0.5, 0.5)
-
 [node name="Enemy Spawner" parent="." instance=ExtResource("3_4rgp5")]
 
 [node name="Map" type="Node" parent="."]

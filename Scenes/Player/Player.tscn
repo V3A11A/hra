@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://oakkxncsd881"]
+[gd_scene load_steps=4 format=3 uid="uid://oakkxncsd881"]
 
 [ext_resource type="PackedScene" uid="uid://uao8gqlr5nnx" path="res://Scenes/Player/Movement/Movement.tscn" id="1_rw6wu"]
 [ext_resource type="Texture2D" uid="uid://csct6w220dg1w" path="res://Sprites/lukas.png" id="2_ls7yc"]
+[ext_resource type="Script" path="res://Scripts/Camera Shake.gd" id="3_2hv52"]
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 0
@@ -12,3 +13,9 @@ scale = Vector2(0.251765, 0.251765)
 texture = ExtResource("2_ls7yc")
 
 [node name="Movement" parent="." instance=ExtResource("1_rw6wu")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+process_callback = 0
+position_smoothing_enabled = true
+script = ExtResource("3_2hv52")

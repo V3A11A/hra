@@ -1,9 +1,7 @@
-[gd_scene load_steps=11 format=4 uid="uid://bjcsa0ixl3x2y"]
+[gd_scene load_steps=9 format=4 uid="uid://bjcsa0ixl3x2y"]
 
-[ext_resource type="Script" path="res://Scripts/shakeYaCamera.gd" id="1_h3807"]
 [ext_resource type="PackedScene" uid="uid://oakkxncsd881" path="res://Scenes/Player/Player.tscn" id="1_quql6"]
 [ext_resource type="PackedScene" uid="uid://d2orr0nnkq4w6" path="res://Scenes/Player/Movement/Drag Area.tscn" id="2_3xmcj"]
-[ext_resource type="Script" path="res://Scenes/Player/plchldr.gd" id="3_yimlq"]
 [ext_resource type="Texture2D" uid="uid://cc86ryvvl37wi" path="res://icon.svg" id="5_68ih2"]
 [ext_resource type="Texture2D" uid="uid://dm4paglh10bw7" path="res://Sprites/tileset_test.png" id="6_25l62"]
 
@@ -120,13 +118,9 @@ sources/0 = SubResource("TileSetAtlasSource_ckv7a")
 sources/1 = SubResource("TileSetAtlasSource_23fsn")
 
 [node name="World" type="Node2D"]
-script = ExtResource("1_h3807")
 
 [node name="Player" parent="." instance=ExtResource("1_quql6")]
 position = Vector2(179, 418)
-script = ExtResource("3_yimlq")
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
 
 [node name="Drag Area" parent="." instance=ExtResource("2_3xmcj")]
 position = Vector2(957, 379)
