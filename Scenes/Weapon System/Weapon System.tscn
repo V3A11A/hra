@@ -1,3 +1,19 @@
-[gd_scene format=3 uid="uid://cxx5acv563mj2"]
+[gd_scene load_steps=4 format=3 uid="uid://cxx5acv563mj2"]
 
-[node name="Weapon System" type="Node"]
+[ext_resource type="Script" path="res://Scripts/Weapon System/Weapon System.gd" id="1_p1gar"]
+[ext_resource type="PackedScene" uid="uid://ukkrukhf47ce" path="res://Scenes/Weapon System/Sword.tscn" id="2_kx5ll"]
+[ext_resource type="PackedScene" uid="uid://ccubqoq4er1po" path="res://Scenes/Weapon System/Handgun.tscn" id="3_uaeyr"]
+
+[node name="Weapon System" type="Node2D"]
+script = ExtResource("1_p1gar")
+
+[node name="Melee" type="Node2D" parent="."]
+
+[node name="Sword" parent="Melee" instance=ExtResource("2_kx5ll")]
+z_index = 2
+
+[node name="Ranged" type="Node2D" parent="."]
+
+[node name="Handgun" parent="Ranged" instance=ExtResource("3_uaeyr")]
+
+[node name="Bullets" type="Node" parent="."]

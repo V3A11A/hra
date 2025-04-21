@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=3 uid="uid://ccubqoq4er1po"]
+
+[ext_resource type="Texture2D" uid="uid://bk4p5jomjjyvp" path="res://Sprites/button pressed.png" id="1_4wfk7"]
+[ext_resource type="Script" path="res://Scripts/Weapon System/Handgun.gd" id="1_tm8j3"]
+
+[sub_resource type="Animation" id="Animation_xgwbm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_0x3jo"]
+resource_name = "attack"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"Shoot"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_opa4x"]
+_data = {
+"RESET": SubResource("Animation_xgwbm"),
+"attack": SubResource("Animation_0x3jo")
+}
+
+[node name="Handgun" type="Node2D"]
+script = ExtResource("1_tm8j3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(1.07031, 0.59375)
+texture = ExtResource("1_4wfk7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_opa4x")
+}
