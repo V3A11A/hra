@@ -9,7 +9,6 @@
 
 [node name="Player" parent="." instance=ExtResource("1_oulc1")]
 z_index = 1
-position = Vector2(1349, 54)
 
 [node name="Wave System" parent="." instance=ExtResource("2_ciwrt")]
 

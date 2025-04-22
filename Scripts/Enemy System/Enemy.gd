@@ -4,7 +4,21 @@ var difficulty : int = 1
 
 
 
+var health : int = 10:
+	set(value):
+		health = value
+		if health < 0:
+			queue_free()
+
+
+
 @onready var wave_system: Node = get_tree().get_root().get_node("Game/Wave System")
+
+
+
+func Take_Damage(amount : int) -> void:
+	health -= amount
+
 
 
 func _exit_tree() -> void:

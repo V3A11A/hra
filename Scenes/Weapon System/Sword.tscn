@@ -7,7 +7,7 @@
 radius = 80.0
 height = 200.0
 
-[sub_resource type="Animation" id="Animation_xgwbm"]
+[sub_resource type="Animation" id="Animation_i2n2d"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -22,7 +22,7 @@ tracks/0/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_0x3jo"]
+[sub_resource type="Animation" id="Animation_oht33"]
 resource_name = "attack"
 length = 0.1
 step = 0.01
@@ -49,14 +49,14 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
-"method": &"Shoot"
+"method": &"Scan_Hurtbox"
 }]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_opa4x"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gckpl"]
 _data = {
-"RESET": SubResource("Animation_xgwbm"),
-"attack": SubResource("Animation_0x3jo")
+"RESET": SubResource("Animation_i2n2d"),
+"attack": SubResource("Animation_oht33")
 }
 
 [node name="Sword" type="Node2D"]
@@ -65,7 +65,6 @@ script = ExtResource("1_f3xi3")
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 2
-monitoring = false
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -78,5 +77,5 @@ texture = ExtResource("2_83jxo")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_opa4x")
+"": SubResource("AnimationLibrary_gckpl")
 }

@@ -17,3 +17,12 @@ z_index = 2
 [node name="Handgun" parent="Ranged" instance=ExtResource("3_uaeyr")]
 
 [node name="Bullets" type="Node" parent="."]
+
+[node name="melee CD" type="Timer" parent="."]
+one_shot = true
+
+[node name="ranged CD" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="melee CD" to="." method="_on_melee_cd_timeout"]
+[connection signal="timeout" from="ranged CD" to="." method="_on_ranged_cd_timeout"]
