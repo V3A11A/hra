@@ -7,7 +7,7 @@ extends Node2D
 
 var attack_CD : float = 0.5
 
-var damage : int = 4
+var damage : int = 5
 
 
 func Attack() -> void:
