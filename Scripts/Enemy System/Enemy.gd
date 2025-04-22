@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+
 var difficulty : int = 1
 
 
