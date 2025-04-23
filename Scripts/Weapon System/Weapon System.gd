@@ -26,13 +26,11 @@ func Attack_With(type_melee : bool) -> void:
 		if melee.get_child(0) and melee_cd.is_stopped():
 			melee_cd.start(melee.get_child(0).attack_CD)
 			melee.get_child(0).Attack()
-			printt("melee:", Time.get_ticks_msec() / 1000.0)
 		return
 	
 	if ranged.get_child(0) and ranged_cd.is_stopped():
 		ranged_cd.start(ranged.get_child(0).attack_CD)
 		ranged.get_child(0).Attack()
-		printt("ranged:", Time.get_ticks_msec() / 1000.0)
 
 
 

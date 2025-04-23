@@ -16,6 +16,5 @@ func Attack() -> void:
 
 
 func Scan_Hurtbox() -> void:
-	print(area_2d.get_overlapping_bodies())
 	for i : PhysicsBody2D in area_2d.get_overlapping_bodies():
-		i.Take_Damage(damage)
+		i.health_system.Take_Damage(damage)

@@ -29,9 +29,6 @@ func Update_Target(target : Targets) -> void:
 
 func _physics_process(delta: float) -> void:
 	Update_Target(target)
-	#target_position = get_global_mouse_position() #TEST
-	
-	
 	Calculate_Movement(delta)
 
 

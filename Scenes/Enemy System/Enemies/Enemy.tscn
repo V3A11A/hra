@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://baedfwx1gh3h2"]
+[gd_scene load_steps=6 format=3 uid="uid://baedfwx1gh3h2"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy System/Enemy.gd" id="1_k8pfq"]
 [ext_resource type="Texture2D" uid="uid://cd7usbmuujk5w" path="res://Sprites/kuba.png" id="2_77h7x"]
 [ext_resource type="PackedScene" uid="uid://c4ni0vy75q3fl" path="res://Scenes/Enemy System/Enemy Movement Core.tscn" id="2_kid5d"]
+[ext_resource type="PackedScene" uid="uid://m0d1mkwvbmjy" path="res://Scenes/Health System/Health System.tscn" id="4_tdouk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pily4"]
 radius = 32.0
@@ -21,3 +22,8 @@ texture = ExtResource("2_77h7x")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_pily4")
 debug_color = Color(0.976528, 0, 0.411164, 0.42)
+
+[node name="Health System" parent="." instance=ExtResource("4_tdouk")]
+invincible_time = 0.2
+
+[connection signal="Obliterate" from="Health System" to="." method="_on_health_system_obliterate"]
