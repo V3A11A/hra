@@ -5,6 +5,8 @@ signal Max_Health_Changed(amount : int)
 signal Damage_Taken(amount : int)
 signal Healed(amount : int)
 
+@onready var blink_animation: AnimationPlayer = $"../Sprite/BlinkAnimation"
+
 
 
 @export var max_health : int = 10:
@@ -28,11 +30,13 @@ var current_health : int = max_health:
 func Take_Damage(amount : int):
 	if amount > 0:
 		current_health -= amount
+		blink_animation.play("flash")
 		Healed.emit(amount)
 		return
 	
 	if invincible_timer.is_stopped():
 		current_health -= amount
+		blink_animation.play("flash")
 		Damage_Taken.emit(amount)
 		invincible_timer.start()
 
