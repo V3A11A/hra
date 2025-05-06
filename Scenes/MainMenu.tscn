@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://gdagppmtsca"]
+[gd_scene load_steps=6 format=3 uid="uid://cxbpxhsvewhoj"]
 
-[ext_resource type="Texture2D" uid="uid://cggrtn0qmumoc" path="res://Sprites/button.png" id="1_eocxo"]
-[ext_resource type="Texture2D" uid="uid://bk4p5jomjjyvp" path="res://Sprites/button pressed.png" id="2_gdbio"]
-[ext_resource type="Texture2D" uid="uid://dcanpv41uw6rh" path="res://Sprites/button hover.png" id="3_lj6e5"]
-[ext_resource type="FontFile" uid="uid://xnlqhu1mjn0n" path="res://Sprites/vhs-gothic.ttf" id="3_m0g03"]
-[ext_resource type="Theme" uid="uid://ckgs0blnlyx7g" path="res://Resources/menutext.tres" id="4_1ape3"]
+[ext_resource type="FontFile" uid="uid://xnlqhu1mjn0n" path="res://Sprites/vhs-gothic.ttf" id="1_bjm2f"]
+[ext_resource type="Texture2D" uid="uid://cggrtn0qmumoc" path="res://Sprites/button.png" id="1_q208i"]
+[ext_resource type="Texture2D" uid="uid://bk4p5jomjjyvp" path="res://Sprites/button pressed.png" id="2_8u58h"]
+[ext_resource type="Texture2D" uid="uid://dcanpv41uw6rh" path="res://Sprites/button hover.png" id="3_c1l60"]
+[ext_resource type="Theme" uid="uid://ckgs0blnlyx7g" path="res://Resources/menutext.tres" id="4_1gvnm"]
 
 [node name="MainMenu" type="Node2D"]
 
@@ -40,9 +40,9 @@ offset_left = 55.0
 offset_top = 120.0
 offset_right = 311.0
 offset_bottom = 376.0
-texture_normal = ExtResource("1_eocxo")
-texture_pressed = ExtResource("2_gdbio")
-texture_hover = ExtResource("3_lj6e5")
+texture_normal = ExtResource("1_q208i")
+texture_pressed = ExtResource("2_8u58h")
+texture_hover = ExtResource("3_c1l60")
 
 [node name="Label" type="Label" parent="Buttons/TextureButton"]
 layout_mode = 0
@@ -50,8 +50,8 @@ offset_left = 48.0
 offset_top = 94.0
 offset_right = 204.0
 offset_bottom = 155.0
-theme = ExtResource("4_1ape3")
-theme_override_fonts/font = ExtResource("3_m0g03")
+theme = ExtResource("4_1gvnm")
+theme_override_fonts/font = ExtResource("1_bjm2f")
 theme_override_font_sizes/font_size = 52
 text = "Play"
 
@@ -61,9 +61,9 @@ offset_left = 55.0
 offset_top = 302.0
 offset_right = 311.0
 offset_bottom = 558.0
-texture_normal = ExtResource("1_eocxo")
-texture_pressed = ExtResource("2_gdbio")
-texture_hover = ExtResource("3_lj6e5")
+texture_normal = ExtResource("1_q208i")
+texture_pressed = ExtResource("2_8u58h")
+texture_hover = ExtResource("3_c1l60")
 
 [node name="Label" type="Label" parent="Buttons/TextureButton2"]
 layout_mode = 0
@@ -71,8 +71,8 @@ offset_left = 37.0
 offset_top = 98.0
 offset_right = 232.0
 offset_bottom = 157.0
-theme = ExtResource("4_1ape3")
-theme_override_fonts/font = ExtResource("3_m0g03")
+theme = ExtResource("4_1gvnm")
+theme_override_fonts/font = ExtResource("1_bjm2f")
 theme_override_font_sizes/font_size = 47
 text = "Saves"
 
@@ -82,9 +82,9 @@ offset_left = 55.0
 offset_top = 484.0
 offset_right = 311.0
 offset_bottom = 740.0
-texture_normal = ExtResource("1_eocxo")
-texture_pressed = ExtResource("2_gdbio")
-texture_hover = ExtResource("3_lj6e5")
+texture_normal = ExtResource("1_q208i")
+texture_pressed = ExtResource("2_8u58h")
+texture_hover = ExtResource("3_c1l60")
 
 [node name="Label" type="Label" parent="Buttons/TextureButton3"]
 layout_mode = 0
@@ -92,8 +92,8 @@ offset_left = 30.0
 offset_top = 106.0
 offset_right = 246.0
 offset_bottom = 167.0
-theme = ExtResource("4_1ape3")
-theme_override_fonts/font = ExtResource("3_m0g03")
+theme = ExtResource("4_1gvnm")
+theme_override_fonts/font = ExtResource("1_bjm2f")
 theme_override_font_sizes/font_size = 32
 text = "Settings"
 
@@ -103,9 +103,9 @@ offset_left = 55.0
 offset_top = 666.0
 offset_right = 311.0
 offset_bottom = 922.0
-texture_normal = ExtResource("1_eocxo")
-texture_pressed = ExtResource("2_gdbio")
-texture_hover = ExtResource("3_lj6e5")
+texture_normal = ExtResource("1_q208i")
+texture_pressed = ExtResource("2_8u58h")
+texture_hover = ExtResource("3_c1l60")
 
 [node name="Label" type="Label" parent="Buttons/TextureButton4"]
 layout_mode = 0
@@ -113,7 +113,7 @@ offset_left = 43.0
 offset_top = 96.0
 offset_right = 259.0
 offset_bottom = 158.0
-theme = ExtResource("4_1ape3")
-theme_override_fonts/font = ExtResource("3_m0g03")
+theme = ExtResource("4_1gvnm")
+theme_override_fonts/font = ExtResource("1_bjm2f")
 theme_override_font_sizes/font_size = 55
 text = "Quit"
