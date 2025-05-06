@@ -1,0 +1,98 @@
+[gd_scene load_steps=3 format=3 uid="uid://gdagppmtsca"]
+
+[ext_resource type="Texture2D" uid="uid://csct6w220dg1w" path="res://Sprites/lukas.png" id="2_s83xl"]
+[ext_resource type="FontFile" uid="uid://xnlqhu1mjn0n" path="res://Sprites/vhs-gothic.ttf" id="5_hwwwu"]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="TopMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 632.0
+offset_bottom = 1088.0
+
+[node name="ColorRect" type="ColorRect" parent="TopMenu"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 128.0
+color = Color(0.273873, 0.273873, 0.273873, 1)
+
+[node name="MenuButton" type="MenuButton" parent="TopMenu"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 64.0
+offset_right = 451.0
+offset_bottom = 114.0
+theme_override_fonts/font = ExtResource("5_hwwwu")
+theme_override_font_sizes/font_size = 37
+keep_pressed_outside = true
+text = "Weapon Upgrades"
+flat = false
+
+[node name="MenuButton2" type="MenuButton" parent="TopMenu"]
+layout_mode = 0
+offset_left = 483.0
+offset_top = 64.0
+offset_right = 907.0
+offset_bottom = 114.0
+theme_override_fonts/font = ExtResource("5_hwwwu")
+theme_override_font_sizes/font_size = 37
+keep_pressed_outside = true
+text = "Player Upgrades"
+flat = false
+
+[node name="ColorRect2" type="ColorRect" parent="TopMenu"]
+offset_left = 462.0
+offset_top = 62.0
+offset_right = 502.0
+offset_bottom = 64.0
+scale = Vector2(0.2, 27.32)
+
+[node name="UpgradeOptions" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 240.0
+offset_bottom = 1008.0
+
+[node name="Divider" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 944.0
+offset_right = 1000.0
+offset_bottom = 1088.0
+
+[node name="ColorRect" type="ColorRect" parent="Divider"]
+offset_left = -16.0
+offset_right = 304.0
+offset_bottom = 40.0
+scale = Vector2(0.2, 27.32)
+color = Color(0.27451, 0.27451, 0.27451, 1)
+
+[node name="Label" type="Label" parent="Divider"]
+offset_left = 272.0
+offset_top = 384.0
+offset_right = 749.0
+offset_bottom = 439.0
+theme_override_font_sizes/font_size = 40
+text = "Weapon/Player Preview?"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1448, 688)
+texture = ExtResource("2_s83xl")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 24.0
+offset_top = 176.0
+offset_right = 64.0
+offset_bottom = 216.0
+scale = Vector2(22.12, 22)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 664.0
+offset_top = 208.0
+offset_right = 668.0
+offset_bottom = 235.0
+scale = Vector2(2.24456, 2.24456)
+theme_override_font_sizes/font_size = 30
