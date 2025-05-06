@@ -11,7 +11,7 @@ var difficulty : int = 1
 
 
 func _exit_tree() -> void:
-w	wave_system.enemies_left_in_wave.erase(difficulty)
+	wave_system.enemies_left_in_wave.erase(difficulty)
 	wave_system.enemies_left_in_wave = wave_system.enemies_left_in_wave #for set() triggering
 
 

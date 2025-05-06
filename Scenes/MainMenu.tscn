@@ -1,119 +1,184 @@
-[gd_scene load_steps=6 format=3 uid="uid://cxbpxhsvewhoj"]
+[gd_scene load_steps=19 format=3 uid="uid://cxbpxhsvewhoj"]
 
 [ext_resource type="FontFile" uid="uid://xnlqhu1mjn0n" path="res://Sprites/vhs-gothic.ttf" id="1_bjm2f"]
-[ext_resource type="Texture2D" uid="uid://cggrtn0qmumoc" path="res://Sprites/button.png" id="1_q208i"]
-[ext_resource type="Texture2D" uid="uid://bk4p5jomjjyvp" path="res://Sprites/button pressed.png" id="2_8u58h"]
-[ext_resource type="Texture2D" uid="uid://dcanpv41uw6rh" path="res://Sprites/button hover.png" id="3_c1l60"]
-[ext_resource type="Theme" uid="uid://ckgs0blnlyx7g" path="res://Resources/menutext.tres" id="4_1gvnm"]
+[ext_resource type="Texture2D" uid="uid://c1o634w6pmwxv" path="res://Sprites/moving_background.png" id="1_coj6f"]
+[ext_resource type="Texture2D" uid="uid://d0liubqihnbi8" path="res://Sprites/fog.png" id="1_l25fy"]
+[ext_resource type="Texture2D" uid="uid://cc86ryvvl37wi" path="res://icon.svg" id="2_74mgm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7wey"]
+atlas = ExtResource("1_coj6f")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxeqe"]
+atlas = ExtResource("1_coj6f")
+region = Rect2(0, 1080, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbcrw"]
+atlas = ExtResource("1_coj6f")
+region = Rect2(0, 2160, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wo3k0"]
+atlas = ExtResource("1_coj6f")
+region = Rect2(0, 3240, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isw1x"]
+atlas = ExtResource("1_coj6f")
+region = Rect2(0, 4320, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkwwl"]
+atlas = ExtResource("1_coj6f")
+region = Rect2(0, 5400, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsp8j"]
+atlas = ExtResource("1_coj6f")
+region = Rect2(0, 6480, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvvpr"]
+atlas = ExtResource("1_coj6f")
+region = Rect2(0, 7560, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1o3e"]
+atlas = ExtResource("1_coj6f")
+region = Rect2(0, 8640, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fpce"]
+atlas = ExtResource("1_coj6f")
+region = Rect2(0, 9720, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ytg2"]
+atlas = ExtResource("1_coj6f")
+region = Rect2(0, 10800, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hreuy"]
+atlas = ExtResource("1_coj6f")
+region = Rect2(0, 11880, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7mdr"]
+atlas = ExtResource("1_coj6f")
+region = Rect2(0, 12960, 1920, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rsuw6"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7wey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxeqe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbcrw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wo3k0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_isw1x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkwwl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fsp8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvvpr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1o3e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fpce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ytg2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hreuy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7mdr")
+}],
+"loop": true,
+"name": &"moving_background",
+"speed": 30.0
+}]
 
 [node name="MainMenu" type="Node2D"]
 
-[node name="Label" type="Label" parent="."]
-offset_left = 1200.0
-offset_top = 584.0
-offset_right = 1880.0
-offset_bottom = 1027.0
-theme_override_constants/line_spacing = -35
-theme_override_font_sizes/font_size = 75
-text = "  _                    
- (  )                   
- | |__    _ __   ____    
- |  _ `\\ ( '__) / _` )   
- | | | || |   ( (_|| _ 
- ( _) (_ ) (_)    \\__,_)(_)"
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(963, 544)
+sprite_frames = SubResource("SpriteFrames_rsuw6")
+animation = &"moving_background"
+autoplay = "moving_background"
+frame = 1
+frame_progress = 0.962502
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = 704.0
+offset_right = 1224.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.207843)
+
+[node name="Fog2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(585, 540.136)
+rotation = 1.57079
+scale = Vector2(5.39844, 1.2036)
+texture = ExtResource("1_l25fy")
+
+[node name="Fog3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1344, 540)
+rotation = -1.57079
+scale = Vector2(5.39844, 1.2036)
+texture = ExtResource("1_l25fy")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(960, 148)
+scale = Vector2(1.3125, 1.3125)
+texture = ExtResource("2_74mgm")
 
 [node name="Buttons" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 632.0
-offset_bottom = 1088.0
+offset_left = 640.0
+offset_top = 272.0
+offset_right = 1280.0
+offset_bottom = 1008.0
 
-[node name="ColorRect" type="ColorRect" parent="Buttons"]
+[node name="Play" type="Button" parent="Buttons"]
 layout_mode = 0
-offset_right = 376.0
-offset_bottom = 1072.0
-color = Color(0.273873, 0.273873, 0.273873, 1)
-
-[node name="TextureButton" type="TextureButton" parent="Buttons"]
-layout_mode = 0
-offset_left = 55.0
-offset_top = 120.0
-offset_right = 311.0
-offset_bottom = 376.0
-texture_normal = ExtResource("1_q208i")
-texture_pressed = ExtResource("2_8u58h")
-texture_hover = ExtResource("3_c1l60")
-
-[node name="Label" type="Label" parent="Buttons/TextureButton"]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 94.0
-offset_right = 204.0
-offset_bottom = 155.0
-theme = ExtResource("4_1gvnm")
-theme_override_fonts/font = ExtResource("1_bjm2f")
-theme_override_font_sizes/font_size = 52
-text = "Play"
-
-[node name="TextureButton2" type="TextureButton" parent="Buttons"]
-layout_mode = 0
-offset_left = 55.0
-offset_top = 302.0
-offset_right = 311.0
-offset_bottom = 558.0
-texture_normal = ExtResource("1_q208i")
-texture_pressed = ExtResource("2_8u58h")
-texture_hover = ExtResource("3_c1l60")
-
-[node name="Label" type="Label" parent="Buttons/TextureButton2"]
-layout_mode = 0
-offset_left = 37.0
-offset_top = 98.0
-offset_right = 232.0
-offset_bottom = 157.0
-theme = ExtResource("4_1gvnm")
+offset_left = 144.0
+offset_top = 8.0
+offset_right = 496.0
+offset_bottom = 72.0
 theme_override_fonts/font = ExtResource("1_bjm2f")
 theme_override_font_sizes/font_size = 47
-text = "Saves"
+text = "> Play <"
 
-[node name="TextureButton3" type="TextureButton" parent="Buttons"]
+[node name="Options" type="Button" parent="Buttons"]
 layout_mode = 0
-offset_left = 55.0
-offset_top = 484.0
-offset_right = 311.0
-offset_bottom = 740.0
-texture_normal = ExtResource("1_q208i")
-texture_pressed = ExtResource("2_8u58h")
-texture_hover = ExtResource("3_c1l60")
-
-[node name="Label" type="Label" parent="Buttons/TextureButton3"]
-layout_mode = 0
-offset_left = 30.0
-offset_top = 106.0
-offset_right = 246.0
-offset_bottom = 167.0
-theme = ExtResource("4_1gvnm")
-theme_override_fonts/font = ExtResource("1_bjm2f")
-theme_override_font_sizes/font_size = 32
-text = "Settings"
-
-[node name="TextureButton4" type="TextureButton" parent="Buttons"]
-layout_mode = 0
-offset_left = 55.0
-offset_top = 666.0
-offset_right = 311.0
-offset_bottom = 922.0
-texture_normal = ExtResource("1_q208i")
-texture_pressed = ExtResource("2_8u58h")
-texture_hover = ExtResource("3_c1l60")
-
-[node name="Label" type="Label" parent="Buttons/TextureButton4"]
-layout_mode = 0
-offset_left = 43.0
+offset_left = 122.0
 offset_top = 96.0
-offset_right = 259.0
-offset_bottom = 158.0
-theme = ExtResource("4_1gvnm")
+offset_right = 518.0
+offset_bottom = 160.0
 theme_override_fonts/font = ExtResource("1_bjm2f")
-theme_override_font_sizes/font_size = 55
-text = "Quit"
+theme_override_font_sizes/font_size = 47
+text = "> Options <"
+
+[node name="Quit" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 184.0
+offset_right = 518.0
+offset_bottom = 248.0
+theme_override_fonts/font = ExtResource("1_bjm2f")
+theme_override_font_sizes/font_size = 47
+text = "> Quit <"

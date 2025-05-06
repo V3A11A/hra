@@ -1,17 +1,129 @@
-[gd_scene load_steps=7 format=3 uid="uid://oakkxncsd881"]
+[gd_scene load_steps=22 format=3 uid="uid://oakkxncsd881"]
 
 [ext_resource type="PackedScene" uid="uid://uao8gqlr5nnx" path="res://Scenes/Player/Movement/Movement.tscn" id="1_rw6wu"]
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_sfaps"]
 [ext_resource type="Texture2D" uid="uid://csct6w220dg1w" path="res://Sprites/lukas.png" id="2_ls7yc"]
+[ext_resource type="Texture2D" uid="uid://dovw47enupjug" path="res://Sprites/walkanim.png" id="2_rwdns"]
 [ext_resource type="Script" path="res://Scripts/Camera Shake.gd" id="3_2hv52"]
 [ext_resource type="PackedScene" uid="uid://cxx5acv563mj2" path="res://Scenes/Weapon System/Weapon System.tscn" id="4_1t5u0"]
 [ext_resource type="PackedScene" uid="uid://m0d1mkwvbmjy" path="res://Scenes/Health System/Health System.tscn" id="5_x5wok"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fg7g"]
+atlas = ExtResource("2_rwdns")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjus5"]
+atlas = ExtResource("2_rwdns")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppgj1"]
+atlas = ExtResource("2_rwdns")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fad5f"]
+atlas = ExtResource("2_rwdns")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4jbr"]
+atlas = ExtResource("2_rwdns")
+region = Rect2(0, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ce0j"]
+atlas = ExtResource("2_rwdns")
+region = Rect2(0, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s71v7"]
+atlas = ExtResource("2_rwdns")
+region = Rect2(0, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xav17"]
+atlas = ExtResource("2_rwdns")
+region = Rect2(0, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nv1h3"]
+atlas = ExtResource("2_rwdns")
+region = Rect2(0, 160, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbidm"]
+atlas = ExtResource("2_rwdns")
+region = Rect2(0, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cnxl"]
+atlas = ExtResource("2_rwdns")
+region = Rect2(0, 224, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ld6te"]
+atlas = ExtResource("2_rwdns")
+region = Rect2(0, 256, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hoi5j"]
+atlas = ExtResource("2_rwdns")
+region = Rect2(0, 272, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ofxsw"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fg7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjus5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppgj1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fad5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4jbr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ce0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s71v7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xav17")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nv1h3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbidm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cnxl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ld6te")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hoi5j")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 20.0
+}]
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 4
 script = ExtResource("1_sfaps")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(10.0706, 10.0706)
+sprite_frames = SubResource("SpriteFrames_ofxsw")
+animation = &"walk"
+autoplay = "walk"
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-0.549431, -0.500008)
 scale = Vector2(0.251765, 0.251765)
 texture = ExtResource("2_ls7yc")

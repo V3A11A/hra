@@ -1,10 +1,115 @@
-[gd_scene load_steps=11 format=3 uid="uid://baedfwx1gh3h2"]
+[gd_scene load_steps=26 format=3 uid="uid://baedfwx1gh3h2"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy System/Enemy.gd" id="1_k8pfq"]
 [ext_resource type="Texture2D" uid="uid://cd7usbmuujk5w" path="res://Sprites/kuba.png" id="2_77h7x"]
 [ext_resource type="PackedScene" uid="uid://c4ni0vy75q3fl" path="res://Scenes/Enemy System/Enemy Movement Core.tscn" id="2_kid5d"]
+[ext_resource type="Texture2D" uid="uid://dovw47enupjug" path="res://Sprites/walkanim.png" id="3_0vmw8"]
 [ext_resource type="Shader" path="res://Scenes/Enemy System/Enemies/Enemy_damage_blink.gdshader" id="3_iiv70"]
 [ext_resource type="PackedScene" uid="uid://m0d1mkwvbmjy" path="res://Scenes/Health System/Health System.tscn" id="4_tdouk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fg7g"]
+atlas = ExtResource("3_0vmw8")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjus5"]
+atlas = ExtResource("3_0vmw8")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppgj1"]
+atlas = ExtResource("3_0vmw8")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fad5f"]
+atlas = ExtResource("3_0vmw8")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4jbr"]
+atlas = ExtResource("3_0vmw8")
+region = Rect2(0, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ce0j"]
+atlas = ExtResource("3_0vmw8")
+region = Rect2(0, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s71v7"]
+atlas = ExtResource("3_0vmw8")
+region = Rect2(0, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xav17"]
+atlas = ExtResource("3_0vmw8")
+region = Rect2(0, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nv1h3"]
+atlas = ExtResource("3_0vmw8")
+region = Rect2(0, 160, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbidm"]
+atlas = ExtResource("3_0vmw8")
+region = Rect2(0, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cnxl"]
+atlas = ExtResource("3_0vmw8")
+region = Rect2(0, 224, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ld6te"]
+atlas = ExtResource("3_0vmw8")
+region = Rect2(0, 256, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hoi5j"]
+atlas = ExtResource("3_0vmw8")
+region = Rect2(0, 272, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2nwhh"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fg7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjus5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppgj1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fad5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4jbr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ce0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s71v7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xav17")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nv1h3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbidm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cnxl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ld6te")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hoi5j")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 20.0
+}]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_byyil"]
 shader = ExtResource("3_iiv70")
@@ -58,6 +163,14 @@ collision_mask = 4
 script = ExtResource("1_k8pfq")
 
 [node name="Enemy Movement Core" parent="." instance=ExtResource("2_kid5d")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+scale = Vector2(10.0706, 10.0706)
+sprite_frames = SubResource("SpriteFrames_2nwhh")
+animation = &"walk"
+autoplay = "walk"
+frame_progress = 0.312612
 
 [node name="Sprite" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_byyil")
