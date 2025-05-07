@@ -111,11 +111,6 @@ animations = [{
 "speed": 20.0
 }]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_byyil"]
-shader = ExtResource("3_iiv70")
-shader_parameter/flash_color = Color(0.756863, 0.141176, 0.141176, 0.494118)
-shader_parameter/flash_value = null
-
 [sub_resource type="Animation" id="Animation_o8aix"]
 length = 0.001
 tracks/0/type = "value"
@@ -154,6 +149,11 @@ _data = {
 "flash": SubResource("Animation_ya2si")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_byyil"]
+shader = ExtResource("3_iiv70")
+shader_parameter/flash_color = Color(0.756863, 0.141176, 0.141176, 0.494118)
+shader_parameter/flash_value = null
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_pily4"]
 radius = 32.0
 
@@ -165,22 +165,23 @@ script = ExtResource("1_k8pfq")
 [node name="Enemy Movement Core" parent="." instance=ExtResource("2_kid5d")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
 scale = Vector2(10.0706, 10.0706)
 sprite_frames = SubResource("SpriteFrames_2nwhh")
 animation = &"walk"
 autoplay = "walk"
 frame_progress = 0.312612
 
-[node name="Sprite" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_byyil")
-scale = Vector2(0.14125, 0.14125)
-texture = ExtResource("2_77h7x")
-
-[node name="BlinkAnimation" type="AnimationPlayer" parent="Sprite"]
+[node name="BlinkAnimation" type="AnimationPlayer" parent="AnimatedSprite2D"]
+root_node = NodePath("../../Sprite")
 libraries = {
 "": SubResource("AnimationLibrary_8dife")
 }
+
+[node name="Sprite" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_byyil")
+scale = Vector2(0.14125, 0.14125)
+texture = ExtResource("2_77h7x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_pily4")
