@@ -1,5 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://cxbpxhsvewhoj"]
+[gd_scene load_steps=20 format=3 uid="uid://cxbpxhsvewhoj"]
 
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_aasmk"]
 [ext_resource type="FontFile" uid="uid://xnlqhu1mjn0n" path="res://Sprites/vhs-gothic.ttf" id="1_bjm2f"]
 [ext_resource type="Texture2D" uid="uid://c1o634w6pmwxv" path="res://Sprites/moving_background.png" id="1_coj6f"]
 [ext_resource type="Texture2D" uid="uid://d0liubqihnbi8" path="res://Sprites/fog.png" id="1_l25fy"]
@@ -110,6 +111,7 @@ animations = [{
 }]
 
 [node name="MainMenu" type="Node2D"]
+script = ExtResource("1_aasmk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(963, 544)
@@ -182,3 +184,7 @@ offset_bottom = 248.0
 theme_override_fonts/font = ExtResource("1_bjm2f")
 theme_override_font_sizes/font_size = 47
 text = "> Quit <"
+
+[connection signal="pressed" from="Buttons/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Buttons/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Buttons/Quit" to="." method="_on_quit_pressed"]

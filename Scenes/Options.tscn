@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://oy6hyed5oh53"]
+
+[ext_resource type="Script" path="res://Scripts/options.gd" id="1_iowl2"]
+
+[node name="Options" type="Node2D"]
+script = ExtResource("1_iowl2")
+
+[node name="Buttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Back" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 877.0
+offset_top = 467.0
+offset_right = 1093.0
+offset_bottom = 519.0
+text = "BACK"
+
+[connection signal="pressed" from="Buttons/Back" to="." method="_on_back_pressed"]
