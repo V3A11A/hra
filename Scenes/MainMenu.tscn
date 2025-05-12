@@ -1,10 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://cxbpxhsvewhoj"]
+[gd_scene load_steps=21 format=3 uid="uid://cxbpxhsvewhoj"]
 
 [ext_resource type="Script" path="res://Scripts/Menu Control/menu.gd" id="1_aasmk"]
 [ext_resource type="FontFile" uid="uid://xnlqhu1mjn0n" path="res://Sprites/vhs-gothic.ttf" id="1_bjm2f"]
 [ext_resource type="Texture2D" uid="uid://c1o634w6pmwxv" path="res://Sprites/moving_background.png" id="1_coj6f"]
 [ext_resource type="Texture2D" uid="uid://d0liubqihnbi8" path="res://Sprites/fog.png" id="1_l25fy"]
 [ext_resource type="Texture2D" uid="uid://cc86ryvvl37wi" path="res://icon.svg" id="2_74mgm"]
+[ext_resource type="PackedScene" uid="uid://oy6hyed5oh53" path="res://Scenes/Options.tscn" id="6_23w2d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r7wey"]
 atlas = ExtResource("1_coj6f")
@@ -184,6 +185,9 @@ offset_bottom = 248.0
 theme_override_fonts/font = ExtResource("1_bjm2f")
 theme_override_font_sizes/font_size = 47
 text = "> Quit <"
+
+[node name="Options" parent="." instance=ExtResource("6_23w2d")]
+visible = false
 
 [connection signal="pressed" from="Buttons/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Buttons/Options" to="." method="_on_options_pressed"]

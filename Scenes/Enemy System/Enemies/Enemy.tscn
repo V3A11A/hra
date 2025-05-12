@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://baedfwx1gh3h2"]
+[gd_scene load_steps=27 format=3 uid="uid://baedfwx1gh3h2"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy System/Enemy.gd" id="1_k8pfq"]
 [ext_resource type="Texture2D" uid="uid://cd7usbmuujk5w" path="res://Sprites/kuba.png" id="2_77h7x"]
@@ -6,6 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://dovw47enupjug" path="res://Sprites/walkanim.png" id="3_0vmw8"]
 [ext_resource type="Shader" path="res://Scenes/Enemy System/Enemies/Enemy_damage_blink.gdshader" id="3_iiv70"]
 [ext_resource type="PackedScene" uid="uid://m0d1mkwvbmjy" path="res://Scenes/Health System/Health System.tscn" id="4_tdouk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l7hr7"]
+shader = ExtResource("3_iiv70")
+shader_parameter/flash_color = Color(0.756863, 0.141176, 0.141176, 0.494118)
+shader_parameter/flash_value = null
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0fg7g"]
 atlas = ExtResource("3_0vmw8")
@@ -165,6 +170,7 @@ script = ExtResource("1_k8pfq")
 [node name="Enemy Movement Core" parent="." instance=ExtResource("2_kid5d")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_l7hr7")
 scale = Vector2(10.0706, 10.0706)
 sprite_frames = SubResource("SpriteFrames_2nwhh")
 animation = &"walk"
@@ -172,13 +178,11 @@ autoplay = "walk"
 frame_progress = 0.312612
 
 [node name="BlinkAnimation" type="AnimationPlayer" parent="AnimatedSprite2D"]
-root_node = NodePath("../../Sprite")
 libraries = {
 "": SubResource("AnimationLibrary_8dife")
 }
 
 [node name="Sprite" type="Sprite2D" parent="."]
-visible = false
 material = SubResource("ShaderMaterial_byyil")
 scale = Vector2(0.14125, 0.14125)
 texture = ExtResource("2_77h7x")

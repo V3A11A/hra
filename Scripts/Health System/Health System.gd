@@ -5,7 +5,7 @@ signal Max_Health_Changed(amount : int)
 signal Damage_Taken(amount : int)
 signal Healed(amount : int)
 
-@onready var blink_animation: AnimationPlayer = $"../Sprite/BlinkAnimation"
+@onready var blink_animation: AnimationPlayer = $"../AnimatedSprite2D/BlinkAnimation"
 
 
 
