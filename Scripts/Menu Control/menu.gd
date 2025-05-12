@@ -10,7 +10,6 @@ func _on_play_pressed() -> void:
 
 func _on_options_pressed() -> void:
 	get_parent().add_child(OPTIONS.instantiate())
-	self.queue_free()
 
 
 func _on_quit_pressed() -> void:
