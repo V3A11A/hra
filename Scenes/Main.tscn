@@ -1,17 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://c21epopd520us"]
+[gd_scene load_steps=5 format=3 uid="uid://c21epopd520us"]
 
 [ext_resource type="PackedScene" uid="uid://cxbpxhsvewhoj" path="res://Scenes/MainMenu.tscn" id="1_f1dar"]
 [ext_resource type="PackedScene" uid="uid://5buiag2sfyl8" path="res://Scenes/Game.tscn" id="2_nbylt"]
 [ext_resource type="PackedScene" uid="uid://oy6hyed5oh53" path="res://Scenes/Options.tscn" id="3_px6rf"]
+[ext_resource type="PackedScene" uid="uid://cm615enj1b85h" path="res://Scenes/EscapeMenu.tscn" id="4_jm3s0"]
 
 [node name="Main" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="MainMenu" parent="CanvasLayer" instance=ExtResource("1_f1dar")]
+
 [node name="Options" parent="CanvasLayer" instance=ExtResource("3_px6rf")]
 visible = false
 
-[node name="MainMenu" parent="." instance=ExtResource("1_f1dar")]
+[node name="EscapeMenu" parent="CanvasLayer" instance=ExtResource("4_jm3s0")]
+visible = false
 
 [node name="Game" parent="." instance=ExtResource("2_nbylt")]
 process_mode = 4

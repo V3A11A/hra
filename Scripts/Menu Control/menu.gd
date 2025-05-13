@@ -1,7 +1,6 @@
 extends Node2D
 
-@onready var game: Node2D = $"../Game"
-const OPTIONS = preload("res://Scenes/Options.tscn")
+@onready var game: Node2D = $"../../Game"
 
 func _on_play_pressed() -> void:
 	game.show()
@@ -11,7 +10,7 @@ func _on_play_pressed() -> void:
 
 
 func _on_options_pressed() -> void:
-	$"../CanvasLayer/Options".show()
+	$"../Options".show()
 
 
 func _on_quit_pressed() -> void:

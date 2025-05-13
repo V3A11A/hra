@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm615enj1b85h"]
+
+[ext_resource type="Script" path="res://Scripts/escape_menu.gd" id="1_570y1"]
+[ext_resource type="FontFile" uid="uid://xnlqhu1mjn0n" path="res://Sprites/vhs-gothic.ttf" id="2_bvcvq"]
+
+[node name="EscapeMenu" type="Node2D"]
+script = ExtResource("1_570y1")
+
+[node name="Exit" type="Button" parent="."]
+offset_left = 862.0
+offset_top = 672.0
+offset_right = 1118.0
+offset_bottom = 733.0
+theme_override_fonts/font = ExtResource("2_bvcvq")
+theme_override_font_sizes/font_size = 40
+text = "Exit"
+
+[node name="Options" type="Button" parent="."]
+offset_left = 862.0
+offset_top = 564.0
+offset_right = 1118.0
+offset_bottom = 625.0
+theme_override_fonts/font = ExtResource("2_bvcvq")
+theme_override_font_sizes/font_size = 40
+text = "Options
+"
+
+[node name="Back To Game" type="Button" parent="."]
+offset_left = 860.0
+offset_top = 454.0
+offset_right = 1114.0
+offset_bottom = 515.0
+theme_override_fonts/font = ExtResource("2_bvcvq")
+theme_override_font_sizes/font_size = 40
+text = "Return"
+
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Back To Game" to="." method="_on_back_to_game_pressed"]

@@ -29,6 +29,7 @@ offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
 
 [node name="VolumeLabel" type="Label" parent="Buttons"]
+layout_mode = 0
 offset_left = 264.0
 offset_top = 256.0
 offset_right = 520.0
@@ -47,6 +48,7 @@ scale = Vector2(2.51, 2.51)
 theme_override_styles/slider = SubResource("StyleBoxLine_yi5kp")
 
 [node name="ScreenShakeToggleLabel2" type="Label" parent="Buttons"]
+layout_mode = 0
 offset_left = 32.0
 offset_top = 646.0
 offset_right = 752.0
@@ -66,6 +68,7 @@ theme = SubResource("Theme_cmew1")
 theme_override_styles/focus = SubResource("StyleBoxFlat_sjhpo")
 
 [node name="ScreenShakeToggleLabel" type="Label" parent="Buttons"]
+layout_mode = 0
 offset_left = 32.0
 offset_top = 456.0
 offset_right = 752.0
@@ -122,6 +125,7 @@ theme_override_font_sizes/font_size = 80
 text = "Options"
 
 [node name="ColorRect2" type="ColorRect" parent="TopBanner/Label"]
+layout_mode = 0
 offset_left = -3.51
 offset_top = 100.0
 offset_right = 2093.49
