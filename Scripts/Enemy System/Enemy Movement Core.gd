@@ -13,7 +13,7 @@ var target : Targets = Targets.Player
 
 
 
-@onready var player : CharacterBody2D = get_tree().get_root().get_node("Game/Player")
+@onready var player : CharacterBody2D = get_tree().get_root().get_node("Main/Game/Player")
 @onready var enemy : CharacterBody2D = $".."
 
 

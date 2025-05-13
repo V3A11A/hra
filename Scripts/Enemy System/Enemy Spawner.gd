@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var enemy_spawn_location : Node = get_tree().get_root().get_node("Game/Enemies")
+@onready var enemy_spawn_location : Node = get_tree().get_root().get_node("Main/Game/Enemies")
 
 
 
