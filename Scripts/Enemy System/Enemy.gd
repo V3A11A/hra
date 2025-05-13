@@ -1,13 +1,12 @@
 extends CharacterBody2D
 
-
 var difficulty : int = 1
+
 
 
 
 @onready var wave_system: Node = get_tree().get_root().get_node("Main/Game/Wave System")
 @onready var health_system: Node = $"Health System"
-
 
 
 func _exit_tree() -> void:
@@ -17,3 +16,8 @@ func _exit_tree() -> void:
 
 func _on_health_system_obliterate() -> void:
 	queue_free()
+	
+# je potřeba vložit signál pro emitaci economy systému	
+
+	
+	

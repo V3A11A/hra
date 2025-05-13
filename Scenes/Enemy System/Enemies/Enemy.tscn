@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://baedfwx1gh3h2"]
+[gd_scene load_steps=28 format=3 uid="uid://baedfwx1gh3h2"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy System/Enemy.gd" id="1_k8pfq"]
 [ext_resource type="Texture2D" uid="uid://cd7usbmuujk5w" path="res://Sprites/kuba.png" id="2_77h7x"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dovw47enupjug" path="res://Sprites/walkanim.png" id="3_0vmw8"]
 [ext_resource type="Shader" path="res://Scenes/Enemy System/Enemies/Enemy_damage_blink.gdshader" id="3_iiv70"]
 [ext_resource type="PackedScene" uid="uid://m0d1mkwvbmjy" path="res://Scenes/Health System/Health System.tscn" id="4_tdouk"]
+[ext_resource type="PackedScene" uid="uid://cst3ov4i06fqe" path="res://Scenes/Economy System/Money Holder.tscn" id="7_2yknh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_l7hr7"]
 shader = ExtResource("3_iiv70")
@@ -193,5 +194,7 @@ debug_color = Color(0.976528, 0, 0.411164, 0.42)
 
 [node name="Health System" parent="." instance=ExtResource("4_tdouk")]
 invincible_time = 0.2
+
+[node name="Money Holder" parent="." instance=ExtResource("7_2yknh")]
 
 [connection signal="Obliterate" from="Health System" to="." method="_on_health_system_obliterate"]

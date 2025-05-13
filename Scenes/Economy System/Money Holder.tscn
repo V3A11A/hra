@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cst3ov4i06fqe"]
+
+[ext_resource type="Script" path="res://Scripts/Economy System/Money Holder.gd" id="1_2i53q"]
+
+[node name="Money Holder" type="Node"]
+script = ExtResource("1_2i53q")
+money = 5
