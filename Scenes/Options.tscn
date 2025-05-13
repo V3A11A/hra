@@ -1,45 +1,142 @@
-[gd_scene load_steps=2 format=3 uid="uid://oy6hyed5oh53"]
+[gd_scene load_steps=8 format=3 uid="uid://oy6hyed5oh53"]
 
 [ext_resource type="Script" path="res://Scripts/Menu Control/options.gd" id="1_iowl2"]
+[ext_resource type="FontFile" uid="uid://xnlqhu1mjn0n" path="res://Sprites/vhs-gothic.ttf" id="2_3kq58"]
+[ext_resource type="Texture2D" uid="uid://d0liubqihnbi8" path="res://Sprites/fog.png" id="3_dh7nx"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_yi5kp"]
+color = Color(1, 1, 1, 1)
+grow_begin = 0.0
+thickness = 4
+
+[sub_resource type="Theme" id="Theme_cmew1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sjhpo"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+skew = Vector2(-1.42, 0)
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ajwou"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Options" type="Node2D"]
 script = ExtResource("1_iowl2")
 
 [node name="Buttons" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(1920, 1080)
-offset_right = 1920.0
+offset_left = 568.0
+offset_right = 1352.0
 offset_bottom = 1080.0
-color = Color(0, 0, 0, 0.74902)
+color = Color(0, 0, 0, 1)
 
-[node name="Back" type="Button" parent="Buttons"]
+[node name="VolumeLabel" type="Label" parent="Buttons"]
+offset_left = 264.0
+offset_top = 256.0
+offset_right = 520.0
+offset_bottom = 321.0
+theme_override_fonts/font = ExtResource("2_3kq58")
+theme_override_font_sizes/font_size = 50
+text = "Volume"
+
+[node name="Volume Slider" type="HSlider" parent="Buttons/VolumeLabel"]
 layout_mode = 0
-offset_left = 146.0
-offset_top = 980.0
-offset_right = 362.0
-offset_bottom = 1032.0
+offset_left = -80.0
+offset_top = 65.0
+offset_right = 85.135
+offset_bottom = 97.28
+scale = Vector2(2.51, 2.51)
+theme_override_styles/slider = SubResource("StyleBoxLine_yi5kp")
+
+[node name="ScreenShakeToggleLabel2" type="Label" parent="Buttons"]
+offset_left = 32.0
+offset_top = 646.0
+offset_right = 752.0
+offset_bottom = 703.0
+theme_override_fonts/font = ExtResource("2_3kq58")
+theme_override_font_sizes/font_size = 50
+text = "Toggle Full Screen"
+
+[node name="FujScreen" type="CheckButton" parent="Buttons/ScreenShakeToggleLabel2"]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 70.0
+offset_right = 336.0
+offset_bottom = 94.0
+scale = Vector2(3.095, 3.095)
+theme = SubResource("Theme_cmew1")
+theme_override_styles/focus = SubResource("StyleBoxFlat_sjhpo")
+
+[node name="ScreenShakeToggleLabel" type="Label" parent="Buttons"]
+offset_left = 32.0
+offset_top = 456.0
+offset_right = 752.0
+offset_bottom = 513.0
+theme_override_fonts/font = ExtResource("2_3kq58")
+theme_override_font_sizes/font_size = 50
+text = "Toggle Screen Shake"
+
+[node name="ToggleScreenShake" type="CheckButton" parent="Buttons/ScreenShakeToggleLabel"]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 56.0
+offset_right = 336.0
+offset_bottom = 80.0
+scale = Vector2(3.095, 3.095)
+theme_override_styles/focus = SubResource("StyleBoxFlat_ajwou")
+
+[node name="Fog2" type="Sprite2D" parent="Buttons"]
+position = Vector2(-112, 544)
+rotation = 1.57079
+scale = Vector2(5.39844, 1.2036)
+texture = ExtResource("3_dh7nx")
+
+[node name="Fog3" type="Sprite2D" parent="Buttons"]
+position = Vector2(896, 544)
+rotation = -1.57079
+scale = Vector2(5.39844, 1.2036)
+texture = ExtResource("3_dh7nx")
+
+[node name="TopBanner" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 32.0
+offset_top = 16.0
+offset_right = 1960.0
+offset_bottom = 144.0
+
+[node name="ColorRect" type="ColorRect" parent="TopBanner"]
+layout_mode = 0
+offset_left = -32.0
+offset_top = -15.0
+offset_right = 1888.0
+offset_bottom = 113.0
+color = Color(0.273873, 0.273873, 0.273873, 1)
+
+[node name="Label" type="Label" parent="TopBanner"]
+layout_mode = 0
+offset_left = 720.0
+offset_top = -8.0
+offset_right = 1140.0
+offset_bottom = 105.0
+theme_override_fonts/font = ExtResource("2_3kq58")
+theme_override_font_sizes/font_size = 80
+text = "Options"
+
+[node name="ColorRect2" type="ColorRect" parent="TopBanner/Label"]
+offset_left = -3.51
+offset_top = 100.0
+offset_right = 2093.49
+offset_bottom = 100.23
+scale = Vector2(0.204, 27.885)
+
+[node name="Back" type="Button" parent="."]
+offset_left = 832.0
+offset_top = 960.0
+offset_right = 1088.0
+offset_bottom = 1021.0
+theme_override_fonts/font = ExtResource("2_3kq58")
+theme_override_font_sizes/font_size = 40
 text = "BACK"
 
-[node name="Volume Slider" type="HSlider" parent="Buttons"]
-layout_mode = 0
-offset_left = 276.0
-offset_top = 187.0
-offset_right = 436.0
-offset_bottom = 203.0
-
-[node name="ToggleScreenShake" type="CheckButton" parent="Buttons"]
-layout_mode = 0
-offset_left = 817.0
-offset_top = 613.0
-offset_right = 861.0
-offset_bottom = 637.0
-
-[node name="FujScreen" type="CheckButton" parent="Buttons"]
-layout_mode = 0
-offset_left = 898.0
-offset_top = 521.0
-offset_right = 942.0
-offset_bottom = 545.0
-
-[connection signal="pressed" from="Buttons/Back" to="." method="_on_back_pressed"]
-[connection signal="value_changed" from="Buttons/Volume Slider" to="." method="_on_volume_slider_value_changed"]
-[connection signal="toggled" from="Buttons/ToggleScreenShake" to="." method="_on_toggle_screen_shake_toggled"]
+[connection signal="value_changed" from="Buttons/VolumeLabel/Volume Slider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="toggled" from="Buttons/ScreenShakeToggleLabel/ToggleScreenShake" to="." method="_on_toggle_screen_shake_toggled"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
