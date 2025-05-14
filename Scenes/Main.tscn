@@ -12,9 +12,11 @@
 [node name="MainMenu" parent="CanvasLayer" instance=ExtResource("1_f1dar")]
 
 [node name="Options" parent="CanvasLayer" instance=ExtResource("3_px6rf")]
+process_mode = 3
 visible = false
 
 [node name="EscapeMenu" parent="CanvasLayer" instance=ExtResource("4_jm3s0")]
+process_mode = 3
 visible = false
 
 [node name="Game" parent="." instance=ExtResource("2_nbylt")]
