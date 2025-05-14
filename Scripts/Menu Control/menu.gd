@@ -7,6 +7,7 @@ func _on_play_pressed() -> void:
 	game.process_mode = Node.PROCESS_MODE_INHERIT
 	self.hide()
 	self.process_mode = Node.PROCESS_MODE_DISABLED
+	$"../EscapeMenu".inGame = true
 
 
 func _on_options_pressed() -> void:

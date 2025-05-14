@@ -57,7 +57,7 @@ theme_override_fonts/font = ExtResource("2_3kq58")
 theme_override_font_sizes/font_size = 50
 text = "Toggle Full Screen"
 
-[node name="FujScreen" type="CheckButton" parent="Buttons/ScreenShakeToggleLabel2"]
+[node name="ToggleFullScreen" type="CheckButton" parent="Buttons/ScreenShakeToggleLabel2"]
 layout_mode = 0
 offset_left = 292.0
 offset_top = 70.0
@@ -142,5 +142,6 @@ theme_override_font_sizes/font_size = 40
 text = "BACK"
 
 [connection signal="value_changed" from="Buttons/VolumeLabel/Volume Slider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="toggled" from="Buttons/ScreenShakeToggleLabel2/ToggleFullScreen" to="." method="_on_toggle_full_screen_toggled"]
 [connection signal="toggled" from="Buttons/ScreenShakeToggleLabel/ToggleScreenShake" to="." method="_on_toggle_screen_shake_toggled"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
