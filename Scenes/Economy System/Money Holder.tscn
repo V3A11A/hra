@@ -4,4 +4,3 @@
 
 [node name="Money Holder" type="Node"]
 script = ExtResource("1_2i53q")
-money = 5

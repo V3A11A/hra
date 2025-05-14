@@ -196,5 +196,6 @@ debug_color = Color(0.976528, 0, 0.411164, 0.42)
 invincible_time = 0.2
 
 [node name="Money Holder" parent="." instance=ExtResource("7_2yknh")]
+money = 12
 
 [connection signal="Obliterate" from="Health System" to="." method="_on_health_system_obliterate"]

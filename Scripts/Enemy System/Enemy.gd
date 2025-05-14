@@ -16,8 +16,3 @@ func _exit_tree() -> void:
 
 func _on_health_system_obliterate() -> void:
 	queue_free()
-	
-# je potřeba vložit signál pro emitaci economy systému	
-
-	
-	

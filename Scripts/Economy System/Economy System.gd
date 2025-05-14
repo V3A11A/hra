@@ -1,8 +1,14 @@
 extends Node
-var money:int = 10
+
+@onready var money_label: RichTextLabel = $CanvasLayer/Money
+
+
+
+var money:int
 
 func _process(delta: float) -> void:
-	$Money.text = "Money: "+str(money)
+	money_label.text = "[wave]Money: "+str(money)
 	
 func AddMoney(amount:int):
-	money += 2
+	print(amount)
+	money += amount
