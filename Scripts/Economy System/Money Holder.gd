@@ -6,12 +6,7 @@ extends Node
 
 
 func _on_health_system_obliterate() -> void:
-	printerr(money)
 	economy_system.AddMoney(money)
-
-
-func _physics_process(delta: float) -> void:
-	print(money)
 
 func _ready() -> void:
 	health_system.Obliterate.connect(_on_health_system_obliterate)

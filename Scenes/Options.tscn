@@ -66,6 +66,7 @@ offset_bottom = 94.0
 scale = Vector2(3.095, 3.095)
 theme = SubResource("Theme_cmew1")
 theme_override_styles/focus = SubResource("StyleBoxFlat_sjhpo")
+button_pressed = true
 
 [node name="ScreenShakeToggleLabel" type="Label" parent="Buttons"]
 layout_mode = 0
@@ -85,6 +86,7 @@ offset_right = 336.0
 offset_bottom = 80.0
 scale = Vector2(3.095, 3.095)
 theme_override_styles/focus = SubResource("StyleBoxFlat_ajwou")
+button_pressed = true
 
 [node name="Fog2" type="Sprite2D" parent="Buttons"]
 position = Vector2(-112, 544)

@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var game: Node2D = $"../../Game"
+var inMenu: bool = true
 
 func _on_play_pressed() -> void:
 	game.show()
@@ -8,6 +9,7 @@ func _on_play_pressed() -> void:
 	self.hide()
 	self.process_mode = Node.PROCESS_MODE_DISABLED
 	$"../EscapeMenu".inGame = true
+	inMenu = false
 
 
 func _on_options_pressed() -> void:
