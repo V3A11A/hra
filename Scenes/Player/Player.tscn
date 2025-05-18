@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://oakkxncsd881"]
+[gd_scene load_steps=26 format=3 uid="uid://oakkxncsd881"]
 
 [ext_resource type="PackedScene" uid="uid://uao8gqlr5nnx" path="res://Scenes/Player/Movement/Movement.tscn" id="1_rw6wu"]
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_sfaps"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ch14t6p2d8c6u" path="res://Sprites/m4.png" id="6_lkkgr"]
 [ext_resource type="PackedScene" uid="uid://djupl0yxxccoo" path="res://Scenes/Economy System/Economy System.tscn" id="8_2e2b6"]
 [ext_resource type="FontFile" uid="uid://xnlqhu1mjn0n" path="res://Sprites/vhs-gothic.ttf" id="9_lqq8l"]
+[ext_resource type="Texture2D" uid="uid://b6xctuv8l0lv7" path="res://Sprites/flashlight.png" id="9_w7lxh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0fg7g"]
 atlas = ExtResource("2_rwdns")
@@ -141,8 +142,25 @@ position = Vector2(130, 0)
 [node name="Sprite2D" type="Sprite2D" parent="Anchor/Weapon System"]
 position = Vector2(16, -1.73004)
 rotation = -4.71238
-scale = Vector2(-0.20738, 0.155892)
+scale = Vector2(-1.11195, 0.835879)
 texture = ExtResource("6_lkkgr")
+
+[node name="ColorRect2" type="ColorRect" parent="Anchor/Weapon System/Sprite2D"]
+light_mask = 2
+offset_left = 0.243276
+offset_top = -72.9771
+offset_right = 18.3383
+offset_bottom = 40.3129
+rotation = 3.14159
+scale = Vector2(0.2, 64.7896)
+color = Color(0.572549, 0, 0.129412, 0.521569)
+
+[node name="PointLight2D" type="PointLight2D" parent="Anchor/Weapon System"]
+position = Vector2(350, -2)
+rotation = 1.57079
+scale = Vector2(3.16, 3.16)
+shadow_enabled = true
+texture = ExtResource("9_w7lxh")
 
 [node name="Health System" parent="." instance=ExtResource("5_x5wok")]
 max_health = 50
