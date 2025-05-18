@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://oakkxncsd881"]
+[gd_scene load_steps=25 format=3 uid="uid://oakkxncsd881"]
 
 [ext_resource type="PackedScene" uid="uid://uao8gqlr5nnx" path="res://Scenes/Player/Movement/Movement.tscn" id="1_rw6wu"]
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_sfaps"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/Camera Shake.gd" id="3_2hv52"]
 [ext_resource type="PackedScene" uid="uid://cxx5acv563mj2" path="res://Scenes/Weapon System/Weapon System.tscn" id="4_1t5u0"]
 [ext_resource type="PackedScene" uid="uid://m0d1mkwvbmjy" path="res://Scenes/Health System/Health System.tscn" id="5_x5wok"]
+[ext_resource type="Texture2D" uid="uid://ch14t6p2d8c6u" path="res://Sprites/m4.png" id="6_lkkgr"]
 [ext_resource type="PackedScene" uid="uid://djupl0yxxccoo" path="res://Scenes/Economy System/Economy System.tscn" id="8_2e2b6"]
 [ext_resource type="FontFile" uid="uid://xnlqhu1mjn0n" path="res://Sprites/vhs-gothic.ttf" id="9_lqq8l"]
 
@@ -136,6 +137,12 @@ texture = ExtResource("2_ls7yc")
 
 [node name="Weapon System" parent="Anchor" instance=ExtResource("4_1t5u0")]
 position = Vector2(130, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Anchor/Weapon System"]
+position = Vector2(16, -1.73004)
+rotation = -4.71238
+scale = Vector2(-0.20738, 0.155892)
+texture = ExtResource("6_lkkgr")
 
 [node name="Health System" parent="." instance=ExtResource("5_x5wok")]
 max_health = 50
