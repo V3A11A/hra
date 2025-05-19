@@ -19,6 +19,6 @@ func _on_toggle_screen_shake_toggled(toggled_on: bool) -> void:
 
 func _on_toggle_full_screen_toggled(toggled_on: bool) -> void:
 	if toggled_on:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 		return
-	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
