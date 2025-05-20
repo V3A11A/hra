@@ -16,3 +16,6 @@ func _exit_tree() -> void:
 
 func _on_health_system_obliterate() -> void:
 	queue_free()
+
+func _process(delta: float) -> void:
+	look_at($"../../Player".position)

@@ -25,4 +25,5 @@ func Shoot() -> void:
 	bullets.add_child(BULLET.instantiate())
 	bullets.get_child(-1).global_position = weapon_system.player.global_position
 	bullets.get_child(-1).direction = Vector2(weapon_system.get_global_mouse_position() - weapon_system.player.global_position).normalized()
+	bullets.get_child(-1).look_at(get_global_mouse_position())
 	bullets.get_child(-1).damage = damage
