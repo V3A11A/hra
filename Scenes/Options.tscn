@@ -98,6 +98,23 @@ rotation = -1.57079
 scale = Vector2(5.39844, 1.2036)
 texture = ExtResource("3_dh7nx")
 
+[node name="CursorSizeLabel" type="Label" parent="Buttons"]
+layout_mode = 0
+offset_left = -425.0
+offset_top = 452.0
+offset_right = -339.0
+offset_bottom = 475.0
+text = "Cursor Size"
+
+[node name="HSlider" type="HSlider" parent="Buttons"]
+offset_left = -525.0
+offset_top = 488.0
+offset_right = -239.0
+offset_bottom = 504.0
+min_value = 1.0
+max_value = 3.0
+value = 3.0
+
 [node name="TopBanner" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -144,4 +161,5 @@ text = "BACK"
 [connection signal="value_changed" from="Buttons/VolumeLabel/Volume Slider" to="." method="_on_volume_slider_value_changed"]
 [connection signal="toggled" from="Buttons/ScreenShakeToggleLabel2/ToggleFullScreen" to="." method="_on_toggle_full_screen_toggled"]
 [connection signal="toggled" from="Buttons/ScreenShakeToggleLabel/ToggleScreenShake" to="." method="_on_toggle_screen_shake_toggled"]
+[connection signal="value_changed" from="Buttons/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
