@@ -71,6 +71,11 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }, {
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0fg7g")
@@ -123,7 +128,7 @@ script = ExtResource("1_sfaps")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(10.0706, 10.0706)
 sprite_frames = SubResource("SpriteFrames_ofxsw")
-animation = &"walk"
+animation = &"idle"
 autoplay = "walk"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -161,6 +166,7 @@ rotation = 1.57079
 scale = Vector2(3.16, 3.16)
 shadow_enabled = true
 texture = ExtResource("9_w7lxh")
+height = 4.0
 
 [node name="Health System" parent="." instance=ExtResource("5_x5wok")]
 max_health = 50
