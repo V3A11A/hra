@@ -83,20 +83,11 @@ text = "Weapon/Player Preview?"
 position = Vector2(1448, 688)
 texture = ExtResource("2_s83xl")
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 24.0
-offset_top = 176.0
-offset_right = 64.0
-offset_bottom = 216.0
-scale = Vector2(22.12, 22)
-
 [node name="ProgressBar" type="ProgressBar" parent="."]
-offset_left = 343.0
-offset_top = 247.0
-offset_right = 558.0
-offset_bottom = 293.0
+offset_left = 400.0
+offset_top = 220.0
+offset_right = 615.0
+offset_bottom = 266.0
 scale = Vector2(2.24456, 2.24456)
 theme_override_font_sizes/font_size = 30
 value = 1.0

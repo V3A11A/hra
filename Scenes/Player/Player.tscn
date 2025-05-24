@@ -153,16 +153,16 @@ texture = ExtResource("6_lkkgr")
 
 [node name="ColorRect2" type="ColorRect" parent="Anchor/Weapon System/Sprite2D"]
 light_mask = 2
-offset_left = 0.243276
+offset_left = 1.1426
 offset_top = -72.9771
-offset_right = 18.3383
-offset_bottom = 40.3129
+offset_right = 12.1426
+offset_bottom = 40.0229
 rotation = 3.14159
 scale = Vector2(0.2, 64.7896)
 color = Color(0.572549, 0, 0.129412, 0.521569)
 
 [node name="PointLight2D" type="PointLight2D" parent="Anchor/Weapon System"]
-position = Vector2(350, -2)
+position = Vector2(350, -4)
 rotation = 1.57079
 scale = Vector2(3.16, 3.16)
 shadow_enabled = true

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ccubqoq4er1po"]
 
-[ext_resource type="Texture2D" uid="uid://bk4p5jomjjyvp" path="res://Sprites/button pressed.png" id="1_4wfk7"]
 [ext_resource type="Script" path="res://Scripts/Weapon System/Handgun.gd" id="1_tm8j3"]
+[ext_resource type="Texture2D" uid="uid://bqcgcjajitnca" path="res://Sprites/muzzle_flash.png" id="2_tpg0b"]
 
 [sub_resource type="Animation" id="Animation_xgwbm"]
 length = 0.001
@@ -60,8 +60,10 @@ script = ExtResource("1_tm8j3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
-scale = Vector2(1.07031, 0.59375)
-texture = ExtResource("1_4wfk7")
+position = Vector2(159, 1)
+rotation = 1.5708
+scale = Vector2(10.5631, 5.85983)
+texture = ExtResource("2_tpg0b")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
