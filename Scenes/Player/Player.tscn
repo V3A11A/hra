@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://oakkxncsd881"]
+[gd_scene load_steps=28 format=3 uid="uid://oakkxncsd881"]
 
 [ext_resource type="PackedScene" uid="uid://uao8gqlr5nnx" path="res://Scenes/Player/Movement/Movement.tscn" id="1_rw6wu"]
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_sfaps"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://djupl0yxxccoo" path="res://Scenes/Economy System/Economy System.tscn" id="8_2e2b6"]
 [ext_resource type="FontFile" uid="uid://xnlqhu1mjn0n" path="res://Sprites/vhs-gothic.ttf" id="9_lqq8l"]
 [ext_resource type="Texture2D" uid="uid://b6xctuv8l0lv7" path="res://Sprites/flashlight.png" id="9_w7lxh"]
+[ext_resource type="PackedScene" uid="uid://c6vghx4qdo7ph" path="res://Scenes/Player/Health Bar.tscn" id="12_7rpfl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0fg7g"]
 atlas = ExtResource("2_rwdns")
@@ -121,6 +122,9 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_1ll27"]
+radius = 55.0
+
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 4
 script = ExtResource("1_sfaps")
@@ -170,7 +174,6 @@ texture = ExtResource("9_w7lxh")
 height = 4.0
 
 [node name="Health System" parent="." instance=ExtResource("5_x5wok")]
-max_health = 50
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
@@ -192,5 +195,18 @@ theme_override_font_sizes/bold_italics_font_size = 30
 bbcode_enabled = true
 fit_content = true
 autowrap_mode = 0
+
+[node name="Damage collider" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damage collider"]
+shape = SubResource("CircleShape2D_1ll27")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Health Bar" parent="UI" node_paths=PackedStringArray("health") instance=ExtResource("12_7rpfl")]
+position = Vector2(242, 68)
+health = NodePath("../../Health System")
 
 [connection signal="Obliterate" from="Health System" to="." method="_on_health_system_obliterate"]

@@ -5,8 +5,6 @@ signal Max_Health_Changed(amount : int)
 signal Damage_Taken(amount : int)
 signal Healed(amount : int)
 
-@onready var blink_animation: AnimationPlayer = $"../AnimatedSprite2D/BlinkAnimation"
-
 
 
 @export var max_health : int = 10:
@@ -19,7 +17,7 @@ var current_health : int = max_health:
 		if current_health == 0:
 			Obliterate.emit()
 
-@export var invincible_time : float = 0.5 ##seconds
+@export_range(0.05, 1, 0.05, "or_greter") var invincible_time : float = 0.5 ##seconds
 
 
 
@@ -28,27 +26,24 @@ var current_health : int = max_health:
 
 
 func Take_Damage(amount : int):
-	if amount > 0:
+	print("i guess try")
+	if amount < 0:
 		current_health -= amount
-		blink_animation.play("flash")
 		Healed.emit(amount)
 		return
 	
 	if invincible_timer.is_stopped():
 		current_health -= amount
-		blink_animation.play("flash")
 		Damage_Taken.emit(amount)
-		invincible_timer.start()
-
+		invincible_timer.start(invincible_time)
+		print(self, current_health)
 
 
 func Change_Max_Health(amount : int, heal_when_increased : bool = false):
 	max_health += amount
 	
+	Max_Health_Changed.emit(amount)
+	
 	if amount > 0:
-		Max_Health_Changed.emit(amount)
-		
 		if heal_when_increased:
 			Take_Damage(-amount)
-		return
-	Max_Health_Changed.emit(amount)
