@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var game: Node2D = $"../../Game"
 @onready var main_menu: Node2D = $"../MainMenu"
+@onready var money_label: RichTextLabel = $"../../Game/Player/EconomySystem/CanvasLayer/Money"
 var inGame: bool = false
 
 func _unhandled_key_input(event: InputEvent) -> void:
@@ -24,6 +25,7 @@ func _on_exit_pressed() -> void:
 	main_menu.show()
 	self.hide()
 	game.hide()
+	money_label.hide()
 	game.process_mode = Node.PROCESS_MODE_DISABLED
 	main_menu.process_mode = Node.PROCESS_MODE_INHERIT
 	inGame = false
