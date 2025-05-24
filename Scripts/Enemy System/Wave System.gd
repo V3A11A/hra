@@ -182,9 +182,3 @@ func _on_next_wave_cd_timeout() -> void:
 func _ready() -> void:
 	await get_tree().physics_frame
 	Begin_Game()
-
-func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_accept"):
-		if $"../Enemies".get_child(0) != null:
-			#print("killing:\t", $"../Enemies".get_child(0))
-			$"../Enemies".get_child(0).queue_free()

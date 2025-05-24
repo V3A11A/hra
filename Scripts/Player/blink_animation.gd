@@ -8,11 +8,15 @@ extends AnimationPlayer
 
 
 
-func _physics_process(delta: float) -> void:
+#func _physics_process(delta: float) -> void:
 	#$"..".material.set_shader_parameter("flash_color", amount_of_flash)
-	printerr($"..".material.get_shader_parameter("flash_color"))
-	
+	#printerr($"..".material.get_shader_parameter("flash_color"))
+
 
 
 func _ready() -> void:
 	$"..".material.set_shader_parameter("flash_color", 1)
+
+
+func _on_health_system_damage_taken(amount: int) -> void:
+	play("flash")

@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
-var difficulty : int = 1
+@export var damage : int = 1
+@export var difficulty : int = 1
 
 
 

@@ -17,6 +17,7 @@ func _on_timer_timeout() -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	print("TAKE THAT")
 	body.health_system.Take_Damage(damage)
 	queue_free()
 

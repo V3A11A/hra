@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://baedfwx1gh3h2"]
+[gd_scene load_steps=30 format=3 uid="uid://baedfwx1gh3h2"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy System/Enemy.gd" id="1_k8pfq"]
 [ext_resource type="PackedScene" uid="uid://c4ni0vy75q3fl" path="res://Scenes/Enemy System/Enemy Movement Core.tscn" id="2_kid5d"]
@@ -180,7 +180,43 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pily4"]
-radius = 32.0
+radius = 41.0122
+
+[sub_resource type="Animation" id="Animation_gw77a"]
+resource_name = "Push"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enemy Movement Core:push_speed_mult")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, -10.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_qxf33"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enemy Movement Core:push_speed_mult")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bi5k5"]
+_data = {
+"Push": SubResource("Animation_gw77a"),
+"RESET": SubResource("Animation_qxf33")
+}
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 2
@@ -210,9 +246,15 @@ shape = SubResource("CircleShape2D_pily4")
 debug_color = Color(0.976528, 0, 0.411164, 0.42)
 
 [node name="Health System" parent="." instance=ExtResource("4_tdouk")]
-invincible_time = 0.2
+invincible_time = 0.05
 
 [node name="Money Holder" parent="." instance=ExtResource("7_2yknh")]
 money = 12
 
+[node name="Push" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bi5k5")
+}
+
+[connection signal="Damage_Taken" from="Health System" to="AnimatedSprite2D/BlinkAnimation" method="_on_health_system_damage_taken"]
 [connection signal="Obliterate" from="Health System" to="." method="_on_health_system_obliterate"]

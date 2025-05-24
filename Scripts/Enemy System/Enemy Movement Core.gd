@@ -6,6 +6,13 @@ extends NavigationAgent2D
 @export var speed : int = 1000
 @export var drag : float = 5
 
+@export var push_speed_mult: float = 1: ## used when player takes damage
+	set(value):
+		speed /= push_speed_mult
+		push_speed_mult = value
+		speed *= value
+
+
 
 
 enum Targets {Spawn, Player, Away_From_Player}
