@@ -1,0 +1,6 @@
+[gd_resource type="StyleBoxLine" format=3 uid="uid://s2hudamkdvd3"]
+
+[resource]
+color = Color(1, 1, 1, 1)
+grow_begin = 0.0
+thickness = 4

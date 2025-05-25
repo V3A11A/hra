@@ -1,7 +1,99 @@
-[gd_scene load_steps=3 format=3 uid="uid://gdagppmtsca"]
+[gd_scene load_steps=16 format=3 uid="uid://gdagppmtsca"]
 
-[ext_resource type="Texture2D" uid="uid://csct6w220dg1w" path="res://Sprites/lukas.png" id="2_s83xl"]
+[ext_resource type="Texture2D" uid="uid://c4j5orrdoiomi" path="res://Sprites/vending.png" id="2_3slcr"]
 [ext_resource type="FontFile" uid="uid://xnlqhu1mjn0n" path="res://Sprites/vhs-gothic.ttf" id="5_hwwwu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kfco"]
+atlas = ExtResource("2_3slcr")
+region = Rect2(0, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4j1oe"]
+atlas = ExtResource("2_3slcr")
+region = Rect2(0, 500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jc3sh"]
+atlas = ExtResource("2_3slcr")
+region = Rect2(0, 1000, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_huolc"]
+atlas = ExtResource("2_3slcr")
+region = Rect2(0, 1500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnai8"]
+atlas = ExtResource("2_3slcr")
+region = Rect2(0, 2000, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1wnf"]
+atlas = ExtResource("2_3slcr")
+region = Rect2(0, 2500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4q08"]
+atlas = ExtResource("2_3slcr")
+region = Rect2(0, 3000, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2shbu"]
+atlas = ExtResource("2_3slcr")
+region = Rect2(0, 3500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyp7g"]
+atlas = ExtResource("2_3slcr")
+region = Rect2(0, 4000, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3kpwp"]
+atlas = ExtResource("2_3slcr")
+region = Rect2(0, 4500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_waedx"]
+atlas = ExtResource("2_3slcr")
+region = Rect2(0, 5000, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0sqmf"]
+atlas = ExtResource("2_3slcr")
+region = Rect2(0, 5500, 500, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hqx0g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kfco")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4j1oe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jc3sh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_huolc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tnai8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1wnf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4q08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2shbu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yyp7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3kpwp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_waedx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0sqmf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
 
 [node name="MainMenu" type="Node2D"]
 
@@ -70,6 +162,14 @@ offset_bottom = 40.0
 scale = Vector2(0.2, 27.32)
 color = Color(0.27451, 0.27451, 0.27451, 1)
 
+[node name="ColorRect" type="ColorRect" parent="Divider/ColorRect"]
+layout_mode = 0
+offset_left = -16.0
+offset_right = 304.0
+offset_bottom = 40.0
+scale = Vector2(0.2, 27.32)
+color = Color(0.27451, 0.27451, 0.27451, 1)
+
 [node name="Label" type="Label" parent="Divider"]
 layout_mode = 0
 offset_left = 272.0
@@ -79,10 +179,6 @@ offset_bottom = 439.0
 theme_override_font_sizes/font_size = 40
 text = "Weapon/Player Preview?"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1448, 688)
-texture = ExtResource("2_s83xl")
-
 [node name="ProgressBar" type="ProgressBar" parent="."]
 offset_left = 400.0
 offset_top = 220.0
@@ -91,3 +187,16 @@ offset_bottom = 266.0
 scale = Vector2(2.24456, 2.24456)
 theme_override_font_sizes/font_size = 30
 value = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 993.0
+offset_top = 129.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ColorRect"]
+position = Vector2(463.5, 495.5)
+scale = Vector2(1.714, 1.714)
+sprite_frames = SubResource("SpriteFrames_hqx0g")
+autoplay = "default"

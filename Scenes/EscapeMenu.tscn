@@ -1,38 +1,64 @@
-[gd_scene load_steps=3 format=3 uid="uid://cm615enj1b85h"]
+[gd_scene load_steps=4 format=3 uid="uid://cm615enj1b85h"]
 
 [ext_resource type="Script" path="res://Scripts/escape_menu.gd" id="1_570y1"]
 [ext_resource type="FontFile" uid="uid://xnlqhu1mjn0n" path="res://Sprites/vhs-gothic.ttf" id="2_bvcvq"]
+[ext_resource type="Texture2D" uid="uid://d0liubqihnbi8" path="res://Sprites/fog.png" id="2_pfkgf"]
 
 [node name="EscapeMenu" type="Node2D"]
 script = ExtResource("1_570y1")
 
+[node name="Fog2" type="Sprite2D" parent="."]
+position = Vector2(434.763, 543.999)
+rotation = 1.57079
+scale = Vector2(5.39844, -4.35821)
+texture = ExtResource("2_pfkgf")
+
 [node name="Exit" type="Button" parent="."]
-offset_left = 862.0
-offset_top = 672.0
-offset_right = 1118.0
-offset_bottom = 733.0
+offset_left = 140.0
+offset_top = 671.0
+offset_right = 444.525
+offset_bottom = 732.0
+scale = Vector2(1.165, 1.165)
 theme_override_fonts/font = ExtResource("2_bvcvq")
 theme_override_font_sizes/font_size = 40
-text = "Exit"
+text = "Exit >"
 
 [node name="Options" type="Button" parent="."]
-offset_left = 862.0
-offset_top = 564.0
-offset_right = 1118.0
-offset_bottom = 625.0
+offset_left = 140.0
+offset_top = 534.0
+offset_right = 444.525
+offset_bottom = 595.0
+scale = Vector2(1.165, 1.165)
 theme_override_fonts/font = ExtResource("2_bvcvq")
 theme_override_font_sizes/font_size = 40
-text = "Options
-"
+text = "Options >"
 
 [node name="Back To Game" type="Button" parent="."]
-offset_left = 860.0
-offset_top = 454.0
-offset_right = 1114.0
-offset_bottom = 515.0
+offset_left = 140.0
+offset_top = 395.0
+offset_right = 444.525
+offset_bottom = 456.0
+scale = Vector2(1.165, 1.165)
 theme_override_fonts/font = ExtResource("2_bvcvq")
 theme_override_font_sizes/font_size = 40
-text = "Return"
+text = "Return >"
+
+[node name="Label" type="Label" parent="Back To Game"]
+offset_left = -30.9013
+offset_top = -192.275
+offset_right = 389.099
+offset_bottom = -79.2747
+theme_override_fonts/font = ExtResource("2_bvcvq")
+theme_override_font_sizes/font_size = 80
+text = "PAUSED"
+
+[node name="ColorRect2" type="ColorRect" parent="Back To Game/Label"]
+layout_mode = 0
+offset_left = -3.51
+offset_top = 100.0
+offset_right = 1798.53
+offset_bottom = 100.23
+scale = Vector2(0.204, 27.885)
 
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
