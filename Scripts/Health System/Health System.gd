@@ -26,7 +26,6 @@ var current_health : int = max_health:
 
 
 func Take_Damage(amount : int):
-	print("i guess try")
 	if amount < 0:
 		current_health -= amount
 		Healed.emit(amount)
@@ -36,7 +35,6 @@ func Take_Damage(amount : int):
 		current_health -= amount
 		Damage_Taken.emit(amount)
 		invincible_timer.start(invincible_time)
-		print(self, current_health)
 
 
 func Change_Max_Health(amount : int, heal_when_increased : bool = false):
@@ -47,3 +45,8 @@ func Change_Max_Health(amount : int, heal_when_increased : bool = false):
 	if amount > 0:
 		if heal_when_increased:
 			Take_Damage(-amount)
+
+
+
+func _ready() -> void:
+	current_health = max_health
