@@ -1,0 +1,114 @@
+[gd_scene load_steps=8 format=3 uid="uid://b7fonanll64hl"]
+
+[ext_resource type="Texture2D" uid="uid://eexukgicx2hc" path="res://Sprites/door_orange_left.png" id="1_quahi"]
+[ext_resource type="Texture2D" uid="uid://8q06gajdt6rs" path="res://Sprites/door_orange_right.png" id="2_qlxog"]
+[ext_resource type="Texture2D" uid="uid://c7hjihbbi0w4l" path="res://Sprites/door_green.png" id="3_ceb8u"]
+
+[sub_resource type="Animation" id="Animation_3rd47"]
+resource_name = "door_blink"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("green:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_8k6gx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("green:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("orange_left:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-32, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("orange_right:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(32, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lo237"]
+resource_name = "open door"
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("orange_left:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 2,
+"values": [Vector2(-32, 0), Vector2(-38.433, 0), Vector2(-88.993, 0), Vector2(-96, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("orange_right:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 2,
+"values": [Vector2(32, 0), Vector2(38.433, 0), Vector2(88.993, 0), Vector2(96, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2acdu"]
+_data = {
+"RESET": SubResource("Animation_8k6gx"),
+"door_blink": SubResource("Animation_3rd47"),
+"open door": SubResource("Animation_lo237")
+}
+
+[node name="Door" type="Node2D"]
+
+[node name="orange_left" type="Sprite2D" parent="."]
+position = Vector2(-32, 0)
+texture = ExtResource("1_quahi")
+
+[node name="orange_right" type="Sprite2D" parent="."]
+position = Vector2(32, 0)
+texture = ExtResource("2_qlxog")
+
+[node name="green" type="Sprite2D" parent="."]
+texture = ExtResource("3_ceb8u")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2acdu")
+}

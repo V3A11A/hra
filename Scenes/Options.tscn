@@ -97,6 +97,7 @@ scale = Vector2(5.39844, 1.2036)
 texture = ExtResource("3_dh7nx")
 
 [node name="CursorSizeLabel" type="Label" parent="Buttons"]
+layout_mode = 0
 offset_left = 185.0
 offset_top = 590.0
 offset_right = 598.0
@@ -118,6 +119,7 @@ max_value = 3.0
 value = 3.0
 
 [node name="Sizelabel" type="Label" parent="Buttons/CursorSizeLabel"]
+layout_mode = 0
 offset_left = -95.0
 offset_top = 139.0
 offset_right = 505.0

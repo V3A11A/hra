@@ -44,6 +44,7 @@ theme_override_font_sizes/font_size = 40
 text = "Return >"
 
 [node name="Label" type="Label" parent="Back To Game"]
+layout_mode = 0
 offset_left = -30.9013
 offset_top = -192.275
 offset_right = 389.099
