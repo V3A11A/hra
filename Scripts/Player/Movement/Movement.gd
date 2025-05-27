@@ -4,6 +4,8 @@ extends CollisionShape2D
 @onready var player : CharacterBody2D = $".."
 @onready var drag_area_detector : Area2D = $"Drag Area Detector"
 @onready var run : Node = $Run
+@onready var footstep: AudioStreamPlayer2D = $"../Footstep"
+@onready var player_animation: AnimatedSprite2D = $"../PlayerAnimation"
 
 
 
@@ -21,7 +23,10 @@ func _physics_process(delta: float) -> void:
 	previous_facing_direction = facing_direction
 
 
-
+#func _play_footstep():
+	#footstep.pitch_scale = randf_range(0.7, 1.2)
+	#footstep.play
+	
 func Calculate() -> Vector2:
 	return run_velocity
 
@@ -79,39 +84,54 @@ func _unhandled_key_input(_event: InputEvent) -> void:
 	
 	if just_pressed_left:
 		facing_direction.x = -1
+		player_animation.play("walk")
 	elif just_pressed_right:
 		facing_direction.x = 1
+		player_animation.play("walk")
 	if just_pressed_up:
 		facing_direction.y = -1
+		player_animation.play("walk")
 	elif just_pressed_down:
 		facing_direction.y = 1
-	
+		player_animation.play("walk")
 	
 	
 	if just_released_left:
 		indecisive.x = false
+		player_animation.play("idle")
 		if pressed_right:
 			facing_direction.x = 1
+			player_animation.play("idle")
 		else:
 			facing_direction.x = -1
+			player_animation.play("idle")
 	if just_released_right:
 		indecisive.x = false
+		player_animation.play("idle")
 		if pressed_left:
 			facing_direction.x = -1
+			player_animation.play("idle")
 		else:
 			facing_direction.x = 1
+			player_animation.play("idle")
 	if just_released_up:
 		indecisive.y = false
+		player_animation.play("idle")
 		if pressed_down:
 			facing_direction.y = 1
+			player_animation.play("idle")
 		else:
 			facing_direction.y = -1
+			player_animation.play("idle")
 	if just_released_down:
 		indecisive.y = false
+		player_animation.play("idle")
 		if pressed_up:
 			facing_direction.y = -1
+			player_animation.play("idle")
 		else:
 			facing_direction.y = 1
+			player_animation.play("idle")
 	
 	run.Update_Inputs()
 
