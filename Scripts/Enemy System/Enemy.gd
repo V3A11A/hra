@@ -1,8 +1,7 @@
 extends CharacterBody2D
 
-var difficulty : int = 1
-
-
+@export var damage : int = 1
+@export var difficulty : int = 1
 
 
 @onready var wave_system: Node = get_tree().get_root().get_node("Main/Game/Wave System")

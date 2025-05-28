@@ -4,7 +4,14 @@ extends NavigationAgent2D
 
 
 @export var speed : int = 1000
-@export var drag : float = 5
+@export var drag : float = 5 ## Lower drag makes enemy accelerate slower, harder to make turns
+
+@export var push_speed_mult: float = 1: ## used when player takes damage
+	set(value):
+		speed /= push_speed_mult
+		push_speed_mult = value
+		speed *= value
+
 
 
 
@@ -36,5 +43,5 @@ func _physics_process(delta: float) -> void:
 func Calculate_Movement(delta : float) -> void:
 	var direction : Vector2 = (get_next_path_position() - enemy.global_position).normalized()
 	
-	enemy.velocity = enemy.velocity.lerp(direction * speed, delta * 5)
+	enemy.velocity = enemy.velocity.lerp(direction * speed, drag * delta)
 	enemy.move_and_slide()
