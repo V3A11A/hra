@@ -1,10 +1,12 @@
 extends Node2D
 
+@onready var audio_manager: Node = $"../../AudioManager"
 @onready var money_label: RichTextLabel = $"../../Game/Player/EconomySystem/CanvasLayer/Money"
 @onready var game: Node2D = $"../../Game"
 var inMenu: bool = true
 
 func _on_play_pressed() -> void:
+	audio_manager.crossfire()
 	game.show()
 	game.process_mode = Node.PROCESS_MODE_INHERIT
 	self.hide()

@@ -1,11 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://5buiag2sfyl8"]
+[gd_scene load_steps=7 format=4 uid="uid://5buiag2sfyl8"]
 
 [ext_resource type="PackedScene" uid="uid://oakkxncsd881" path="res://Scenes/Player/Player.tscn" id="1_oulc1"]
 [ext_resource type="PackedScene" uid="uid://tfb7lf5iow77" path="res://Scenes/Enemy System/Wave System.tscn" id="2_ciwrt"]
 [ext_resource type="PackedScene" uid="uid://ci85eww70mwqw" path="res://Scenes/Enemy System/Enemy Spawner.tscn" id="3_2bl6x"]
 [ext_resource type="TileSet" uid="uid://cv75pqoxbc8kh" path="res://Resources/Tile Set.tres" id="4_2ujju"]
-[ext_resource type="PackedScene" uid="uid://com2uxyj4cxgv" path="res://Scenes/door.tscn" id="5_p86a5"]
 [ext_resource type="PackedScene" uid="uid://bmufr65pppa0w" path="res://Scenes/Shop System/Shop System.tscn" id="5_idhip"]
+[ext_resource type="PackedScene" uid="uid://com2uxyj4cxgv" path="res://Scenes/door.tscn" id="5_p86a5"]
 
 [node name="Game" type="Node2D"]
 
@@ -36,4 +36,5 @@ tile_set = ExtResource("4_2ujju")
 
 [node name="Door" parent="." instance=ExtResource("5_p86a5")]
 position = Vector2(153, -499)
+
 [node name="Shop System" parent="." instance=ExtResource("5_idhip")]

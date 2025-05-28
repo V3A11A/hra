@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var audio_manager: Node = $"../../AudioManager"
 @onready var game: Node2D = $"../../Game"
 @onready var main_menu: Node2D = $"../MainMenu"
 @onready var money_label: RichTextLabel = $"../../Game/Player/EconomySystem/CanvasLayer/Money"
@@ -22,6 +23,7 @@ func _on_options_pressed() -> void:
 
 
 func _on_exit_pressed() -> void:
+	audio_manager.crossfire()
 	main_menu.show()
 	self.hide()
 	game.hide()
