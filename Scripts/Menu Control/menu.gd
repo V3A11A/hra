@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var money_label: RichTextLabel = $"../../Game/Player/EconomySystem/CanvasLayer/Money"
 @onready var game: Node2D = $"../../Game"
 var inMenu: bool = true
 
@@ -10,6 +11,7 @@ func _on_play_pressed() -> void:
 	self.process_mode = Node.PROCESS_MODE_DISABLED
 	$"../EscapeMenu".inGame = true
 	inMenu = false
+	money_label.show()
 
 
 func _on_options_pressed() -> void:
