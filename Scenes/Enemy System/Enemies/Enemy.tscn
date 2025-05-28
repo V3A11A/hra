@@ -215,4 +215,6 @@ invincible_time = 0.2
 [node name="Money Holder" parent="." instance=ExtResource("7_2yknh")]
 money = 12
 
+[node name="Node2D" type="Node2D" parent="."]
+
 [connection signal="Obliterate" from="Health System" to="." method="_on_health_system_obliterate"]
