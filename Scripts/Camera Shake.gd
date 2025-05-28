@@ -19,4 +19,4 @@ func _process(delta: float) -> void:
 	offset = randomOffset() # Nastavení offsetu u kamery
 
 func randomOffset() -> Vector2:
-	return Vector2(rng.randf_range(-shakeIntensity, shakeIntensity), 0) # Random pohyb
+	return Vector2(rng.randf_range(-shakeIntensity, shakeIntensity), rng.randf_range(-shakeIntensity, shakeIntensity)) # Random pohyb
