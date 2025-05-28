@@ -1,6 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://bmufr65pppa0w"]
+[gd_scene load_steps=9 format=3 uid="uid://bmufr65pppa0w"]
 
 [ext_resource type="Script" path="res://Scripts/Shop System/Shop System.gd" id="1_1a5v6"]
+[ext_resource type="FontFile" uid="uid://xnlqhu1mjn0n" path="res://Sprites/vhs-gothic.ttf" id="2_ml3kr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hsaxu"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.905882, 0.027451, 0.329412, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 4
 
 [sub_resource type="Animation" id="Animation_13a1e"]
 length = 0.001
@@ -8,7 +23,7 @@ tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath(".:offset")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
@@ -63,10 +78,11 @@ transform = Transform2D(1, 0, 0, 1, 0, 1100)
 script = ExtResource("1_1a5v6")
 
 [node name="Shop Panel" type="Panel" parent="."]
-offset_left = 109.0
-offset_top = 99.0
-offset_right = 1804.0
-offset_bottom = 996.0
+offset_left = 569.0
+offset_top = 135.0
+offset_right = 1343.0
+offset_bottom = 995.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hsaxu")
 
 [node name="Shop Animation" type="AnimationPlayer" parent="."]
 libraries = {
@@ -74,17 +90,21 @@ libraries = {
 }
 
 [node name="Exit" type="Button" parent="."]
-offset_left = 1723.0
-offset_top = 100.0
-offset_right = 1803.0
-offset_bottom = 180.0
-text = "Exit"
+offset_left = 856.0
+offset_top = 895.0
+offset_right = 1022.0
+offset_bottom = 975.0
+theme_override_fonts/font = ExtResource("2_ml3kr")
+theme_override_font_sizes/font_size = 35
+text = "Exit >"
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1.0
-offset_bottom = 1.0
+offset_left = -36.0
+offset_top = -2.0
+offset_right = -35.0
+offset_bottom = -1.0
 
 [node name="Animated Items" type="AnimatedSprite2D" parent="Control"]
 position = Vector2(820, 349)
@@ -92,49 +112,56 @@ sprite_frames = SubResource("SpriteFrames_lo435")
 
 [node name="Name" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 919.0
-offset_top = 173.0
-offset_right = 1051.0
-offset_bottom = 211.0
-theme_override_font_sizes/font_size = 31
-text = "Name"
+offset_left = 646.0
+offset_top = 147.0
+offset_right = 1338.0
+offset_bottom = 250.0
+theme_override_fonts/font = ExtResource("2_ml3kr")
+theme_override_font_sizes/font_size = 75
+text = "Upgrade"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="Detail" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 936.0
-offset_top = 743.0
-offset_right = 976.0
-offset_bottom = 766.0
+offset_left = 737.0
+offset_top = 755.0
+offset_right = 993.0
+offset_bottom = 790.0
+theme_override_fonts/font = ExtResource("2_ml3kr")
 theme_override_font_sizes/font_size = 31
-text = "Detail"
+text = "Description"
 
 [node name="Left" type="Button" parent="Control"]
 layout_mode = 0
 offset_left = 633.0
-offset_top = 566.0
+offset_top = 646.0
 offset_right = 728.0
 offset_bottom = 750.0
-theme_override_font_sizes/font_size = 31
+theme_override_fonts/font = ExtResource("2_ml3kr")
+theme_override_font_sizes/font_size = 85
 text = "<"
 
 [node name="Right" type="Button" parent="Control"]
 layout_mode = 0
 offset_left = 1265.0
-offset_top = 564.0
+offset_top = 644.0
 offset_right = 1359.0
 offset_bottom = 748.0
-theme_override_font_sizes/font_size = 31
+theme_override_fonts/font = ExtResource("2_ml3kr")
+theme_override_font_sizes/font_size = 85
 text = ">"
 
 [node name="Buy" type="Button" parent="Control"]
 layout_mode = 0
 offset_left = 732.0
-offset_top = 606.0
+offset_top = 646.0
 offset_right = 1262.0
 offset_bottom = 747.0
+theme_override_fonts/font = ExtResource("2_ml3kr")
+theme_override_font_sizes/font_size = 60
+text = "Buy?"
 
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Control/Left" to="." method="_on_left_pressed"]

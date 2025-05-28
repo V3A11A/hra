@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c6vghx4qdo7ph"]
+[gd_scene load_steps=4 format=3 uid="uid://c6vghx4qdo7ph"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Health Bar.gd" id="1_fgi45"]
 [ext_resource type="Texture2D" uid="uid://bfijssd1jlikf" path="res://Sprites/Health Bar.png" id="2_08270"]
+[ext_resource type="FontFile" uid="uid://xnlqhu1mjn0n" path="res://Sprites/vhs-gothic.ttf" id="3_cancc"]
 
 [node name="Health Bar" type="Node2D"]
 script = ExtResource("1_fgi45")
@@ -63,6 +64,7 @@ offset_right = 304.0
 offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/bold_font = ExtResource("3_cancc")
 theme_override_font_sizes/bold_font_size = 40
 bbcode_enabled = true
 scroll_active = false

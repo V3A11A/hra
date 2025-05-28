@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://oakkxncsd881"]
+[gd_scene load_steps=29 format=3 uid="uid://oakkxncsd881"]
 
 [ext_resource type="PackedScene" uid="uid://uao8gqlr5nnx" path="res://Scenes/Player/Movement/Movement.tscn" id="1_rw6wu"]
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_sfaps"]
@@ -12,6 +12,7 @@
 [ext_resource type="FontFile" uid="uid://xnlqhu1mjn0n" path="res://Sprites/vhs-gothic.ttf" id="9_lqq8l"]
 [ext_resource type="Texture2D" uid="uid://b6xctuv8l0lv7" path="res://Sprites/flashlight.png" id="9_w7lxh"]
 [ext_resource type="PackedScene" uid="uid://c6vghx4qdo7ph" path="res://Scenes/Player/Health Bar.tscn" id="12_7rpfl"]
+[ext_resource type="Texture2D" uid="uid://dqcsl82c3e7xm" path="res://Sprites/healthbar_frame.png" id="13_ak6de"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0fg7g"]
 atlas = ExtResource("2_rwdns")
@@ -209,5 +210,10 @@ shape = SubResource("CircleShape2D_1ll27")
 [node name="Health Bar" parent="UI" node_paths=PackedStringArray("health") instance=ExtResource("12_7rpfl")]
 position = Vector2(242, 68)
 health = NodePath("../../Health System")
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Health Bar"]
+position = Vector2(-1.52588e-05, 9.53674e-07)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("13_ak6de")
 
 [connection signal="Obliterate" from="Health System" to="." method="_on_health_system_obliterate"]

@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://xnlqhu1mjn0n" path="res://Sprites/vhs-gothic.ttf" id="1_bjm2f"]
 [ext_resource type="Texture2D" uid="uid://c1o634w6pmwxv" path="res://Sprites/moving_background.png" id="1_coj6f"]
 [ext_resource type="Texture2D" uid="uid://d0liubqihnbi8" path="res://Sprites/fog.png" id="1_l25fy"]
-[ext_resource type="Texture2D" uid="uid://cc86ryvvl37wi" path="res://icon.svg" id="2_74mgm"]
+[ext_resource type="Texture2D" uid="uid://cdrbpembjdf8j" path="res://Sprites/Lab_Hunters_icon.png" id="4_pp3jl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r7wey"]
 atlas = ExtResource("1_coj6f")
@@ -144,17 +144,17 @@ scale = Vector2(5.39844, 1.2036)
 texture = ExtResource("1_l25fy")
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(960, 148)
-scale = Vector2(1.3125, 1.3125)
-texture = ExtResource("2_74mgm")
+position = Vector2(960, 120)
+scale = Vector2(0.804475, 0.804475)
+texture = ExtResource("4_pp3jl")
 
 [node name="Buttons" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 640.0
-offset_top = 272.0
+offset_top = 440.0
 offset_right = 1280.0
-offset_bottom = 1008.0
+offset_bottom = 1064.0
 
 [node name="Play" type="Button" parent="Buttons"]
 layout_mode = 0
@@ -185,6 +185,26 @@ offset_bottom = 248.0
 theme_override_fonts/font = ExtResource("1_bjm2f")
 theme_override_font_sizes/font_size = 47
 text = "> Quit <"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 568.0
+offset_top = 256.0
+offset_right = 1344.0
+offset_bottom = 368.0
+theme_override_fonts/normal_font = ExtResource("1_bjm2f")
+theme_override_font_sizes/normal_font_size = 94
+bbcode_enabled = true
+text = "[wave]Lab Hunters"
+fit_content = true
+autowrap_mode = 0
+
+[node name="ColorRect2" type="ColorRect" parent="RichTextLabel"]
+layout_mode = 0
+offset_left = 806.0
+offset_top = 108.0
+offset_right = 953.0
+offset_bottom = 114.0
+scale = Vector2(-5.90059, 6.14033)
 
 [connection signal="pressed" from="Buttons/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Buttons/Options" to="." method="_on_options_pressed"]
