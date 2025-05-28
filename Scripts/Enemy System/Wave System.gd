@@ -14,11 +14,13 @@ const Enemy_List : Dictionary = {
 	3 : preload("res://Scenes/Enemy System/Enemies/Cutter.tscn"),
 	4 : preload("res://Scenes/Enemy System/Enemies/Breaker.tscn"),
 	5 : preload("res://Scenes/Enemy System/Enemies/Monster.tscn"),
-	6 : preload("res://Scenes/Enemy System/Enemies/Glob.tscn"), #not done
-	7 : preload("res://Scenes/Enemy System/Enemies/Glob.tscn"), #not done
-	8 : preload("res://Scenes/Enemy System/Enemies/Glob.tscn"), #not done
-	9 : preload("res://Scenes/Enemy System/Enemies/Glob.tscn"), #not done
+	6 : preload("res://Scenes/Enemy System/Enemies/Ghost.tscn"),
+	7 : preload("res://Scenes/Enemy System/Enemies/Mosquito.tscn"),
+	8 : preload("res://Scenes/Enemy System/Enemies/Baby Ghost.tscn"),
+	9 : preload("res://Scenes/Enemy System/Enemies/Wall.tscn"),
 	10 : preload("res://Scenes/Enemy System/Enemies/Shrieker.tscn"),
+	15 : preload("res://Scenes/Enemy System/Enemies/Crusher.tscn"),
+	25 : preload("res://Scenes/Enemy System/Enemies/The Experiment.tscn"),
 }
 
 
@@ -65,13 +67,13 @@ func Start_Next_Wave() -> void:
 
 	new_wave.emit(wave)
 
-	print()
-	printerr("wave:\t", wave, "\t", difficulty)
-	printerr("to spawn from previous:\t", enemies_to_spawn_in_current_wave)
+	#print()
+	#printerr("wave:\t", wave, "\t", difficulty)
+	#printerr("to spawn from previous:\t", enemies_to_spawn_in_current_wave)
 	Assign_Enemies_In_Current_Wave()
 	enemies_in_horde = roundi(enemies_to_spawn_in_current_wave.size() / hordes_in_wave)
-	printerr("to spawn:\t", enemies_to_spawn_in_current_wave)
-	print(enemies_in_horde, " to spawn each horde")
+	#printerr("to spawn:\t", enemies_to_spawn_in_current_wave)
+	#print(enemies_in_horde, " to spawn each horde")
 	Spawn_Next_Horde()
 
 
@@ -155,8 +157,8 @@ func Spawn_Next_Horde() -> void:
 		enemies_to_spawn_in_current_wave.remove_at(0)
 		enemies_in_this_horde -= 1
 
-		print("to spawn:\t", enemies_to_spawn_in_current_wave)
-		printerr("to kill:\t", enemies_left_in_wave)
+		#print("to spawn:\t", enemies_to_spawn_in_current_wave)
+		#printerr("to kill:\t", enemies_left_in_wave)
 		enemy_spawn_CD.start()
 		await enemy_spawn_CD.timeout
 

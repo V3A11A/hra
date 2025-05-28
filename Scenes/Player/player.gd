@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var game: Node2D = $".."
 @onready var health_system: Node = $"Health System"
 @onready var damage_collider: Area2D = $"Damage collider"
 @onready var enemies: Node2D = $"../Enemies"
@@ -11,6 +12,10 @@ func _process(delta: float) -> void:
 
 func _on_health_system_obliterate() -> void:
 	pass #Game over, pánové! 🫡
+	printt("END")
+	game.process_mode = Node.PROCESS_MODE_DISABLED
+	game.get_node("../CanvasLayer/Game Over Screen").show()
+	game.get_node("../CanvasLayer/Game Over Screen/CanvasLayer").show()
 
 
 

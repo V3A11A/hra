@@ -180,7 +180,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pily4"]
-radius = 41.0122
+radius = 31.0
 
 [sub_resource type="Animation" id="Animation_gw77a"]
 resource_name = "Push"
@@ -232,7 +232,7 @@ drag = 7.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_l7hr7")
 rotation = 1.5708
-scale = Vector2(10.0706, 10.0706)
+scale = Vector2(8.786, 8.786)
 sprite_frames = SubResource("SpriteFrames_2nwhh")
 animation = &"walk"
 autoplay = "walk"

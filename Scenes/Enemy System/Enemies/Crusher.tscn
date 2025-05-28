@@ -1,68 +1,68 @@
-[gd_scene load_steps=30 format=3 uid="uid://dgl1r2u7b8c51"]
+[gd_scene load_steps=30 format=3 uid="uid://dxndswcpv78l"]
 
-[ext_resource type="Script" path="res://Scripts/Enemy System/Enemy.gd" id="1_m323p"]
-[ext_resource type="PackedScene" uid="uid://c4ni0vy75q3fl" path="res://Scenes/Enemy System/Enemy Movement Core.tscn" id="2_l6hir"]
-[ext_resource type="Shader" path="res://Scenes/Player/damage_blink.gdshader" id="3_cwne5"]
-[ext_resource type="Texture2D" uid="uid://dovw47enupjug" path="res://Sprites/walkanim.png" id="4_pp1l5"]
-[ext_resource type="Script" path="res://Scripts/Player/blink_animation.gd" id="5_kcyx6"]
-[ext_resource type="PackedScene" uid="uid://m0d1mkwvbmjy" path="res://Scenes/Health System/Health System.tscn" id="6_n7hof"]
-[ext_resource type="PackedScene" uid="uid://cst3ov4i06fqe" path="res://Scenes/Economy System/Money Holder.tscn" id="7_7xg7o"]
+[ext_resource type="Script" path="res://Scripts/Enemy System/Enemy.gd" id="1_27orc"]
+[ext_resource type="PackedScene" uid="uid://c4ni0vy75q3fl" path="res://Scenes/Enemy System/Enemy Movement Core.tscn" id="2_wyprk"]
+[ext_resource type="Shader" path="res://Scenes/Player/damage_blink.gdshader" id="3_uhldh"]
+[ext_resource type="Texture2D" uid="uid://dovw47enupjug" path="res://Sprites/walkanim.png" id="4_u2a7r"]
+[ext_resource type="Script" path="res://Scripts/Player/blink_animation.gd" id="5_gl71r"]
+[ext_resource type="PackedScene" uid="uid://m0d1mkwvbmjy" path="res://Scenes/Health System/Health System.tscn" id="6_uxoyc"]
+[ext_resource type="PackedScene" uid="uid://cst3ov4i06fqe" path="res://Scenes/Economy System/Money Holder.tscn" id="7_v0xjp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_l7hr7"]
-shader = ExtResource("3_cwne5")
+shader = ExtResource("3_uhldh")
 shader_parameter/flash_color = Color(0.756863, 0.141176, 0.141176, 0.494118)
 shader_parameter/flash_value = null
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0fg7g"]
-atlas = ExtResource("4_pp1l5")
+atlas = ExtResource("4_u2a7r")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yjus5"]
-atlas = ExtResource("4_pp1l5")
+atlas = ExtResource("4_u2a7r")
 region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ppgj1"]
-atlas = ExtResource("4_pp1l5")
+atlas = ExtResource("4_u2a7r")
 region = Rect2(0, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fad5f"]
-atlas = ExtResource("4_pp1l5")
+atlas = ExtResource("4_u2a7r")
 region = Rect2(0, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r4jbr"]
-atlas = ExtResource("4_pp1l5")
+atlas = ExtResource("4_u2a7r")
 region = Rect2(0, 80, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6ce0j"]
-atlas = ExtResource("4_pp1l5")
+atlas = ExtResource("4_u2a7r")
 region = Rect2(0, 112, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s71v7"]
-atlas = ExtResource("4_pp1l5")
+atlas = ExtResource("4_u2a7r")
 region = Rect2(0, 128, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xav17"]
-atlas = ExtResource("4_pp1l5")
+atlas = ExtResource("4_u2a7r")
 region = Rect2(0, 144, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nv1h3"]
-atlas = ExtResource("4_pp1l5")
+atlas = ExtResource("4_u2a7r")
 region = Rect2(0, 160, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lbidm"]
-atlas = ExtResource("4_pp1l5")
+atlas = ExtResource("4_u2a7r")
 region = Rect2(0, 192, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2cnxl"]
-atlas = ExtResource("4_pp1l5")
+atlas = ExtResource("4_u2a7r")
 region = Rect2(0, 224, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ld6te"]
-atlas = ExtResource("4_pp1l5")
+atlas = ExtResource("4_u2a7r")
 region = Rect2(0, 256, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hoi5j"]
-atlas = ExtResource("4_pp1l5")
+atlas = ExtResource("4_u2a7r")
 region = Rect2(0, 272, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2nwhh"]
@@ -180,7 +180,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pily4"]
-radius = 41.0122
+radius = 82.0061
 
 [sub_resource type="Animation" id="Animation_gw77a"]
 resource_name = "Push"
@@ -218,21 +218,21 @@ _data = {
 "RESET": SubResource("Animation_qxf33")
 }
 
-[node name="Shrieker" type="CharacterBody2D"]
+[node name="Crusher" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 4
-script = ExtResource("1_m323p")
-damage = 10
-difficulty = 10
+script = ExtResource("1_27orc")
+damage = 25
+difficulty = 15
 
-[node name="Enemy Movement Core" parent="." instance=ExtResource("2_l6hir")]
-speed = 700
-drag = 6.0
+[node name="Enemy Movement Core" parent="." instance=ExtResource("2_wyprk")]
+speed = 400
+drag = 4.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_l7hr7")
 rotation = 1.5708
-scale = Vector2(10.631, 10.631)
+scale = Vector2(25, 25)
 sprite_frames = SubResource("SpriteFrames_2nwhh")
 animation = &"walk"
 autoplay = "walk"
@@ -243,18 +243,18 @@ libraries = {
 "": SubResource("AnimationLibrary_8dife")
 }
 speed_scale = 0.1
-script = ExtResource("5_kcyx6")
+script = ExtResource("5_gl71r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_pily4")
-debug_color = Color(0, 0, 0, 0.42)
+debug_color = Color(0.415686, 0.309804, 0.0823529, 0.772549)
 
-[node name="Health System" parent="." instance=ExtResource("6_n7hof")]
-max_health = 100
+[node name="Health System" parent="." instance=ExtResource("6_uxoyc")]
+max_health = 250
 invincible_time = 0.05
 
-[node name="Money Holder" parent="." instance=ExtResource("7_7xg7o")]
-money = 10
+[node name="Money Holder" parent="." instance=ExtResource("7_v0xjp")]
+money = 20
 
 [node name="Push" type="AnimationPlayer" parent="."]
 libraries = {

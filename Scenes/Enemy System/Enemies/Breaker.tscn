@@ -218,7 +218,7 @@ _data = {
 "RESET": SubResource("Animation_qxf33")
 }
 
-[node name="Glob" type="CharacterBody2D"]
+[node name="Breaker" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 4
 script = ExtResource("1_8hva1")
@@ -231,7 +231,7 @@ speed = 900
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_l7hr7")
 rotation = 1.5708
-scale = Vector2(10.0706, 10.0706)
+scale = Vector2(11.556, 11.556)
 sprite_frames = SubResource("SpriteFrames_2nwhh")
 animation = &"walk"
 autoplay = "walk"
