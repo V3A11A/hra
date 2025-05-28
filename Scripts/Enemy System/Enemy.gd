@@ -4,8 +4,6 @@ extends CharacterBody2D
 @export var difficulty : int = 1
 
 
-
-
 @onready var wave_system: Node = get_tree().get_root().get_node("Main/Game/Wave System")
 @onready var health_system: Node = $"Health System"
 

@@ -107,6 +107,7 @@ offset_bottom = 475.0
 text = "Cursor Size"
 
 [node name="HSlider" type="HSlider" parent="Buttons"]
+layout_mode = 0
 offset_left = -525.0
 offset_top = 488.0
 offset_right = -239.0
