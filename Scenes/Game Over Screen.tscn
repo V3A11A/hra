@@ -8,16 +8,15 @@ visible = false
 script = ExtResource("1_k543y")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 2
+layer = 3
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-visible = false
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 0.580392)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
-visible = false
 offset_left = 576.0
 offset_top = 136.0
 offset_right = 1352.0
@@ -32,3 +31,14 @@ bbcode_enabled = true
 text = "[wave]GAME OVER"
 fit_content = true
 autowrap_mode = 0
+
+[node name="Quit" type="Button" parent="CanvasLayer"]
+offset_left = 763.0
+offset_top = 688.0
+offset_right = 1159.0
+offset_bottom = 752.0
+theme_override_fonts/font = ExtResource("2_o87us")
+theme_override_font_sizes/font_size = 47
+text = "> Quit <"
+
+[connection signal="pressed" from="CanvasLayer/Quit" to="." method="_on_quit_pressed"]

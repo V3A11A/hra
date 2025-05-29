@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var money_label: RichTextLabel = $"../../Game/Player/EconomySystem/CanvasLayer/Money"
+@onready var hpbar: CanvasLayer = $"../../Game/Player/UI"
 @onready var game: Node2D = $"../../Game"
 var inMenu: bool = true
 
@@ -12,10 +13,12 @@ func _on_play_pressed() -> void:
 	$"../EscapeMenu".inGame = true
 	inMenu = false
 	money_label.show()
+	hpbar.show()
 
 
 func _on_options_pressed() -> void:
 	$"../Options".show()
+	hpbar.hide()
 
 
 func _on_quit_pressed() -> void:

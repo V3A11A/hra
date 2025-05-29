@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ci85eww70mwqw" path="res://Scenes/Enemy System/Enemy Spawner.tscn" id="3_2bl6x"]
 [ext_resource type="TileSet" uid="uid://cv75pqoxbc8kh" path="res://Resources/Tile Set.tres" id="4_2ujju"]
 [ext_resource type="PackedScene" uid="uid://bmufr65pppa0w" path="res://Scenes/Shop System/Shop System.tscn" id="5_idhip"]
-[ext_resource type="PackedScene" uid="uid://com2uxyj4cxgv" path="res://Scenes/Door.tscn" id="5_p86a5"]
+[ext_resource type="PackedScene" uid="uid://com2uxyj4cxgv" path="res://Scenes/door.tscn" id="5_p86a5"]
 [ext_resource type="PackedScene" uid="uid://b7urhgr7ycfm1" path="res://alarm_light.tscn" id="5_ssvil"]
 [ext_resource type="Texture2D" uid="uid://d0liubqihnbi8" path="res://Sprites/fog.png" id="7_ubgyx"]
 
