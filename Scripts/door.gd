@@ -3,15 +3,27 @@ extends Node2D
 @onready var open_timer: Timer = $OpenTimer
 @onready var close_timer: Timer = $CloseTimer
 #self.queue_free()
+var animation_started: bool = false
 
 func _on_open_area_body_entered(body: Node2D) -> void:
-	animation_player.play("flash")
-	open_timer.start()
+	if !animation_started:
+		animation_started = !animation_started
+		animation_player.play("flash")
+		open_timer.start()
 	
 	
 func _on_open_timer_timeout() -> void:
 	animation_player.play("open")
 	close_timer.start()
+	open_timer.stop()
+	
 	
 func _on_close_timer_timeout() -> void:
-	animation_player.play("opened")
+	animation_player.play("close")
+	close_timer.stop()
+	
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "close":
+		animation_started = !animation_started
