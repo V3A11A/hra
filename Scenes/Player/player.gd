@@ -11,8 +11,7 @@ func _process(delta: float) -> void:
 	look_at(get_global_mouse_position())
 
 func _on_health_system_obliterate() -> void:
-	pass #Game over, pánové! 🫡
-	printt("END")
+	#pass #Game over, pánové! 🫡
 	game.process_mode = Node.PROCESS_MODE_DISABLED
 	game.get_node("../CanvasLayer/Game Over Screen").show()
 	game.get_node("../CanvasLayer/Game Over Screen/CanvasLayer").show()

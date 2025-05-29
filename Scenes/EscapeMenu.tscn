@@ -1,39 +1,69 @@
-[gd_scene load_steps=3 format=3 uid="uid://cm615enj1b85h"]
+[gd_scene load_steps=4 format=3 uid="uid://cm615enj1b85h"]
 
 [ext_resource type="Script" path="res://Scripts/escape_menu.gd" id="1_570y1"]
 [ext_resource type="FontFile" uid="uid://xnlqhu1mjn0n" path="res://Sprites/vhs-gothic.ttf" id="2_bvcvq"]
+[ext_resource type="Texture2D" uid="uid://d0liubqihnbi8" path="res://Sprites/fog.png" id="3_aa60n"]
 
 [node name="EscapeMenu" type="Node2D"]
 script = ExtResource("1_570y1")
 
-[node name="Exit" type="Button" parent="."]
-offset_left = 862.0
-offset_top = 672.0
-offset_right = 1118.0
-offset_bottom = 733.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(319.369, 538.25)
+rotation = -1.57079
+scale = Vector2(5.3825, 3.2337)
+texture = ExtResource("3_aa60n")
+
+[node name="Exit" type="Button" parent="CanvasLayer"]
+offset_left = 124.0
+offset_top = 655.0
+offset_right = 401.0
+offset_bottom = 716.0
 theme_override_fonts/font = ExtResource("2_bvcvq")
 theme_override_font_sizes/font_size = 40
-text = "Exit"
+text = "Exit >"
 
-[node name="Options" type="Button" parent="."]
-offset_left = 862.0
-offset_top = 564.0
-offset_right = 1118.0
-offset_bottom = 625.0
+[node name="Options" type="Button" parent="CanvasLayer"]
+offset_left = 124.0
+offset_top = 547.0
+offset_right = 402.0
+offset_bottom = 608.0
 theme_override_fonts/font = ExtResource("2_bvcvq")
 theme_override_font_sizes/font_size = 40
-text = "Options
-"
+text = "Options >"
 
-[node name="Back To Game" type="Button" parent="."]
-offset_left = 860.0
-offset_top = 454.0
-offset_right = 1114.0
-offset_bottom = 515.0
+[node name="Back To Game" type="Button" parent="CanvasLayer"]
+offset_left = 122.0
+offset_top = 437.0
+offset_right = 403.0
+offset_bottom = 498.0
 theme_override_fonts/font = ExtResource("2_bvcvq")
 theme_override_font_sizes/font_size = 40
-text = "Return"
+text = "Return >"
 
-[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="Back To Game" to="." method="_on_back_to_game_pressed"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 119.0
+offset_top = 183.0
+offset_right = 686.0
+offset_bottom = 325.0
+theme_override_fonts/normal_font = ExtResource("2_bvcvq")
+theme_override_font_sizes/normal_font_size = 126
+bbcode_enabled = true
+text = "[wave]PAUSED"
+fit_content = true
+autowrap_mode = 0
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/RichTextLabel"]
+layout_mode = 0
+offset_left = 568.0
+offset_top = 138.0
+offset_right = 664.0
+offset_bottom = 140.0
+scale = Vector2(-5.90059, 6.14033)
+
+[connection signal="pressed" from="CanvasLayer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="CanvasLayer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="CanvasLayer/Back To Game" to="." method="_on_back_to_game_pressed"]

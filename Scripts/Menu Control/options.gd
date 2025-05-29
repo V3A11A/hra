@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var main_menu: Node2D = $"../MainMenu"
+@onready var hpbar: CanvasLayer = $"../../Game/Player/UI"
 var smallCursor = load("res://Sprites/smallCursor.png")
 var medCursor = load("res://Sprites/medCursor.png")
 var defCursor = load("res://Sprites/defCursor.png")
@@ -10,6 +11,7 @@ func _on_back_pressed() -> void:
 	if !main_menu.inMenu:
 		$"../EscapeMenu".show()
 		$"../EscapeMenu".inGame = true
+		hpbar.show()
 
 
 func _on_volume_slider_value_changed(value: float) -> void:

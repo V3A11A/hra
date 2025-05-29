@@ -1,13 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://ycv5ec1knv"]
+[gd_scene load_steps=3 format=3 uid="uid://ycv5ec1knv"]
 
 [ext_resource type="Script" path="res://Scripts/game_over_screen.gd" id="1_k543y"]
+[ext_resource type="FontFile" uid="uid://xnlqhu1mjn0n" path="res://Sprites/vhs-gothic.ttf" id="2_o87us"]
 
 [node name="Game Over Screen" type="Node2D"]
 visible = false
 script = ExtResource("1_k543y")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 2
+layer = 3
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
@@ -16,11 +17,28 @@ offset_bottom = 1080.0
 color = Color(0, 0, 0, 0.580392)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
-offset_left = 942.0
-offset_top = 120.0
-offset_right = 1034.0
-offset_bottom = 160.0
+offset_left = 576.0
+offset_top = 136.0
+offset_right = 1352.0
+offset_bottom = 266.0
+theme_override_colors/default_color = Color(0.372549, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("2_o87us")
+theme_override_font_sizes/normal_font_size = 115
 bbcode_enabled = true
 text = "[wave]GAME OVER"
 fit_content = true
 autowrap_mode = 0
+
+[node name="Quit" type="Button" parent="CanvasLayer"]
+offset_left = 763.0
+offset_top = 688.0
+offset_right = 1159.0
+offset_bottom = 752.0
+theme_override_fonts/font = ExtResource("2_o87us")
+theme_override_font_sizes/font_size = 47
+text = "> Quit <"
+
+[connection signal="pressed" from="CanvasLayer/Quit" to="." method="_on_quit_pressed"]
