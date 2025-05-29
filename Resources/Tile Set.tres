@@ -27,6 +27,7 @@ texture_region_size = Vector2i(64, 64)
 13:1/0 = 0
 14:1/0 = 0
 15:1/0 = 0
+2:0/size_in_atlas = Vector2i(3, 1)
 2:0/0 = 0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ujbw5"]
