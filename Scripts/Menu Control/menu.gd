@@ -4,24 +4,34 @@ extends Node2D
 @onready var money_label: RichTextLabel = $"../../Game/Player/EconomySystem/CanvasLayer/Money"
 @onready var hpbar: CanvasLayer = $"../../Game/Player/UI"
 @onready var game: Node2D = $"../../Game"
+@onready var escape_menu: Node2D = $"../EscapeMenu"
 var inMenu: bool = true
 
 func _on_play_pressed() -> void:
-	audio_manager.crossfire()
-	game.show()
-	game.process_mode = Node.PROCESS_MODE_INHERIT
-	self.hide()
-	self.process_mode = Node.PROCESS_MODE_DISABLED
-	inMenu = false
-	$"../EscapeMenu".inGame = true
-	money_label.show()
-	hpbar.show()
-
-
+	start_game()
+	configure_processes()
+	update_ui()
+	
 func _on_options_pressed() -> void:
 	$"../Options".show()
-	hpbar.hide()
-
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
+
+
+
+# Updated for better understanding
+func start_game():
+	audio_manager.crossfire() # Fades out Menu music and Fades in game music in
+	game.show()
+	inMenu = false
+	escape_menu.inGame = true
+	
+func configure_processes() -> void:
+	game.process_mode = Node.PROCESS_MODE_INHERIT
+	self.hide()
+	self.process_mode = Node.PROCESS_MODE_DISABLED
+	
+func update_ui():
+	money_label.show()
+	hpbar.show()
