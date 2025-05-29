@@ -10,12 +10,6 @@ extends AnimationPlayer
 
 func _physics_process(delta: float) -> void:
 	$"..".material.set_shader_parameter("flash_value", amount_of_flash)
-	#printerr($"..".material.get_shader_parameter("flash_value"))
-
-
-
-#func _ready() -> void:
-	#$"..".material.set_shader_parameter("flash_value", 1)
 
 
 func _on_health_system_damage_taken(amount: int) -> void:
