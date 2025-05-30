@@ -218,7 +218,6 @@ frame_progress = 0.312612
 libraries = {
 "": SubResource("AnimationLibrary_8dife")
 }
-speed_scale = 0.1
 script = ExtResource("5_ehpct")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
