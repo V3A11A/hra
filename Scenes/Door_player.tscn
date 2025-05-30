@@ -1,9 +1,9 @@
 [gd_scene load_steps=13 format=3 uid="uid://bcf4lue1oh7v5"]
 
 [ext_resource type="Script" path="res://Scripts/door_player.gd" id="1_qounb"]
-[ext_resource type="Texture2D" uid="uid://8q06gajdt6rs" path="res://Sprites/door_orange_right.png" id="2_dpba0"]
-[ext_resource type="Texture2D" uid="uid://eexukgicx2hc" path="res://Sprites/door_orange_left.png" id="3_kx852"]
-[ext_resource type="Texture2D" uid="uid://c7hjihbbi0w4l" path="res://Sprites/door_green.png" id="4_vh7up"]
+[ext_resource type="Texture2D" uid="uid://dtsus3mvsm3fv" path="res://Sprites/playerdoor_right.png" id="2_mp8md"]
+[ext_resource type="Texture2D" uid="uid://bskp60y23ux3n" path="res://Sprites/playerdoor_left.png" id="3_i6pvl"]
+[ext_resource type="Texture2D" uid="uid://dcnir5fmho7n5" path="res://Sprites/playerdoor.png" id="4_bfr17"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_co4ms"]
 size = Vector2(64, 16)
@@ -227,8 +227,8 @@ _data = {
 "opened": SubResource("Animation_3ts1c")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7umi3"]
-radius = 346.199
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u24qw"]
+size = Vector2(20, 23.0566)
 
 [node name="PlayerDoor" type="Node2D"]
 scale = Vector2(3.6527, 3.93426)
@@ -258,14 +258,14 @@ speed_scale = 3.265
 
 [node name="orange_right" type="Sprite2D" parent="TheDoor"]
 position = Vector2(32.0311, 0)
-texture = ExtResource("2_dpba0")
+texture = ExtResource("2_mp8md")
 
 [node name="orange_left" type="Sprite2D" parent="TheDoor"]
 position = Vector2(-32.031, 0)
-texture = ExtResource("3_kx852")
+texture = ExtResource("3_i6pvl")
 
 [node name="green" type="Sprite2D" parent="TheDoor"]
-texture = ExtResource("4_vh7up")
+texture = ExtResource("4_bfr17")
 
 [node name="OpenArea" type="Area2D" parent="."]
 position = Vector2(0.27377, 77.2699)
@@ -273,9 +273,9 @@ collision_layer = 0
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OpenArea"]
-position = Vector2(-0.273769, -77.0157)
-scale = Vector2(0.186632, 0.186632)
-shape = SubResource("CircleShape2D_7umi3")
+position = Vector2(-0.27377, -77.2699)
+scale = Vector2(-6.52615, 15.8653)
+shape = SubResource("RectangleShape2D_u24qw")
 
 [node name="OpenTimer" type="Timer" parent="."]
 wait_time = 1.5

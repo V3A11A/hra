@@ -1,8 +1,11 @@
-[gd_resource type="TileSet" load_steps=28 format=3 uid="uid://cv75pqoxbc8kh"]
+[gd_resource type="TileSet" load_steps=33 format=3 uid="uid://cv75pqoxbc8kh"]
 
 [ext_resource type="Texture2D" uid="uid://dbca3psvjss7k" path="res://Sprites/details.png" id="1_oj81n"]
 [ext_resource type="Texture2D" uid="uid://dm4paglh10bw7" path="res://Sprites/tileset_test.png" id="1_plh8f"]
+[ext_resource type="Texture2D" uid="uid://wqohcpl8xhii" path="res://Sprites/details_n.png" id="2_usk72"]
 [ext_resource type="Texture2D" uid="uid://wfnajpyvlh05" path="res://Sprites/tileset_test_n.png" id="3_c7dfo"]
+[ext_resource type="Texture2D" uid="uid://chww1gujfpvd0" path="res://Sprites/details_s.png" id="3_my6wo"]
+[ext_resource type="Texture2D" uid="uid://dfqvon4jr1wdd" path="res://Sprites/tileset_test_s.png" id="6_xda3t"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_17vdy"]
 polygon = PackedVector2Array(-22.981, -23.6881, -23.8649, -32, -32, -32, -32, -23.6881)
@@ -10,8 +13,16 @@ polygon = PackedVector2Array(-22.981, -23.6881, -23.8649, -32, -32, -32, -32, -2
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_j5ndx"]
 polygon = PackedVector2Array(-32, -22.5, 32, -23.5, 32, -32, -32, -32)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_50cjp"]
+polygon = PackedVector2Array(-96.1665, 28.9914, -97.5807, 4.94975, -58.6899, -31.1127, 45.2548, -31.1127, 45.2548, -12.0208, -50.2046, -16.9706, -82.0244, 8.48528, -85.5599, 30.4056)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_d4221"]
+diffuse_texture = ExtResource("1_oj81n")
+normal_texture = ExtResource("2_usk72")
+specular_texture = ExtResource("3_my6wo")
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ht0j0"]
-texture = ExtResource("1_oj81n")
+texture = SubResource("CanvasTexture_d4221")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_17vdy")
@@ -37,7 +48,8 @@ texture_region_size = Vector2i(64, 64)
 15:1/0 = 0
 2:0/size_in_atlas = Vector2i(3, 1)
 2:0/0 = 0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-81.5, 31.5, -97, 32.5, -97.5, 7, -58.5, -31, 47.5, -31.5, 49, -18.5, -51.5, -20.5, -83, 10.5)
+2:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_50cjp")
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-81.5, 31.5, -97, 32.5, -97.5, 7, -58.5, -31, 47.5, -31.5, 152.5, 32.5, -25, 32, -65.5, 32, -74, 32.5)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_i0oe3"]
 vertices = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)
@@ -105,6 +117,7 @@ polygon = PackedVector2Array(-32, 3, 2, 3, 1, -32, -32, -32)
 [sub_resource type="CanvasTexture" id="CanvasTexture_dode6"]
 diffuse_texture = ExtResource("1_plh8f")
 normal_texture = ExtResource("3_c7dfo")
+specular_texture = ExtResource("6_xda3t")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y8pyp"]
 texture = SubResource("CanvasTexture_dode6")
