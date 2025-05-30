@@ -206,6 +206,16 @@ offset_right = 953.0
 offset_bottom = 114.0
 scale = Vector2(-5.90059, 6.14033)
 
+[node name="LinkButton" type="LinkButton" parent="."]
+offset_left = 24.0
+offset_top = 1038.0
+offset_right = 396.0
+offset_bottom = 1073.0
+theme_override_fonts/font = ExtResource("1_bjm2f")
+theme_override_font_sizes/font_size = 31
+text = "Credits & GitHub"
+uri = "https://v3a11a.github.io/hra/licence.html"
+
 [connection signal="pressed" from="Buttons/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Buttons/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Buttons/Quit" to="." method="_on_quit_pressed"]
