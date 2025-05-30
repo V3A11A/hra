@@ -1,14 +1,22 @@
-[gd_resource type="TileSet" load_steps=26 format=3 uid="uid://cv75pqoxbc8kh"]
+[gd_resource type="TileSet" load_steps=28 format=3 uid="uid://cv75pqoxbc8kh"]
 
 [ext_resource type="Texture2D" uid="uid://dbca3psvjss7k" path="res://Sprites/details.png" id="1_oj81n"]
 [ext_resource type="Texture2D" uid="uid://dm4paglh10bw7" path="res://Sprites/tileset_test.png" id="1_plh8f"]
 [ext_resource type="Texture2D" uid="uid://wfnajpyvlh05" path="res://Sprites/tileset_test_n.png" id="3_c7dfo"]
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_17vdy"]
+polygon = PackedVector2Array(-22.981, -23.6881, -23.8649, -32, -32, -32, -32, -23.6881)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_j5ndx"]
+polygon = PackedVector2Array(-32, -22.5, 32, -23.5, 32, -32, -32, -32)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ht0j0"]
 texture = ExtResource("1_oj81n")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_17vdy")
 1:0/0 = 0
+1:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_j5ndx")
 8:0/0 = 0
 9:0/0 = 0
 10:0/0 = 0
