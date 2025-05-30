@@ -163,6 +163,14 @@ theme_override_fonts/font = ExtResource("2_ml3kr")
 theme_override_font_sizes/font_size = 60
 text = "Buy?"
 
+[node name="Message" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 958.0
+offset_top = 612.0
+offset_right = 998.0
+offset_bottom = 635.0
+text = "Message"
+
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Control/Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="Control/Right" to="." method="_on_right_pressed"]
