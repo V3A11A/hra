@@ -10,6 +10,8 @@ script = ExtResource("1_rd44c")
 
 [node name="MenuSong" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_6opv7")
+parameters/looping = true
 
 [node name="GameSong" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_yiysn")
+parameters/looping = true

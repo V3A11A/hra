@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://bcf4lue1oh7v5"]
 
-[ext_resource type="Script" path="res://Scripts/door.gd" id="1_pa1vp"]
+[ext_resource type="Script" path="res://Scripts/door_player.gd" id="1_qounb"]
 [ext_resource type="Texture2D" uid="uid://8q06gajdt6rs" path="res://Sprites/door_orange_right.png" id="2_dpba0"]
 [ext_resource type="Texture2D" uid="uid://eexukgicx2hc" path="res://Sprites/door_orange_left.png" id="3_kx852"]
 [ext_resource type="Texture2D" uid="uid://c7hjihbbi0w4l" path="res://Sprites/door_green.png" id="4_vh7up"]
@@ -232,7 +232,7 @@ radius = 346.199
 
 [node name="PlayerDoor" type="Node2D"]
 scale = Vector2(3.6527, 3.93426)
-script = ExtResource("1_pa1vp")
+script = ExtResource("1_qounb")
 
 [node name="TheDoor" type="StaticBody2D" parent="."]
 collision_layer = 4
@@ -257,11 +257,11 @@ libraries = {
 speed_scale = 3.265
 
 [node name="orange_right" type="Sprite2D" parent="TheDoor"]
-position = Vector2(87.954, 0)
+position = Vector2(32.0311, 0)
 texture = ExtResource("2_dpba0")
 
 [node name="orange_left" type="Sprite2D" parent="TheDoor"]
-position = Vector2(-87.954, 0)
+position = Vector2(-32.031, 0)
 texture = ExtResource("3_kx852")
 
 [node name="green" type="Sprite2D" parent="TheDoor"]
@@ -269,6 +269,8 @@ texture = ExtResource("4_vh7up")
 
 [node name="OpenArea" type="Area2D" parent="."]
 position = Vector2(0.27377, 77.2699)
+collision_layer = 0
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OpenArea"]
 position = Vector2(-0.273769, -77.0157)
@@ -279,7 +281,7 @@ shape = SubResource("CircleShape2D_7umi3")
 wait_time = 1.5
 
 [node name="CloseTimer" type="Timer" parent="."]
-wait_time = 8.0
+wait_time = 5.0
 
 [connection signal="animation_finished" from="TheDoor/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="OpenArea" to="." method="_on_open_area_body_entered"]

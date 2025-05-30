@@ -273,6 +273,8 @@ texture = ExtResource("1_spdth")
 
 [node name="OpenArea" type="Area2D" parent="."]
 position = Vector2(0.27377, 77.2699)
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OpenArea"]
 position = Vector2(-0.273769, -77.0157)
@@ -282,10 +284,6 @@ shape = SubResource("CircleShape2D_7umi3")
 [node name="OpenTimer" type="Timer" parent="."]
 wait_time = 1.5
 
-[node name="CloseTimer" type="Timer" parent="."]
-wait_time = 8.0
-
 [connection signal="animation_finished" from="TheDoor/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="OpenArea" to="." method="_on_open_area_body_entered"]
 [connection signal="timeout" from="OpenTimer" to="." method="_on_open_timer_timeout"]
-[connection signal="timeout" from="CloseTimer" to="." method="_on_close_timer_timeout"]
