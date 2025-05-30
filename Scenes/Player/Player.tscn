@@ -187,13 +187,14 @@ script = ExtResource("3_2hv52")
 [node name="CanvasLayer" type="CanvasLayer" parent="EconomySystem"]
 
 [node name="Money" type="RichTextLabel" parent="EconomySystem/CanvasLayer"]
-offset_left = 1741.0
-offset_top = 146.0
-offset_right = 1781.0
-offset_bottom = 174.0
+offset_left = 1553.0
+offset_top = 116.0
+offset_right = 1845.0
+offset_bottom = 165.0
 theme_override_fonts/normal_font = ExtResource("9_lqq8l")
-theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/normal_font_size = 43
 bbcode_enabled = true
+text = "Money"
 fit_content = true
 autowrap_mode = 0
 

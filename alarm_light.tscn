@@ -138,5 +138,7 @@ frame_progress = 0.656462
 
 [node name="PointLight2D" type="PointLight2D" parent="Sprite2D/AnimatedSprite2D"]
 color = Color(0.987992, 0, 0.109859, 1)
+energy = 2.83
 texture = ExtResource("3_tn5mm")
+texture_scale = 1.84
 height = 95.0
