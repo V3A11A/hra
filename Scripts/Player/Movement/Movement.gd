@@ -7,7 +7,6 @@ extends CollisionShape2D
 
 
 
-var final_speed : Vector2
 
 
 var run_velocity : Vector2
