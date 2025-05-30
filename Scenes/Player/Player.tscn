@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://oakkxncsd881"]
+[gd_scene load_steps=35 format=3 uid="uid://oakkxncsd881"]
 
 [ext_resource type="PackedScene" uid="uid://uao8gqlr5nnx" path="res://Scenes/Player/Movement/Movement.tscn" id="1_rw6wu"]
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_sfaps"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://djupl0yxxccoo" path="res://Scenes/Economy System/Economy System.tscn" id="8_2e2b6"]
 [ext_resource type="FontFile" uid="uid://xnlqhu1mjn0n" path="res://Sprites/vhs-gothic.ttf" id="9_lqq8l"]
 [ext_resource type="Texture2D" uid="uid://b6xctuv8l0lv7" path="res://Sprites/flashlight.png" id="9_w7lxh"]
+[ext_resource type="AudioStream" uid="uid://be3gcg1jv7mf6" path="res://Sounds/health-pickup.mp3" id="10_iy5v6"]
+[ext_resource type="Script" path="res://Scenes/Player/heal.gd" id="11_1ke17"]
 [ext_resource type="PackedScene" uid="uid://c6vghx4qdo7ph" path="res://Scenes/Player/Health Bar.tscn" id="12_7rpfl"]
 [ext_resource type="Texture2D" uid="uid://glnvuvj3rg5b" path="res://Sprites/money_frame.png" id="12_yfij2"]
 [ext_resource type="Texture2D" uid="uid://dqcsl82c3e7xm" path="res://Sprites/healthbar_frame.png" id="13_ak6de"]
@@ -125,6 +127,29 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="Animation" id="Animation_ojk7q"]
+resource_name = "walk"
+loop_mode = 1
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("walk")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t7tg4"]
+_data = {
+"walk": SubResource("Animation_ojk7q")
+}
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ll27"]
 radius = 55.0
 
@@ -149,6 +174,13 @@ texture = ExtResource("2_ls7yc")
 
 [node name="Node" type="Node" parent="Movement"]
 script = ExtResource("5_xcbq5")
+
+[node name="walk" type="AudioStreamPlayer2D" parent="Movement/Node"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Movement/Node"]
+libraries = {
+"": SubResource("AnimationLibrary_t7tg4")
+}
 
 [node name="Anchor" type="Node2D" parent="."]
 
@@ -180,6 +212,10 @@ texture = ExtResource("9_w7lxh")
 height = 4.0
 
 [node name="Health System" parent="." instance=ExtResource("5_x5wok")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Health System"]
+stream = ExtResource("10_iy5v6")
+script = ExtResource("11_1ke17")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
@@ -227,4 +263,5 @@ position = Vector2(-1.52588e-05, 9.53674e-07)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("13_ak6de")
 
+[connection signal="Healed" from="Health System" to="Health System/AudioStreamPlayer2D" method="_on_health_system_healed"]
 [connection signal="Obliterate" from="Health System" to="." method="_on_health_system_obliterate"]
