@@ -1,7 +1,6 @@
 extends Node2D
 @onready var animation_player: AnimationPlayer = $TheDoor/AnimationPlayer
 @onready var open_timer: Timer = $OpenTimer
-@onready var close_timer: Timer = $CloseTimer
 #self.queue_free()
 var animation_started: bool = false
 

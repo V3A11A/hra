@@ -227,6 +227,7 @@ script = ExtResource("3_2hv52")
 [node name="EconomySystem" parent="." instance=ExtResource("8_2e2b6")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="EconomySystem"]
+visible = false
 
 [node name="MoneyFrame" type="Sprite2D" parent="EconomySystem/CanvasLayer"]
 position = Vector2(1747, 85)

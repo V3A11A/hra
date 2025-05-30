@@ -3,7 +3,7 @@ extends Node2D
 @onready var audio_manager: Node = $"../../AudioManager"
 @onready var game: Node2D = $"../../Game"
 @onready var main_menu: Node2D = $"../MainMenu"
-@onready var money_label: RichTextLabel = $"../../Game/Player/EconomySystem/CanvasLayer/Money"
+@onready var economy_canvas: CanvasLayer = $"../../Game/Player/EconomySystem/CanvasLayer"
 @onready var hpbar: CanvasLayer = $"../../Game/Player/UI"
 var inGame: bool = false
 
@@ -24,22 +24,22 @@ func _on_options_pressed() -> void:
 func _on_exit_pressed() -> void:
 	$click.play()
 	exit_pause_menu()
-	
-	
+
+
 
 # For better understanding
 func toggle_menu():
 	self.visible = !self.visible
 	$CanvasLayer.visible = !$CanvasLayer.visible
 	get_tree().paused = !get_tree().paused
-	
+
 func toggle_options():
 	self.hide()
 	inGame = false
 	$"../Options".show()
 	hpbar.visible = false
 	$CanvasLayer.hide()
-	
+
 func resume_game():
 	self.hide()
 	get_tree().paused = false
@@ -54,8 +54,9 @@ func exit_pause_menu():
 	main_menu.show()
 	$CanvasLayer.hide()
 	game.hide()
-	money_label.hide()
+	economy_canvas.hide()
 	inGame = false
 	get_tree().paused = false
 	hpbar.visible = false
 	main_menu.inMenu = true
+	main_menu.link_button.show()

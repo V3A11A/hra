@@ -17,6 +17,8 @@ func _on_back_pressed() -> void:
 		escape_menu.inGame = true
 		escape_menu.show()
 		hpbar.show()
+	else:
+		main_menu.link_button.show()
 
 func _on_volume_slider_value_changed(value: float) -> void:
 	$click.play()
