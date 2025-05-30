@@ -10,6 +10,7 @@ var defCursor = load("res://Sprites/defCursor.png")
 
 
 func _on_back_pressed() -> void:
+	$click.play()
 	self.hide()
 	if !main_menu.inMenu:
 		$"../EscapeMenu/CanvasLayer".show()
@@ -18,18 +19,22 @@ func _on_back_pressed() -> void:
 		hpbar.show()
 
 func _on_volume_slider_value_changed(value: float) -> void:
+	$click.play()
 	AudioServer.set_bus_volume_db(0, linear_to_db(value))
 
 func _on_toggle_screen_shake_toggled(toggled_on: bool) -> void:
+	$click.play()
 	camera.allowShake = toggled_on
 
 func _on_toggle_full_screen_toggled(toggled_on: bool) -> void:
+	$click.play()
 	if toggled_on:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 		return
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
 func _on_h_slider_value_changed(value: float) -> void:
+	$click.play()
 	if value == 1:
 		Input.set_custom_mouse_cursor(smallCursor, Input.CURSOR_ARROW, Vector2(8, 8))
 	if value == 2:

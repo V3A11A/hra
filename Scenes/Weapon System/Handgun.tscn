@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ccubqoq4er1po"]
+[gd_scene load_steps=7 format=3 uid="uid://ccubqoq4er1po"]
 
 [ext_resource type="Script" path="res://Scripts/Weapon System/Handgun.gd" id="1_tm8j3"]
 [ext_resource type="Texture2D" uid="uid://bqcgcjajitnca" path="res://Sprites/muzzle_flash.png" id="2_tpg0b"]
+[ext_resource type="AudioStream" uid="uid://bixqhn4kvb2jf" path="res://Sounds/shoot.mp3" id="3_kxvxu"]
 
 [sub_resource type="Animation" id="Animation_xgwbm"]
 length = 0.001
@@ -69,3 +70,6 @@ texture = ExtResource("2_tpg0b")
 libraries = {
 "": SubResource("AnimationLibrary_opa4x")
 }
+
+[node name="shoot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_kxvxu")

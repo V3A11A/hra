@@ -34,6 +34,7 @@ func _input(event: InputEvent) -> void:
 		
 	
 func _on_exit_pressed() -> void:
+	$click.play()
 	shop_animation.play("moveDown")
 	get_tree().paused = false
 	
@@ -47,6 +48,7 @@ func changeItems():
 	
 
 func _on_left_pressed() -> void:
+	$click.play()
 	if decide == 0:
 		decide = 7
 		changeItems()
@@ -56,6 +58,7 @@ func _on_left_pressed() -> void:
 
 
 func _on_right_pressed() -> void:
+	$click.play()
 	if decide == 7:
 		decide = 0
 		changeItems()
@@ -65,6 +68,7 @@ func _on_right_pressed() -> void:
 
 
 func _on_buy_pressed() -> void:
+	$click.play()
 	if economy_system.money >= economy_system.upgrades[decide]["Cost"][economy_system.upgrades[decide]["Level"]]:
 		if economy_system.upgrades[decide]["Level"] <= (economy_system.upgrades[decide]["Cost"].size())-1:
 			economy_system.money -= economy_system.upgrades[decide]["Cost"][economy_system.upgrades[decide]["Level"]]

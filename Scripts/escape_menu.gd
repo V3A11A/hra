@@ -14,12 +14,15 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		toggle_menu()
 
 func _on_back_to_game_pressed() -> void:
+	$click.play()
 	resume_game()
 
 func _on_options_pressed() -> void:
+	$click.play()
 	toggle_options()
 
 func _on_exit_pressed() -> void:
+	$click.play()
 	exit_pause_menu()
 	
 	

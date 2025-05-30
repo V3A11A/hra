@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ycv5ec1knv"]
+[gd_scene load_steps=4 format=3 uid="uid://ycv5ec1knv"]
 
 [ext_resource type="Script" path="res://Scripts/game_over_screen.gd" id="1_k543y"]
 [ext_resource type="FontFile" uid="uid://xnlqhu1mjn0n" path="res://Sprites/vhs-gothic.ttf" id="2_o87us"]
+[ext_resource type="AudioStream" uid="uid://be5tuj3w6jace" path="res://Sounds/click.mp3" id="3_vrk0t"]
 
 [node name="Game Over Screen" type="Node2D"]
 visible = false
@@ -40,5 +41,8 @@ offset_bottom = 752.0
 theme_override_fonts/font = ExtResource("2_o87us")
 theme_override_font_sizes/font_size = 47
 text = "> Quit <"
+
+[node name="click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_vrk0t")
 
 [connection signal="pressed" from="CanvasLayer/Quit" to="." method="_on_quit_pressed"]

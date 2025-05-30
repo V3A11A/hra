@@ -8,20 +8,25 @@ extends Node2D
 var inMenu: bool = true
 
 func _on_play_pressed() -> void:
+	$click.play()
 	start_game()
 	configure_processes()
 	update_ui()
 	
 func _on_options_pressed() -> void:
+	$click.play()
 	$"../Options".show()
 
 func _on_quit_pressed() -> void:
+	$click.play()
+	await $click.finished
 	get_tree().quit()
 
 
 
 # Updated for better understanding
 func start_game():
+	$click.play()
 	audio_manager.crossfire() # Fades out Menu music and Fades in game music in
 	game.show()
 	inMenu = false

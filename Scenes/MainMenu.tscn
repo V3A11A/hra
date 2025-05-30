@@ -1,10 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://cxbpxhsvewhoj"]
+[gd_scene load_steps=21 format=3 uid="uid://cxbpxhsvewhoj"]
 
 [ext_resource type="Script" path="res://Scripts/Menu Control/menu.gd" id="1_aasmk"]
 [ext_resource type="FontFile" uid="uid://xnlqhu1mjn0n" path="res://Sprites/vhs-gothic.ttf" id="1_bjm2f"]
 [ext_resource type="Texture2D" uid="uid://c1o634w6pmwxv" path="res://Sprites/moving_background.png" id="1_coj6f"]
 [ext_resource type="Texture2D" uid="uid://d0liubqihnbi8" path="res://Sprites/fog.png" id="1_l25fy"]
 [ext_resource type="Texture2D" uid="uid://cdrbpembjdf8j" path="res://Sprites/Lab_Hunters_icon.png" id="4_pp3jl"]
+[ext_resource type="AudioStream" uid="uid://be5tuj3w6jace" path="res://Sounds/click.mp3" id="6_rrtn6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r7wey"]
 atlas = ExtResource("1_coj6f")
@@ -206,6 +207,7 @@ offset_right = 953.0
 offset_bottom = 114.0
 scale = Vector2(-5.90059, 6.14033)
 
+<<<<<<< Updated upstream
 [node name="LinkButton" type="LinkButton" parent="."]
 offset_left = 24.0
 offset_top = 1038.0
@@ -215,6 +217,11 @@ theme_override_fonts/font = ExtResource("1_bjm2f")
 theme_override_font_sizes/font_size = 31
 text = "Credits & GitHub"
 uri = "https://v3a11a.github.io/hra/licence.html"
+=======
+[node name="click" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("6_rrtn6")
+>>>>>>> Stashed changes
 
 [connection signal="pressed" from="Buttons/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Buttons/Options" to="." method="_on_options_pressed"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bmufr65pppa0w"]
+[gd_scene load_steps=10 format=3 uid="uid://bmufr65pppa0w"]
 
 [ext_resource type="Script" path="res://Scripts/Shop System/Shop System.gd" id="1_1a5v6"]
 [ext_resource type="FontFile" uid="uid://xnlqhu1mjn0n" path="res://Sprites/vhs-gothic.ttf" id="2_ml3kr"]
+[ext_resource type="AudioStream" uid="uid://be5tuj3w6jace" path="res://Sounds/click.mp3" id="3_7kp1b"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hsaxu"]
 bg_color = Color(0, 0, 0, 1)
@@ -170,6 +171,9 @@ offset_top = 612.0
 offset_right = 998.0
 offset_bottom = 635.0
 text = "Message"
+
+[node name="click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_7kp1b")
 
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Control/Left" to="." method="_on_left_pressed"]

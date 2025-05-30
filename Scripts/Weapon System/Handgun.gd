@@ -22,6 +22,7 @@ func Attack() -> void:
 
 
 func Shoot() -> void:
+	$shoot.play()
 	$"../../../../Camera2D".apply_shake(50, 50)
 	bullets.add_child(BULLET.instantiate())
 	bullets.get_child(-1).global_position = weapon_system.player.global_position

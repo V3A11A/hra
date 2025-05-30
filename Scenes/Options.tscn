@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://oy6hyed5oh53"]
+[gd_scene load_steps=11 format=3 uid="uid://oy6hyed5oh53"]
 
 [ext_resource type="Script" path="res://Scripts/Menu Control/options.gd" id="1_iowl2"]
 [ext_resource type="FontFile" uid="uid://xnlqhu1mjn0n" path="res://Sprites/vhs-gothic.ttf" id="2_3kq58"]
 [ext_resource type="Texture2D" uid="uid://d0liubqihnbi8" path="res://Sprites/fog.png" id="3_dh7nx"]
 [ext_resource type="Theme" uid="uid://ckgs0blnlyx7g" path="res://Resources/menutext.tres" id="3_xtogb"]
+[ext_resource type="AudioStream" uid="uid://be5tuj3w6jace" path="res://Sounds/click.mp3" id="5_37tc3"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_yi5kp"]
 color = Color(1, 1, 1, 1)
@@ -187,6 +188,9 @@ offset_top = 108.0
 offset_right = 603.0
 offset_bottom = 110.0
 scale = Vector2(-5.90059, 6.14033)
+
+[node name="click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_37tc3")
 
 [connection signal="value_changed" from="Buttons/VolumeLabel/Volume Slider" to="." method="_on_volume_slider_value_changed"]
 [connection signal="toggled" from="Buttons/ScreenShakeToggleLabel2/ToggleFullScreen" to="." method="_on_toggle_full_screen_toggled"]
