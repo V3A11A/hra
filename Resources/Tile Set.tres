@@ -37,6 +37,7 @@ texture_region_size = Vector2i(64, 64)
 15:1/0 = 0
 2:0/size_in_atlas = Vector2i(3, 1)
 2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-81.5, 31.5, -97, 32.5, -97.5, 7, -58.5, -31, 47.5, -31.5, 49, -18.5, -51.5, -20.5, -83, 10.5)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_i0oe3"]
 vertices = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)

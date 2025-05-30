@@ -173,10 +173,10 @@ tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath(".:offset")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.166667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, 1100)]
@@ -191,10 +191,10 @@ tracks/0/path = NodePath(".:offset")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.266667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, -1100), Vector2(0, 0)]
+"values": [Vector2(0, 1100), Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k01fc"]
@@ -213,17 +213,18 @@ transform = Transform2D(1, 0, 0, 1, 0, 1100)
 script = ExtResource("1_1a5v6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1043, 617)
-scale = Vector2(1.58859, 1.58859)
+position = Vector2(862.218, 645.218)
+scale = Vector2(1.14805, 1.14805)
 sprite_frames = SubResource("SpriteFrames_bry2x")
 autoplay = "default"
 frame_progress = 0.995584
 
 [node name="Shop Panel" type="Panel" parent="."]
-offset_left = 569.0
-offset_top = 188.0
-offset_right = 1343.0
-offset_bottom = 1048.0
+visible = false
+offset_left = 417.0
+offset_top = 1097.0
+offset_right = 969.0
+offset_bottom = 1710.0
 
 [node name="Shop Animation" type="AnimationPlayer" parent="."]
 libraries = {
@@ -231,10 +232,10 @@ libraries = {
 }
 
 [node name="Exit" type="Button" parent="."]
-offset_left = 856.0
-offset_top = 948.0
-offset_right = 1022.0
-offset_bottom = 1028.0
+offset_left = 518.436
+offset_top = 864.436
+offset_right = 684.436
+offset_bottom = 944.436
 theme_override_fonts/font = ExtResource("2_ml3kr")
 theme_override_font_sizes/font_size = 35
 text = "Exit >"
@@ -248,15 +249,15 @@ offset_right = -35.0
 offset_bottom = 52.0
 
 [node name="Animated Items" type="AnimatedSprite2D" parent="Control"]
-position = Vector2(820, 349)
+position = Vector2(815.436, 553.436)
 sprite_frames = SubResource("SpriteFrames_lo435")
 
 [node name="Name" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 646.0
-offset_top = 147.0
-offset_right = 1338.0
-offset_bottom = 250.0
+offset_left = 557.436
+offset_top = 289.436
+offset_right = 1115.44
+offset_bottom = 374.436
 theme_override_fonts/font = ExtResource("2_ml3kr")
 theme_override_font_sizes/font_size = 75
 text = "Upgrade"
@@ -266,51 +267,52 @@ autowrap_mode = 3
 
 [node name="Detail" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 737.0
-offset_top = 755.0
-offset_right = 993.0
-offset_bottom = 790.0
+offset_left = 600.436
+offset_top = 737.436
+offset_right = 856.436
+offset_bottom = 772.436
 theme_override_fonts/font = ExtResource("2_ml3kr")
 theme_override_font_sizes/font_size = 31
 text = "Description"
 
 [node name="Left" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 633.0
-offset_top = 646.0
-offset_right = 728.0
-offset_bottom = 750.0
+offset_left = 596.436
+offset_top = 622.436
+offset_right = 668.436
+offset_bottom = 726.436
 theme_override_fonts/font = ExtResource("2_ml3kr")
 theme_override_font_sizes/font_size = 85
 text = "<"
 
 [node name="Right" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 1265.0
-offset_top = 644.0
-offset_right = 1359.0
-offset_bottom = 748.0
+offset_left = 1006.44
+offset_top = 622.436
+offset_right = 1078.44
+offset_bottom = 726.436
 theme_override_fonts/font = ExtResource("2_ml3kr")
 theme_override_font_sizes/font_size = 85
 text = ">"
 
 [node name="Buy" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 732.0
-offset_top = 646.0
-offset_right = 1262.0
-offset_bottom = 747.0
+offset_left = 669.436
+offset_top = 621.436
+offset_right = 1005.44
+offset_bottom = 726.436
 theme_override_fonts/font = ExtResource("2_ml3kr")
 theme_override_font_sizes/font_size = 60
-text = "Buy?"
+text = "Buy"
 
 [node name="Message" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 958.0
-offset_top = 612.0
-offset_right = 998.0
-offset_bottom = 635.0
-text = "Message"
+offset_left = 734.436
+offset_top = 802.436
+offset_right = 886.436
+offset_bottom = 835.436
+theme_override_fonts/font = ExtResource("2_ml3kr")
+theme_override_font_sizes/font_size = 29
 
 [node name="click" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(0, 53)
