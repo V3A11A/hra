@@ -73,3 +73,4 @@ libraries = {
 
 [node name="shoot" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_kxvxu")
+bus = &"Game Audio"

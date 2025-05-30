@@ -176,6 +176,7 @@ texture = ExtResource("2_ls7yc")
 script = ExtResource("5_xcbq5")
 
 [node name="walk" type="AudioStreamPlayer2D" parent="Movement/Node"]
+bus = &"Game Audio"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Movement/Node"]
 libraries = {
@@ -228,17 +229,17 @@ script = ExtResource("3_2hv52")
 [node name="CanvasLayer" type="CanvasLayer" parent="EconomySystem"]
 
 [node name="MoneyFrame" type="Sprite2D" parent="EconomySystem/CanvasLayer"]
-position = Vector2(1702, 141)
-scale = Vector2(3.5, 3.23889)
+position = Vector2(1747, 85)
+scale = Vector2(2.61449, 2.41945)
 texture = ExtResource("12_yfij2")
 
 [node name="Money" type="RichTextLabel" parent="EconomySystem/CanvasLayer"]
-offset_left = 1553.0
-offset_top = 116.0
-offset_right = 1845.0
-offset_bottom = 165.0
+offset_left = 1632.0
+offset_top = 66.0
+offset_right = 1924.0
+offset_bottom = 101.0
 theme_override_fonts/normal_font = ExtResource("9_lqq8l")
-theme_override_font_sizes/normal_font_size = 43
+theme_override_font_sizes/normal_font_size = 31
 bbcode_enabled = true
 text = "Money"
 fit_content = true
