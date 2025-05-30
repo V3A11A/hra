@@ -202,7 +202,7 @@ damage = 10
 difficulty = 9
 
 [node name="Enemy Movement Core" parent="." instance=ExtResource("2_ypyo8")]
-speed = 0
+speed = 100
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_2002u")
