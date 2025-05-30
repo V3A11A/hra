@@ -14,5 +14,4 @@ func _on_open_area_body_entered(body: Node2D) -> void:
 	
 func _on_open_timer_timeout() -> void:
 	animation_player.play("open")
-	close_timer.start()
 	open_timer.stop()

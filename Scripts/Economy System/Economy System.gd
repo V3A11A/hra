@@ -65,7 +65,7 @@ var upgrades = {
 }
 
 func _process(delta: float) -> void:
-	money_label.text = "[wave]Money: "+str(money)
+	money_label.text = "[wave]"+str(money)+"$"
 
 func AddMoney(amount:int):
 	money += amount

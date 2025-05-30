@@ -228,6 +228,7 @@ _data = {
 }
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_5y8n1"]
+polygon = PackedVector2Array(-235, -33, 233, -33, 234, 30, -234, 33)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7umi3"]
 radius = 346.199

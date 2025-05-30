@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://oakkxncsd881"]
+[gd_scene load_steps=31 format=3 uid="uid://oakkxncsd881"]
 
 [ext_resource type="PackedScene" uid="uid://uao8gqlr5nnx" path="res://Scenes/Player/Movement/Movement.tscn" id="1_rw6wu"]
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_sfaps"]
@@ -13,6 +13,7 @@
 [ext_resource type="FontFile" uid="uid://xnlqhu1mjn0n" path="res://Sprites/vhs-gothic.ttf" id="9_lqq8l"]
 [ext_resource type="Texture2D" uid="uid://b6xctuv8l0lv7" path="res://Sprites/flashlight.png" id="9_w7lxh"]
 [ext_resource type="PackedScene" uid="uid://c6vghx4qdo7ph" path="res://Scenes/Player/Health Bar.tscn" id="12_7rpfl"]
+[ext_resource type="Texture2D" uid="uid://glnvuvj3rg5b" path="res://Sprites/money_frame.png" id="12_yfij2"]
 [ext_resource type="Texture2D" uid="uid://dqcsl82c3e7xm" path="res://Sprites/healthbar_frame.png" id="13_ak6de"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0fg7g"]
@@ -190,6 +191,11 @@ script = ExtResource("3_2hv52")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="EconomySystem"]
 
+[node name="MoneyFrame" type="Sprite2D" parent="EconomySystem/CanvasLayer"]
+position = Vector2(1702, 141)
+scale = Vector2(3.5, 3.23889)
+texture = ExtResource("12_yfij2")
+
 [node name="Money" type="RichTextLabel" parent="EconomySystem/CanvasLayer"]
 offset_left = 1553.0
 offset_top = 116.0
@@ -216,7 +222,7 @@ visible = false
 position = Vector2(242, 68)
 health = NodePath("../../Health System")
 
-[node name="Sprite2D" type="Sprite2D" parent="UI/Health Bar"]
+[node name="HealthFrame" type="Sprite2D" parent="UI/Health Bar"]
 position = Vector2(-1.52588e-05, 9.53674e-07)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("13_ak6de")
