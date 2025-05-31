@@ -7,8 +7,10 @@ var player_inside = false
 @onready var escape_menu: Node2D = $"../../../CanvasLayer/EscapeMenu"
 
 func _on_shop_area_body_entered(body: Node2D) -> void:
-	player_inside = true
-	click_this.show()
+	if body.name == "Player":
+		print(body.name)
+		click_this.show()
+		player_inside = true
 
 func _on_shop_area_body_exited(body: Node2D) -> void:
 	player_inside = false

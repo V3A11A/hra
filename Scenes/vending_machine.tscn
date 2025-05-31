@@ -6,14 +6,25 @@
 [ext_resource type="Texture2D" uid="uid://bkc3lot4wja36" path="res://Sprites/hint.png" id="3_bx64i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_feyra"]
-size = Vector2(204, 215)
+size = Vector2(181, 118)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mux4k"]
-size = Vector2(203, 233)
+size = Vector2(255, 226.5)
 
 [node name="VendingMachine" type="Node2D"]
 process_mode = 3
 script = ExtResource("1_4yt7c")
+
+[node name="ClickThis" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(115, -107)
+texture = ExtResource("3_bx64i")
+
+[node name="tělo" type="StaticBody2D" parent="."]
+
+[node name="kolize" type="CollisionShape2D" parent="tělo"]
+position = Vector2(0.5, -9)
+shape = SubResource("RectangleShape2D_feyra")
 
 [node name="Machine" type="Sprite2D" parent="."]
 texture = ExtResource("2_3s8lv")
@@ -22,22 +33,11 @@ texture = ExtResource("2_3s8lv")
 texture = ExtResource("3_8a0nn")
 texture_scale = 2.35
 
-[node name="tělo" type="StaticBody2D" parent="."]
-
-[node name="kolize" type="CollisionShape2D" parent="tělo"]
-position = Vector2(0, 11.5)
-shape = SubResource("RectangleShape2D_feyra")
-
 [node name="ShopArea" type="Area2D" parent="."]
 
 [node name="areaCollision" type="CollisionShape2D" parent="ShopArea"]
-position = Vector2(-0.5, 106.5)
+position = Vector2(0.5, 21.75)
 shape = SubResource("RectangleShape2D_mux4k")
-
-[node name="ClickThis" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(115, -107)
-texture = ExtResource("3_bx64i")
 
 [connection signal="body_entered" from="ShopArea" to="." method="_on_shop_area_body_entered"]
 [connection signal="body_exited" from="ShopArea" to="." method="_on_shop_area_body_exited"]
