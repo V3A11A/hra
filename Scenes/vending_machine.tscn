@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://lledmr72stl7"]
+
+[ext_resource type="Script" path="res://vending_machine.gd" id="1_4yt7c"]
+[ext_resource type="Texture2D" uid="uid://cdrbpembjdf8j" path="res://Sprites/Lab_Hunters_icon.png" id="2_bvkco"]
+[ext_resource type="Texture2D" uid="uid://bkc3lot4wja36" path="res://Sprites/hint.png" id="3_bx64i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_feyra"]
+size = Vector2(204, 215)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mux4k"]
+size = Vector2(203, 233)
+
+[node name="VendingMachine" type="Node2D"]
+script = ExtResource("1_4yt7c")
+
+[node name="Machine" type="Sprite2D" parent="."]
+texture = ExtResource("2_bvkco")
+
+[node name="tělo" type="StaticBody2D" parent="."]
+
+[node name="kolize" type="CollisionShape2D" parent="tělo"]
+position = Vector2(0, 11.5)
+shape = SubResource("RectangleShape2D_feyra")
+
+[node name="ShopArea" type="Area2D" parent="."]
+
+[node name="areaCollision" type="CollisionShape2D" parent="ShopArea"]
+position = Vector2(-0.5, 106.5)
+shape = SubResource("RectangleShape2D_mux4k")
+
+[node name="ClickThis" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(115, -107)
+texture = ExtResource("3_bx64i")
+
+[connection signal="body_entered" from="ShopArea" to="." method="_on_shop_area_body_entered"]
+[connection signal="body_exited" from="ShopArea" to="." method="_on_shop_area_body_exited"]

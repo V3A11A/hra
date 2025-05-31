@@ -53,9 +53,9 @@ offset_right = 85.135
 offset_bottom = 97.28
 scale = Vector2(2.51, 2.51)
 theme_override_styles/slider = SubResource("StyleBoxLine_yi5kp")
-max_value = 4.5
-step = 0.08
-value = 2.24
+max_value = 1.0
+step = 0.01
+value = 0.5
 
 [node name="ScreenShakeToggleLabel2" type="Label" parent="Buttons"]
 layout_mode = 0

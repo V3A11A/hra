@@ -1,11 +1,14 @@
-extends Node2D
+extends Node
 
+var start_time : int
+var elapsed_time : int
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func _ready():
+	start_time = Time.get_ticks_msec()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _process(delta):
+	elapsed_time = Time.get_ticks_msec() - start_time
+	var minutes = int(elapsed_time / 60000)
+	var seconds = int((elapsed_time % 60000) / 1000)
+	var time_display = "%02d:%02d" % [minutes, seconds]
+	$"../CanvasLayer/Game Over Screen/CanvasLayer/PlayTime".text = "time alive: " + time_display

@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=4 uid="uid://5buiag2sfyl8"]
+[gd_scene load_steps=12 format=4 uid="uid://5buiag2sfyl8"]
 
+[ext_resource type="Script" path="res://Scenes/game.gd" id="1_b6281"]
 [ext_resource type="PackedScene" uid="uid://oakkxncsd881" path="res://Scenes/Player/Player.tscn" id="1_oulc1"]
 [ext_resource type="PackedScene" uid="uid://tfb7lf5iow77" path="res://Scenes/Enemy System/Wave System.tscn" id="2_ciwrt"]
 [ext_resource type="PackedScene" uid="uid://ci85eww70mwqw" path="res://Scenes/Enemy System/Enemy Spawner.tscn" id="3_2bl6x"]
@@ -9,8 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://b7urhgr7ycfm1" path="res://alarm_light.tscn" id="5_ssvil"]
 [ext_resource type="PackedScene" uid="uid://bcf4lue1oh7v5" path="res://Scenes/Door_player.tscn" id="5_swxq0"]
 [ext_resource type="Texture2D" uid="uid://d0liubqihnbi8" path="res://Sprites/fog.png" id="7_ubgyx"]
+[ext_resource type="PackedScene" uid="uid://lledmr72stl7" path="res://Scenes/vending_machine.tscn" id="8_kb82c"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_b6281")
 
 [node name="Player" parent="." instance=ExtResource("1_oulc1")]
 z_index = 1
@@ -104,6 +107,9 @@ scale = Vector2(1.0927, 1.17693)
 z_index = 1
 position = Vector2(1516, -7819)
 scale = Vector2(1.0927, 1.17693)
+
+[node name="VendingMachine" parent="Map" instance=ExtResource("8_kb82c")]
+position = Vector2(-368, -50)
 
 [node name="Door" parent="." instance=ExtResource("5_p86a5")]
 z_index = 1
