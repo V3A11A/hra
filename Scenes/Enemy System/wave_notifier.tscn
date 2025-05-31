@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://3snaf50jgign"]
+
+[ext_resource type="Script" path="res://Scenes/Enemy System/wave.gd" id="2_f2h1g"]
+
+[node name="Wave Notifier" type="Node2D"]
+
+[node name="WAVE" type="RichTextLabel" parent="."]
+offset_right = 639.0
+offset_bottom = 90.0
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[wave]THE X WAVE BEGINS"
+scroll_active = false
+shortcut_keys_enabled = false
+script = ExtResource("2_f2h1g")

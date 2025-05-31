@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://oakkxncsd881"]
+[gd_scene load_steps=37 format=3 uid="uid://oakkxncsd881"]
 
 [ext_resource type="PackedScene" uid="uid://uao8gqlr5nnx" path="res://Scenes/Player/Movement/Movement.tscn" id="1_rw6wu"]
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_sfaps"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://glnvuvj3rg5b" path="res://Sprites/money_frame.png" id="12_yfij2"]
 [ext_resource type="Texture2D" uid="uid://dqcsl82c3e7xm" path="res://Sprites/healthbar_frame.png" id="13_ak6de"]
 [ext_resource type="Script" path="res://Scenes/Player/game_stats.gd" id="18_b1c8p"]
+[ext_resource type="PackedScene" uid="uid://3snaf50jgign" path="res://Scenes/Enemy System/wave_notifier.tscn" id="19_bk2og"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0fg7g"]
 atlas = ExtResource("2_rwdns")
@@ -268,6 +269,10 @@ texture = ExtResource("13_ak6de")
 
 [node name="GameStats" type="Node" parent="UI"]
 script = ExtResource("18_b1c8p")
+
+[node name="Wave Notifier" parent="UI" instance=ExtResource("19_bk2og")]
+z_index = 1
+position = Vector2(699, 373)
 
 [connection signal="Healed" from="Health System" to="Health System/AudioStreamPlayer2D" method="_on_health_system_healed"]
 [connection signal="Obliterate" from="Health System" to="." method="_on_health_system_obliterate"]
