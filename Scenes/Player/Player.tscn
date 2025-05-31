@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://glnvuvj3rg5b" path="res://Sprites/money_frame.png" id="12_yfij2"]
 [ext_resource type="Texture2D" uid="uid://dqcsl82c3e7xm" path="res://Sprites/healthbar_frame.png" id="13_ak6de"]
 [ext_resource type="Script" path="res://Scenes/Player/game_stats.gd" id="18_b1c8p"]
-[ext_resource type="PackedScene" uid="uid://3snaf50jgign" path="res://Scenes/Enemy System/wave_notifier.tscn" id="19_bk2og"]
+[ext_resource type="PackedScene" uid="uid://c8453lwsov7v2" path="res://Scenes/Enemy System/wave_notifier.tscn" id="19_bk2og"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0fg7g"]
 atlas = ExtResource("2_rwdns")
