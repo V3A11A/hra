@@ -23,7 +23,7 @@ func Attack() -> void:
 
 func Shoot() -> void:
 	$shoot.play()
-	$"../../../../Camera2D".apply_shake(50, 50)
+	$"../../../../Camera2D".apply_shake(6, 600)
 	bullets.add_child(BULLET.instantiate())
 	bullets.get_child(-1).global_position = weapon_system.player.global_position
 	bullets.get_child(-1).direction = Vector2(weapon_system.get_global_mouse_position() - weapon_system.player.global_position).normalized()

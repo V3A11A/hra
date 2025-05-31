@@ -14,6 +14,7 @@ func _exit_tree() -> void:
 
 
 func _on_health_system_obliterate() -> void:
+	$"../../Player/UI/GameStats".enemies_killed += 1
 	queue_free()
 
 func _process(delta: float) -> void:

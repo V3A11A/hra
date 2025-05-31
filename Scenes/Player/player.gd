@@ -6,12 +6,14 @@ extends CharacterBody2D
 @onready var enemies: Node2D = $"../Enemies"
 
 
-
 func _process(delta: float) -> void:
 	look_at(get_global_mouse_position())
 
 func _on_health_system_obliterate() -> void:
 	#pass #Game over, pánové! 🫡
+	$"../../CanvasLayer/Game Over Screen/CanvasLayer/Speed".stop()
+	$"../../CanvasLayer/Game Over Screen/CanvasLayer/KillCount".text = "[wave]kill count: " + str($"UI/GameStats".enemies_killed)
+	$"../../CanvasLayer/Game Over Screen/CanvasLayer/PlayTime".text = "[wave]time alive: " + str($"SpeedrunClock".get)
 	game.process_mode = Node.PROCESS_MODE_DISABLED
 	game.get_node("../CanvasLayer/Game Over Screen").show()
 	game.get_node("../CanvasLayer/Game Over Screen/CanvasLayer").show()

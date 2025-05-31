@@ -1,22 +1,22 @@
 extends Camera2D
 
-var randomIntensity: float = 0 # Jak moc se bude obrazovka hýbat + předem specifikování
-var shakeTime: float = 0 # Jak dlouho se bude shakeovat + předem specifikování
-var allowShake: bool = true
+var shakeIntensity: float # určení intenzity
+var shakeTime: float # čas trvání
+var allowShake: bool = true # jestli je povoleno v nastavení (defaultně povoleno)
+var rng = RandomNumberGenerator.new() # náhodná generace čísel
 
-var rng = RandomNumberGenerator.new()
-var shakeIntensity: float = 0.0 # Intenzita, předem specifikovaná
+# funkce na aplikování času a intenzity
+func apply_shake(time, intensity):
+	shakeTime = time
+	shakeIntensity = intensity
 
-func apply_shake(moveTime, intensity): # moveTime -> čím vyšší tím kratší doba, intensity -> čím větší tím více třesu
-	shakeTime = moveTime
-	randomIntensity = intensity
-	shakeIntensity = randomIntensity
-
+# funkce se volá každý snímek
 func _process(delta: float) -> void:
 	if !allowShake: return
 	if shakeIntensity > 0:
-		shakeIntensity = lerpf(shakeIntensity, 0, shakeTime * delta) # Třesání kamery od intenzity do 0,po dobu času
-	offset = randomOffset() # Nastavení offsetu u kamery
+		shakeIntensity = lerpf(shakeIntensity, 0, shakeTime * delta) # postupné klesání do 0
+	offset = randomOffset() # náhodně přenese kameru
 
+# funkce generuje Vektor odsazení kamery
 func randomOffset() -> Vector2:
-	return Vector2(rng.randf_range(-shakeIntensity, shakeIntensity), rng.randf_range(-shakeIntensity, shakeIntensity)) # Random pohyb
+	return Vector2(rng.randf_range(-shakeIntensity, shakeIntensity), rng.randf_range(-shakeIntensity, shakeIntensity))

@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://oakkxncsd881"]
+[gd_scene load_steps=36 format=3 uid="uid://oakkxncsd881"]
 
 [ext_resource type="PackedScene" uid="uid://uao8gqlr5nnx" path="res://Scenes/Player/Movement/Movement.tscn" id="1_rw6wu"]
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_sfaps"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://c6vghx4qdo7ph" path="res://Scenes/Player/Health Bar.tscn" id="12_7rpfl"]
 [ext_resource type="Texture2D" uid="uid://glnvuvj3rg5b" path="res://Sprites/money_frame.png" id="12_yfij2"]
 [ext_resource type="Texture2D" uid="uid://dqcsl82c3e7xm" path="res://Sprites/healthbar_frame.png" id="13_ak6de"]
+[ext_resource type="Script" path="res://Scenes/Player/game_stats.gd" id="18_b1c8p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0fg7g"]
 atlas = ExtResource("2_rwdns")
@@ -264,6 +265,9 @@ health = NodePath("../../Health System")
 position = Vector2(-1.52588e-05, 9.53674e-07)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("13_ak6de")
+
+[node name="GameStats" type="Node" parent="UI"]
+script = ExtResource("18_b1c8p")
 
 [connection signal="Healed" from="Health System" to="Health System/AudioStreamPlayer2D" method="_on_health_system_healed"]
 [connection signal="Obliterate" from="Health System" to="." method="_on_health_system_obliterate"]
