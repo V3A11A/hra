@@ -18,7 +18,7 @@ var upgrades = {
 		"Detail": "Area size up",
 		"Cost": [1, 2, 3, 4, 5],
 		"Level": 0,
-		"Value": [1, 2, 3, 4, 5]
+		"Value": [4.2, 5.3, 6.7, 8, 9]
 	}, 
 	2: {
 		"Name": "Sword",

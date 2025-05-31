@@ -9,6 +9,8 @@ var decide = 0
 @onready var health_system = get_tree().get_root().get_node("Main/Game/Player/Health System")
 @onready var bullets = get_tree().get_root().get_node("Main/Game/Player/Anchor/Weapon System/Bullets")
 @onready var hitbox = get_tree().get_root().get_node("Main/Game/Player/Anchor/Weapon System/Melee/Sword/Area2D/CollisionShape2D")
+@onready var sword_collisionshape = get_tree().get_root().get_node("Main/Game/Player/Anchor/Weapon System/Melee/Sword/Area2D/CollisionShape2D").shape
+@onready var sword_sprite = get_tree().get_root().get_node("Main/Game/Player/Anchor/Weapon System/Melee/Sword/AnimatedSprite2D")
 var inShop: bool = false
 
 
@@ -90,8 +92,8 @@ func _on_buy_pressed() -> void:
 				if economy_system.upgrades[decide]["Detail"] == "Damage up":
 					sword.damage = economy_system.upgrades[decide]["Value"][economy_system.upgrades[decide]["Level"]]
 				elif economy_system.upgrades[decide]["Detail"] == "Area size up":
-					pass #sword.area_2D.scale = economy_system.upgrades[decide]["Value"][economy_system.upgrades[decide]["Level"]]
-					#vím, potřebuje opravit!!!
+					sword_sprite.scale = Vector2(economy_system.upgrades[decide]["Value"][economy_system.upgrades[decide]["Level"]], economy_system.upgrades[decide]["Value"][economy_system.upgrades[decide]["Level"]])
+					sword_collisionshape.extents *= economy_system.upgrades[decide]["Value"][economy_system.upgrades[decide]["Level"]]
 				elif economy_system.upgrades[decide]["Detail"] == "Attack Speed up":
 					sword.attack_CD = economy_system.upgrades[decide]["Value"][economy_system.upgrades[decide]["Level"]]
 			economy_system.upgrades[decide]["Level"] += 1
