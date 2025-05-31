@@ -1,8 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://ycv5ec1knv"]
+[gd_scene load_steps=8 format=3 uid="uid://ycv5ec1knv"]
 
 [ext_resource type="Script" path="res://Scripts/game_over_screen.gd" id="1_k543y"]
 [ext_resource type="FontFile" uid="uid://xnlqhu1mjn0n" path="res://Sprites/vhs-gothic.ttf" id="2_o87us"]
+[ext_resource type="Texture2D" uid="uid://bguvnepro5ule" path="res://Sprites/skull.png" id="3_jbvb2"]
 [ext_resource type="AudioStream" uid="uid://be5tuj3w6jace" path="res://Sounds/click.mp3" id="3_vrk0t"]
+[ext_resource type="Texture2D" uid="uid://b1rbj1y8gyyt8" path="res://Sprites/time.png" id="4_e3d7f"]
+[ext_resource type="Texture2D" uid="uid://b3ey7udsjddci" path="res://Sprites/waves.png" id="5_ej5mp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5wkm"]
+bg_color = Color(0.103744, 0.103744, 0.103743, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
 
 [node name="Game Over Screen" type="Node2D"]
 visible = false
@@ -10,6 +21,15 @@ script = ExtResource("1_k543y")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 3
+visible = false
+
+[node name="StatsBackground" type="Panel" parent="CanvasLayer"]
+offset_left = 585.0
+offset_top = 382.0
+offset_right = 1106.0
+offset_bottom = 788.0
+scale = Vector2(1.48, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_a5wkm")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 offset_right = 1920.0
@@ -32,50 +52,83 @@ text = "[wave]GAME OVER"
 fit_content = true
 autowrap_mode = 0
 
+[node name="Stats" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 897.0
+offset_top = 389.0
+offset_right = 1050.0
+offset_bottom = 428.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("2_o87us")
+theme_override_font_sizes/normal_font_size = 34
+bbcode_enabled = true
+text = "[rainbow sat=0.0]Stats:"
+fit_content = true
+autowrap_mode = 0
+
+[node name="KillsSkull" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(641, 479)
+scale = Vector2(1.58334, 1.58334)
+texture = ExtResource("3_jbvb2")
+
 [node name="KillCount" type="RichTextLabel" parent="CanvasLayer"]
-offset_left = 437.0
-offset_top = 361.0
-offset_right = 833.0
-offset_bottom = 415.0
+offset_left = 683.0
+offset_top = 458.0
+offset_right = 1079.0
+offset_bottom = 512.0
 theme_override_constants/outline_size = 20
 theme_override_fonts/normal_font = ExtResource("2_o87us")
-theme_override_font_sizes/normal_font_size = 48
+theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
+text = "kills"
 fit_content = true
 autowrap_mode = 0
 meta_underlined = false
+
+[node name="Time" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(643, 580)
+scale = Vector2(2.14, 2.14)
+texture = ExtResource("4_e3d7f")
 
 [node name="PlayTime" type="RichTextLabel" parent="CanvasLayer"]
-offset_left = 425.0
-offset_top = 478.0
-offset_right = 821.0
-offset_bottom = 532.0
-theme_override_constants/outline_size = 20
-theme_override_fonts/normal_font = ExtResource("2_o87us")
-theme_override_font_sizes/normal_font_size = 48
-bbcode_enabled = true
-fit_content = true
-autowrap_mode = 0
-meta_underlined = false
-
-[node name="Waves Survived" type="RichTextLabel" parent="CanvasLayer"]
-offset_left = 425.0
+offset_left = 683.0
 offset_top = 566.0
-offset_right = 929.0
+offset_right = 1079.0
 offset_bottom = 620.0
 theme_override_constants/outline_size = 20
 theme_override_fonts/normal_font = ExtResource("2_o87us")
-theme_override_font_sizes/normal_font_size = 48
+theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
+text = "time"
+fit_content = true
+autowrap_mode = 0
+meta_underlined = false
+
+[node name="Waves" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(644, 688)
+scale = Vector2(1.95, 1.95)
+texture = ExtResource("5_ej5mp")
+
+[node name="Waves Survived" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 687.0
+offset_top = 667.0
+offset_right = 1191.0
+offset_bottom = 721.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("2_o87us")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "waves"
 fit_content = true
 autowrap_mode = 0
 meta_underlined = false
 
 [node name="Quit" type="Button" parent="CanvasLayer"]
 offset_left = 763.0
-offset_top = 688.0
+offset_top = 869.0
 offset_right = 1159.0
-offset_bottom = 752.0
+offset_bottom = 933.0
 theme_override_fonts/font = ExtResource("2_o87us")
 theme_override_font_sizes/font_size = 47
 text = "> Quit <"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://oakkxncsd881"]
+[gd_scene load_steps=37 format=3 uid="uid://oakkxncsd881"]
 
 [ext_resource type="PackedScene" uid="uid://uao8gqlr5nnx" path="res://Scenes/Player/Movement/Movement.tscn" id="1_rw6wu"]
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_sfaps"]
@@ -154,6 +154,9 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ll27"]
 radius = 55.0
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_koge5"]
+polygon = PackedVector2Array(-20, -20, -30, -20, -30, -10, -40, -10, -41, 10, -31, 10, -30, 20, -21, 20, -21, 61, -11, 61, -11, 72, 9, 72, 10, 61, 19, 61, 20, 21, 30, 21, 30, 11, 79, 4, 213, 4, 212, -5, 78, -6, 41, -10, 32, -10, 31, -20, 21, -21, 21, -60, 10, -61, 11, -72, -11, -71, -11, -63, -20, -61)
+
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 4
 script = ExtResource("1_sfaps")
@@ -268,6 +271,10 @@ texture = ExtResource("13_ak6de")
 
 [node name="GameStats" type="Node" parent="UI"]
 script = ExtResource("18_b1c8p")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_koge5")
+occluder_light_mask = 5
 
 [connection signal="Healed" from="Health System" to="Health System/AudioStreamPlayer2D" method="_on_health_system_healed"]
 [connection signal="Obliterate" from="Health System" to="." method="_on_health_system_obliterate"]

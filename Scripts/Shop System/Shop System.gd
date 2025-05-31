@@ -72,10 +72,10 @@ func _on_buy_pressed() -> void:
 	if economy_system.money >= economy_system.upgrades[decide]["Cost"][economy_system.upgrades[decide]["Level"]]:
 		if economy_system.upgrades[decide]["Level"] <= (economy_system.upgrades[decide]["Cost"].size())-1:
 			economy_system.money -= economy_system.upgrades[decide]["Cost"][economy_system.upgrades[decide]["Level"]]
-			get_node("Control/Message").text = "You have bought this upgrade"
+			get_node("Control/Message").text = "Bought upgrade!"
 			if economy_system.upgrades[decide]["Name"] == "Potion":
 				health_system.Take_Damage(-(economy_system.upgrades[decide]["Value"][economy_system.upgrades[decide]["Level"]]))
-			elif economy_system.upgrades[decide]["Name"] == "Magic potion":
+			elif economy_system.upgrades[decide]["Name"] == "healthUP! health drink":
 				pass #health_system.Change_Max_Health(economy_system.upgrades[decide]["Cost"][economy_system.upgrades[decide]["Level"]], true)
 				#potřebuje opravit
 			elif economy_system.upgrades[decide]["Name"] == "Boots":
@@ -96,7 +96,7 @@ func _on_buy_pressed() -> void:
 			economy_system.upgrades[decide]["Level"] += 1
 			changeItems()
 		else:
-			get_node("Control/Message").text = "You've reached maximal level on this upgrade"
+			get_node("Control/Message").text = "You've reached the maximal level for this upgrade"
 		
 	else:
-		get_node("Control/Message").text = "You have enough money"
+		get_node("Control/Message").text = "Not enough funds"

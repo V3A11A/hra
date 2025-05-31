@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://lledmr72stl7"]
+[gd_scene load_steps=7 format=3 uid="uid://lledmr72stl7"]
 
 [ext_resource type="Script" path="res://vending_machine.gd" id="1_4yt7c"]
-[ext_resource type="Texture2D" uid="uid://cdrbpembjdf8j" path="res://Sprites/Lab_Hunters_icon.png" id="2_bvkco"]
+[ext_resource type="Texture2D" uid="uid://cev3j4c5jrlqr" path="res://Sprites/vending_top.png" id="2_3s8lv"]
+[ext_resource type="Texture2D" uid="uid://wwc3ibru7jms" path="res://Sprites/light.png" id="3_8a0nn"]
 [ext_resource type="Texture2D" uid="uid://bkc3lot4wja36" path="res://Sprites/hint.png" id="3_bx64i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_feyra"]
@@ -14,7 +15,11 @@ size = Vector2(203, 233)
 script = ExtResource("1_4yt7c")
 
 [node name="Machine" type="Sprite2D" parent="."]
-texture = ExtResource("2_bvkco")
+texture = ExtResource("2_3s8lv")
+
+[node name="PointLight2D" type="PointLight2D" parent="Machine"]
+texture = ExtResource("3_8a0nn")
+texture_scale = 2.35
 
 [node name="tělo" type="StaticBody2D" parent="."]
 
