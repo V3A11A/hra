@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://bmufr65pppa0w"]
+[gd_scene load_steps=52 format=3 uid="uid://bmufr65pppa0w"]
 
 [ext_resource type="Script" path="res://Scripts/Shop System/Shop System.gd" id="1_1a5v6"]
 [ext_resource type="Texture2D" uid="uid://yveew1jl6j3e" path="res://Sprites/vending/Untitled00086400.jpg" id="2_a0imm"]
@@ -38,6 +38,14 @@
 [ext_resource type="Texture2D" uid="uid://c8bcdx2go7sv4" path="res://Sprites/vending/Untitled00086432.jpg" id="34_dmlmp"]
 [ext_resource type="Texture2D" uid="uid://og1bqmvqyfi" path="res://Sprites/vending/Untitled00086433.jpg" id="35_xlust"]
 [ext_resource type="Texture2D" uid="uid://cn06lkegdghfl" path="res://Sprites/vending/Untitled00086434.jpg" id="36_xp4wg"]
+[ext_resource type="Texture2D" uid="uid://dandw3akhgcy1" path="res://Sprites/corpse.png" id="38_exy3x"]
+[ext_resource type="Texture2D" uid="uid://c1afsggsq5fk5" path="res://Sprites/alarm_light.png" id="39_ff30q"]
+[ext_resource type="Texture2D" uid="uid://bjx6p1mce3ssw" path="res://Sprites/blood2.png" id="40_oh2lv"]
+[ext_resource type="Texture2D" uid="uid://c7hjihbbi0w4l" path="res://Sprites/door_green.png" id="41_g7jyj"]
+[ext_resource type="Texture2D" uid="uid://b6xctuv8l0lv7" path="res://Sprites/flashlight.png" id="42_w1shv"]
+[ext_resource type="Texture2D" uid="uid://b1o8e6o0qlqbq" path="res://Sprites/github_logo.png" id="43_yqnsa"]
+[ext_resource type="Texture2D" uid="uid://bfx0xiv767f86" path="res://Sprites/healthup.png" id="44_l16l4"]
+[ext_resource type="Texture2D" uid="uid://cd7usbmuujk5w" path="res://Sprites/kuba.png" id="45_kr0b2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bry2x"]
 animations = [{
@@ -246,9 +254,6 @@ offset_top = 51.0
 offset_right = -35.0
 offset_bottom = 52.0
 
-[node name="Item Showcase" type="Sprite2D" parent="Control"]
-position = Vector2(36, -51)
-
 [node name="Name" type="Label" parent="Control"]
 layout_mode = 0
 offset_left = 557.436
@@ -310,6 +315,53 @@ offset_right = 886.436
 offset_bottom = 835.436
 theme_override_fonts/font = ExtResource("2_ml3kr")
 theme_override_font_sizes/font_size = 29
+
+[node name="Shop Items" type="Node" parent="Control"]
+
+[node name="Potion" type="Sprite2D" parent="Control/Shop Items"]
+position = Vector2(806, 554)
+scale = Vector2(10.4615, 5.06383)
+texture = ExtResource("38_exy3x")
+
+[node name="Health Up" type="Sprite2D" parent="Control/Shop Items"]
+visible = false
+position = Vector2(811.688, 550.688)
+scale = Vector2(7.44257, 7.82661)
+texture = ExtResource("39_ff30q")
+
+[node name="Boots" type="Sprite2D" parent="Control/Shop Items"]
+visible = false
+position = Vector2(809, 559)
+texture = ExtResource("40_oh2lv")
+
+[node name="Gun Dmg Up" type="Sprite2D" parent="Control/Shop Items"]
+visible = false
+position = Vector2(800, 552.25)
+scale = Vector2(2.21875, 16.9688)
+texture = ExtResource("41_g7jyj")
+
+[node name="Gun Firerate Up" type="Sprite2D" parent="Control/Shop Items"]
+visible = false
+position = Vector2(799, 555)
+scale = Vector2(1.79747, 1.07031)
+texture = ExtResource("42_w1shv")
+
+[node name="Sword Dmg Up" type="Sprite2D" parent="Control/Shop Items"]
+visible = false
+position = Vector2(810, 558)
+texture = ExtResource("43_yqnsa")
+
+[node name="Sword Area Up" type="Sprite2D" parent="Control/Shop Items"]
+visible = false
+position = Vector2(810, 561)
+scale = Vector2(3.21642, 2.01786)
+texture = ExtResource("44_l16l4")
+
+[node name="Sword Atk Spd" type="Sprite2D" parent="Control/Shop Items"]
+visible = false
+position = Vector2(802, 543)
+scale = Vector2(0.218898, 0.203583)
+texture = ExtResource("45_kr0b2")
 
 [node name="click" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(0, 53)

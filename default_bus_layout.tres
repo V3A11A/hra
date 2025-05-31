@@ -4,6 +4,7 @@
 resource_name = "Reverb"
 
 [resource]
+bus/0/volume_db = -0.130497
 bus/1/name = &"UI sounds"
 bus/1/solo = false
 bus/1/mute = false
@@ -14,7 +15,7 @@ bus/2/name = &"Game Audio"
 bus/2/solo = false
 bus/2/mute = false
 bus/2/bypass_fx = false
-bus/2/volume_db = 0.0
+bus/2/volume_db = -0.130497
 bus/2/send = &"Master"
 bus/2/effect/0/effect = SubResource("AudioEffectReverb_vya7k")
 bus/2/effect/0/enabled = true

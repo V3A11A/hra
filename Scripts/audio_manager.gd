@@ -1,6 +1,6 @@
 extends Node
 
-const mute := -30.0
+const mute := -60.0
 const default_music_db := 0.0
 const fade_time := 2.0
 
@@ -11,7 +11,7 @@ var current_music_player: AudioStreamPlayer
 
 
 func _ready() -> void:
-	AudioServer.set_bus_volume_db(0, 2.5)
+	AudioServer.set_bus_volume_db(0, 0.25)
 	current_music_player = menu_song
 	current_music_player.play()
 
