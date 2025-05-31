@@ -231,6 +231,7 @@ _data = {
 size = Vector2(20, 23.0566)
 
 [node name="PlayerDoor" type="Node2D"]
+z_index = 1
 scale = Vector2(3.6527, 3.93426)
 script = ExtResource("1_qounb")
 
@@ -278,7 +279,7 @@ scale = Vector2(-6.52615, 15.8653)
 shape = SubResource("RectangleShape2D_u24qw")
 
 [node name="OpenTimer" type="Timer" parent="."]
-wait_time = 1.5
+wait_time = 0.5
 
 [node name="CloseTimer" type="Timer" parent="."]
 wait_time = 5.0

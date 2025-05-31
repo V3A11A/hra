@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://hf0ri01jcam3"]
+
+[ext_resource type="Texture2D" uid="uid://uabavp0mvvbd" path="res://Sprites/blood3.png" id="1_0ab7n"]
+
+[node name="BloodstainPoly" type="Sprite2D"]
+texture = ExtResource("1_0ab7n")

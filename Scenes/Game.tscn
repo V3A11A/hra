@@ -305,12 +305,10 @@ scale = Vector2(1.0927, 1.17693)
 position = Vector2(301, -43)
 
 [node name="Door" parent="." instance=ExtResource("5_p86a5")]
-z_index = 1
 position = Vector2(1221, -1447)
 rotation = 1.57079
 
 [node name="Door2" parent="." instance=ExtResource("5_p86a5")]
-z_index = 1
 position = Vector2(-1404, -7463)
 rotation = 3.14159
 

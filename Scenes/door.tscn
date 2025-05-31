@@ -234,6 +234,7 @@ polygon = PackedVector2Array(-235, -33, 233, -33, 234, 30, -234, 33)
 radius = 346.199
 
 [node name="Door" type="Node2D"]
+z_index = 1
 scale = Vector2(3.6527, 3.93426)
 script = ExtResource("1_lp6sx")
 
