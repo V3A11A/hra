@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://bmufr65pppa0w"]
+[gd_scene load_steps=44 format=3 uid="uid://bmufr65pppa0w"]
 
 [ext_resource type="Script" path="res://Scripts/Shop System/Shop System.gd" id="1_1a5v6"]
 [ext_resource type="Texture2D" uid="uid://yveew1jl6j3e" path="res://Sprites/vending/Untitled00086400.jpg" id="2_a0imm"]
@@ -204,8 +204,6 @@ _data = {
 "moveIn": SubResource("Animation_gp8e6")
 }
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_lo435"]
-
 [node name="Shop System" type="CanvasLayer"]
 process_mode = 3
 offset = Vector2(0, 1100)
@@ -248,9 +246,8 @@ offset_top = 51.0
 offset_right = -35.0
 offset_bottom = 52.0
 
-[node name="Animated Items" type="AnimatedSprite2D" parent="Control"]
-position = Vector2(815.436, 553.436)
-sprite_frames = SubResource("SpriteFrames_lo435")
+[node name="Item Showcase" type="Sprite2D" parent="Control"]
+position = Vector2(36, -51)
 
 [node name="Name" type="Label" parent="Control"]
 layout_mode = 0
