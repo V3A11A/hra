@@ -9,7 +9,7 @@ var decide = 0
 @onready var health_system = get_tree().get_root().get_node("Main/Game/Player/Health System")
 @onready var bullets = get_tree().get_root().get_node("Main/Game/Player/Anchor/Weapon System/Bullets")
 @onready var hitbox = get_tree().get_root().get_node("Main/Game/Player/Anchor/Weapon System/Melee/Sword/Area2D/CollisionShape2D")
-
+var inShop: bool = false
 
 
 @onready var Labelname: Label = $Control/Name
@@ -36,7 +36,8 @@ func _ready() -> void:
 func _on_exit_pressed() -> void:
 	$click.play()
 	shop_animation.play("moveDown")
-	get_tree().paused = false
+	inShop = !inShop
+	get_tree().paused = !get_tree().paused
 	
 func changeItems():
 	get_node("Control/Name").text = economy_system.upgrades[decide]["Name"]

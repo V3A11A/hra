@@ -6,15 +6,19 @@ extends Node2D
 @onready var economy_canvas: CanvasLayer = $"../../Game/Player/EconomySystem/CanvasLayer"
 @onready var hpbar: CanvasLayer = $"../../Game/Player/UI"
 var inGame: bool = false
+var inPauseMenu: bool = false
+@onready var shop_system: CanvasLayer = $"../../Game/Shop System"
 
 
 
 func _unhandled_key_input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("Menu") and inGame:
+	if Input.is_action_just_pressed("Menu") and inGame and !shop_system.inShop:
+		inPauseMenu = !inPauseMenu
 		toggle_menu()
 
 func _on_back_to_game_pressed() -> void:
 	$click.play()
+	inPauseMenu = !inPauseMenu
 	resume_game()
 
 func _on_options_pressed() -> void:

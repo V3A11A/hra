@@ -12,6 +12,7 @@ size = Vector2(204, 215)
 size = Vector2(203, 233)
 
 [node name="VendingMachine" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_4yt7c")
 
 [node name="Machine" type="Sprite2D" parent="."]
