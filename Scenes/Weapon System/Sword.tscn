@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://ukkrukhf47ce"]
+[gd_scene load_steps=17 format=3 uid="uid://ukkrukhf47ce"]
 
 [ext_resource type="Script" path="res://Scripts/Weapon System/Sword.gd" id="1_f3xi3"]
+[ext_resource type="AudioStream" uid="uid://40ddm5bke7p5" path="res://Sounds/sword.mp3" id="3_kuenf"]
 [ext_resource type="Texture2D" uid="uid://rrwapx2a35yq" path="res://Sprites/sword_swing.png" id="3_sd3vc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oefxt"]
@@ -50,6 +51,20 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sword_sound")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gckpl"]
@@ -148,3 +163,6 @@ sprite_frames = SubResource("SpriteFrames_rpu14")
 autoplay = "default"
 frame_progress = 0.418462
 speed_scale = 2.0
+
+[node name="sword_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_kuenf")
