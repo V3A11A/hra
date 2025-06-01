@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://d30oq1sqxpwu0"]
+
+[ext_resource type="Texture2D" uid="uid://bmxy57ehq2vrq" path="res://Sprites/bench.png" id="1_4wmts"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_htoi4"]
+size = Vector2(69, 28)
+
+[node name="Bench" type="Node2D"]
+z_index = 1
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+collision_layer = 5
+mass = 0.001
+gravity_scale = 0.0
+can_sleep = false
+freeze = true
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+texture = ExtResource("1_4wmts")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("RectangleShape2D_htoi4")
