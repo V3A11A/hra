@@ -12,37 +12,24 @@ var decide = 0
 #@onready var sword_collisionshape = get_tree().get_root().get_node("Main/Game/Player/Anchor/Weapon System/Melee/Sword/Area2D/CollisionShape2D").shape
 #@onready var sword_sprite = get_tree().get_root().get_node("Main/Game/Player/Anchor/Weapon System/Melee/Sword/AnimatedSprite2D")
 var inShop: bool = false
-var sprites = []
+@onready var sprites = get_node("Control/Shop Items").get_children()
 
 
 @onready var Labelname: Label = $Control/Name
 @onready var Labeldetail: Label = $Control/Detail
 
 func _ready() -> void:
-	for child in get_node("Control/Shop Items").get_children():
-		if child is Sprite2D:
-			sprites.append(child)
-		
-	print(decide)
-	print(economy_system.upgrades[decide]["Name"])
-	print(economy_system.upgrades[decide]["Detail"])
-	print(economy_system.upgrades[decide]["Cost"])
-	print(economy_system.upgrades[decide]["Value"])
 	get_node("Control/Name").text = economy_system.upgrades[decide]["Name"]
 	get_node("Control/Detail").text = economy_system.upgrades[decide]["Detail"]
 	get_node("Control/Detail").text += "\nCost: " + str(economy_system.upgrades[decide]["Cost"][economy_system.upgrades[decide]["Level"]])
 
 
 
-#func _input(event: InputEvent) -> void:
-#	if event.is_action_pressed("Shop_Menu"):
-#		get_tree().paused = true
-#		shop_animation.play("moveIn")
-		
-	
+
 func _on_exit_pressed() -> void:
 	$click.play()
 	shop_animation.play("moveDown")
+	get_node("Control/Message").text = ""
 	inShop = !inShop
 	get_tree().paused = !get_tree().paused
 
@@ -50,11 +37,11 @@ func _on_exit_pressed() -> void:
 func changeItems():
 	get_node("Control/Name").text = economy_system.upgrades[decide]["Name"]
 	get_node("Control/Detail").text = economy_system.upgrades[decide]["Detail"]
-	if economy_system.upgrades[decide]["Level"] < (economy_system.upgrades[decide]["Cost"].size())-1:
-		get_node("Control/Detail").text += "\nCost: " + str(economy_system.upgrades[decide]["Cost"][economy_system.upgrades[decide]["Level"]])
-	else:
-		get_node("Control/Detail").text = "You've reached maximal level on this upgrade"
-	
+	if economy_system.upgrades[decide]["Level"] > economy_system.upgrades[decide]["Cost"].size() - 1:
+		get_node("Control/Detail").text = "maximal level reached!"
+		return
+	get_node("Control/Detail").text += "\nCost: " + str(economy_system.upgrades[decide]["Cost"][economy_system.upgrades[decide]["Level"]])
+
 
 func _on_left_pressed() -> void:
 	$click.play()
@@ -62,9 +49,11 @@ func _on_left_pressed() -> void:
 	if decide == 0:
 		decide = 7
 		changeItems()
+		get_node("Control/Message").text = ""
 	else:
 		decide -= 1
 		changeItems()
+		get_node("Control/Message").text = ""
 	sprites[decide].show()
 
 
@@ -74,42 +63,56 @@ func _on_right_pressed() -> void:
 	if decide == 7:
 		decide = 0
 		changeItems()
+		get_node("Control/Message").text = ""
 	else:
 		decide += 1
 		changeItems()
+		get_node("Control/Message").text = ""
 	sprites[decide].show()
 
 
 func _on_buy_pressed() -> void:
 	$click.play()
-	if economy_system.money >= economy_system.upgrades[decide]["Cost"][economy_system.upgrades[decide]["Level"]]:
-		if economy_system.upgrades[decide]["Level"] <= (economy_system.upgrades[decide]["Cost"].size()):
-			economy_system.money -= economy_system.upgrades[decide]["Cost"][economy_system.upgrades[decide]["Level"]]
-			get_node("Control/Message").text = "Bought upgrade!"
-			if economy_system.upgrades[decide]["Name"] == "Potion":
-				health_system.Take_Damage(-(economy_system.upgrades[decide]["Value"][economy_system.upgrades[decide]["Level"]]))
-			elif economy_system.upgrades[decide]["Name"] == "Magic Potion":
-				health_system.Change_Max_Health(economy_system.upgrades[decide]["Value"][economy_system.upgrades[decide]["Level"]], true)
-			elif economy_system.upgrades[decide]["Name"] == "Boots":
-				movement.speed_multiplier = economy_system.upgrades[decide]["Value"][economy_system.upgrades[decide]["Level"]]
-			elif economy_system.upgrades[decide]["Name"] == "Gun":
-				if economy_system.upgrades[decide]["Detail"] == "Damage up":
-					handgun.damage = economy_system.upgrades[decide]["Value"][economy_system.upgrades[decide]["Level"]]
-				elif economy_system.upgrades[decide]["Detail"] == "Firerate up":
-					handgun.attack_CD = economy_system.upgrades[decide]["Value"][economy_system.upgrades[decide]["Level"]]
-			elif economy_system.upgrades[decide]["Name"] == "Sword":
-				if economy_system.upgrades[decide]["Detail"] == "Damage up":
-					sword.damage = economy_system.upgrades[decide]["Value"][economy_system.upgrades[decide]["Level"]]
-				elif economy_system.upgrades[decide]["Detail"] == "Area size up":
-					#sword_sprite.scale = Vector2(economy_system.upgrades[decide]["Value"][economy_system.upgrades[decide]["Level"]], economy_system.upgrades[decide]["Value"][economy_system.upgrades[decide]["Level"]])
-					#sword_collisionshape.extents *= economy_system.upgrades[decide]["Value"][economy_system.upgrades[decide]["Level"]]
-					sword.scale = economy_system.upgrades[decide]["Value"][economy_system.upgrades[decide]["Level"]]*Vector2.ONE
-				elif economy_system.upgrades[decide]["Detail"] == "Attack Speed up":
-					sword.attack_CD = economy_system.upgrades[decide]["Value"][economy_system.upgrades[decide]["Level"]]
-			economy_system.upgrades[decide]["Level"] += 1
-			changeItems()
-		else:
-			get_node("Control/Message").text = "You've reached the maximal level for this upgrade"
+	
+	
+	if economy_system.upgrades[decide]["Level"] > economy_system.upgrades[decide]["Cost"].size() - 1:
+		#get_node("Control/Message").text = "You've reached the maximal level for this upgrade"
+		return
 		
-	else:
+	if not economy_system.money >= economy_system.upgrades[decide]["Cost"][economy_system.upgrades[decide]["Level"]]:
 		get_node("Control/Message").text = "Not enough funds"
+		return
+	
+	var cost : int = economy_system.upgrades[decide]["Cost"][economy_system.upgrades[decide]["Level"]]
+	var value : int = economy_system.upgrades[decide]["Value"][economy_system.upgrades[decide]["Level"]]
+	var item_name : String = economy_system.upgrades[decide]["Name"]
+	
+	
+	economy_system.money -= cost
+	get_node("Control/Message").text = "Bought upgrade!"
+	
+	if item_name == "Potion":
+		health_system.Take_Damage(-value)
+	elif item_name == "Magic Potion":
+		health_system.Change_Max_Health(value, true)
+	elif item_name == "Boots":
+		movement.speed_multiplier = value
+	elif item_name == "Gun":
+		if economy_system.upgrades[decide]["Detail"] == "Damage up":
+			handgun.damage = value
+		elif economy_system.upgrades[decide]["Detail"] == "Firerate up":
+			handgun.attack_CD = value
+	elif item_name == "Sword":
+		if economy_system.upgrades[decide]["Detail"] == "Damage up":
+			sword.damage = value
+		elif economy_system.upgrades[decide]["Detail"] == "Area size up":
+			sword.scale = value*Vector2.ONE
+		elif economy_system.upgrades[decide]["Detail"] == "Attack Speed up":
+			sword.attack_CD = value
+	
+	economy_system.upgrades[decide]["Level"] += 1
+	changeItems()
+	
+	
+	#if economy_system.upgrades[decide]["Level"] > economy_system.upgrades[decide]["Cost"].size() - 1:
+		#get_node("Control/Message").text = "You've reached the maximal level for this upgrade"
