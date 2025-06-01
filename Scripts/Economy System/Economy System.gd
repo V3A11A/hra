@@ -28,14 +28,14 @@ var upgrades = {
 		"Value": [0.5, 2, 3.9, 5.5, 7.5]
 	}, 
 	3:{
-		"Name": "Weapon",
+		"Name": "Gun",
 		"Detail": "Damage up",
 		"Cost": [1, 2, 3, 4, 5],
 		"Level": 0,
 		"Value": [1, 2, 3, 4, 5]
 	}, 
 	4: {
-		"Name": "Weapon",
+		"Name": "Gun",
 		"Detail": "Firerate up",
 		"Cost": [1, 2, 3, 4, 5],
 		"Level": 0,
