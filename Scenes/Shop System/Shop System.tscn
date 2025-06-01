@@ -43,9 +43,9 @@
 [ext_resource type="Texture2D" uid="uid://bjx6p1mce3ssw" path="res://Sprites/blood2.png" id="40_oh2lv"]
 [ext_resource type="Texture2D" uid="uid://c7hjihbbi0w4l" path="res://Sprites/door_green.png" id="41_g7jyj"]
 [ext_resource type="Texture2D" uid="uid://b6xctuv8l0lv7" path="res://Sprites/flashlight.png" id="42_w1shv"]
-[ext_resource type="Texture2D" uid="uid://b1o8e6o0qlqbq" path="res://Sprites/github_logo.png" id="43_yqnsa"]
+[ext_resource type="Texture2D" uid="uid://chyvgwpwy5sjn" path="res://Sprites/boots.png" id="43_bcyxy"]
 [ext_resource type="Texture2D" uid="uid://bfx0xiv767f86" path="res://Sprites/healthup.png" id="44_l16l4"]
-[ext_resource type="Texture2D" uid="uid://cd7usbmuujk5w" path="res://Sprites/kuba.png" id="45_kr0b2"]
+[ext_resource type="Texture2D" uid="uid://equxtlbp7pto" path="res://Sprites/syringe.png" id="45_32nqs"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bry2x"]
 animations = [{
@@ -348,8 +348,9 @@ texture = ExtResource("42_w1shv")
 
 [node name="Boots" type="Sprite2D" parent="Control/Shop Items"]
 visible = false
-position = Vector2(810, 558)
-texture = ExtResource("43_yqnsa")
+position = Vector2(803, 562)
+scale = Vector2(3.97656, 3.97656)
+texture = ExtResource("43_bcyxy")
 
 [node name="Potion" type="Sprite2D" parent="Control/Shop Items"]
 visible = false
@@ -359,9 +360,9 @@ texture = ExtResource("44_l16l4")
 
 [node name="Magic Potion" type="Sprite2D" parent="Control/Shop Items"]
 visible = false
-position = Vector2(802, 543)
-scale = Vector2(0.218898, 0.203583)
-texture = ExtResource("45_kr0b2")
+position = Vector2(809, 546.5)
+scale = Vector2(4.625, 3.70312)
+texture = ExtResource("45_32nqs")
 
 [node name="click" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(0, 53)
