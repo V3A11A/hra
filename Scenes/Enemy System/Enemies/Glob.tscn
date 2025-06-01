@@ -263,6 +263,7 @@ libraries = {
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 scale = Vector2(1.84, 1.84)
+energy = 0.0
 texture = ExtResource("9_kqwed")
 height = 95.0
 

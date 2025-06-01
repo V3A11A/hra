@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dcnir5fmho7n5" path="res://Sprites/playerdoor.png" id="4_bfr17"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_co4ms"]
-size = Vector2(49.1261, 16)
+size = Vector2(55.2633, 16)
 
 [sub_resource type="Animation" id="Animation_and6b"]
 length = 0.001

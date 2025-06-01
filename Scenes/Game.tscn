@@ -258,7 +258,12 @@ scale = Vector2(1.46109, 1.57371)
 [node name="PlayerDoor2" parent="Map" instance=ExtResource("5_swxq0")]
 position = Vector2(6564, -7033)
 rotation = 1.57079
-scale = Vector2(3.81464, 4.10868)
+scale = Vector2(4.81464, 5.18576)
+
+[node name="PlayerDoor3" parent="Map" instance=ExtResource("5_swxq0")]
+position = Vector2(3260, -8256)
+rotation = 2.61799
+scale = Vector2(5.66605, 6.1028)
 
 [node name="Alarm Lights" type="Node" parent="Map"]
 
