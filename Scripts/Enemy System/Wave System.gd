@@ -64,10 +64,8 @@ func Begin_Game() -> void:
 func Start_Next_Wave() -> void:
 	Stop_Timers()
 	Increment_Difficulty()
-	
 	$"../Player/UI/Wave Notifier/WAVE".text = "[wave]wave " + str(wave) + " begins!"
-	$"../Player/UI/Wave Notifier/WAVE".fade_in()
-	$"../Player/UI/Wave Notifier/WAVE".fade_out()
+	$"../Player/UI/Wave Notifier/WAVE".fade_in_then_out()
 
 	new_wave.emit(wave)
 

@@ -1,14 +1,11 @@
 extends RichTextLabel
 
-func _ready() -> void:
-	self.mouse_filter = Control.MOUSE_FILTER_IGNORE
+func _ready():
+	self.self_modulate.a = 0.0
+	fade_in_then_out()
 
-func fade_in():
-	self.modulate.a = 0.0
+func fade_in_then_out():
 	var tween = create_tween()
-	tween.tween_property(self, "modulate:a", 1.0, 1.0)
-
-func fade_out():
-	self.modulate.a = 1.0
-	var tween = create_tween()
-	tween.tween_property(self, "modulate:a", 0.0, 1.0)
+	tween.tween_property(self, "self_modulate:a", 1.0, 1.0)
+	tween.tween_interval(1.0)
+	tween.tween_property(self, "self_modulate:a", 0.0, 1.0)
