@@ -1,120 +1,53 @@
-[gd_scene load_steps=30 format=3 uid="uid://jqeqtboltjl0"]
+[gd_scene load_steps=22 format=3 uid="uid://jqeqtboltjl0"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy System/Enemy.gd" id="1_rcpq1"]
 [ext_resource type="PackedScene" uid="uid://c4ni0vy75q3fl" path="res://Scenes/Enemy System/Enemy Movement Core.tscn" id="2_77oqo"]
 [ext_resource type="Shader" path="res://Scenes/Player/damage_blink.gdshader" id="3_4i3j3"]
-[ext_resource type="Texture2D" uid="uid://dovw47enupjug" path="res://Sprites/walkanim.png" id="4_a8oxp"]
+[ext_resource type="Texture2D" uid="uid://dmf71gywspp6c" path="res://Sprites/spider.png" id="4_shnam"]
 [ext_resource type="Script" path="res://Scripts/Player/blink_animation.gd" id="5_yvkkc"]
 [ext_resource type="PackedScene" uid="uid://m0d1mkwvbmjy" path="res://Scenes/Health System/Health System.tscn" id="6_sx7aa"]
 [ext_resource type="PackedScene" uid="uid://cst3ov4i06fqe" path="res://Scenes/Economy System/Money Holder.tscn" id="7_b6ept"]
+[ext_resource type="Texture2D" uid="uid://b6xctuv8l0lv7" path="res://Sprites/flashlight.png" id="8_00l8k"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mphvi"]
 shader = ExtResource("3_4i3j3")
 shader_parameter/flash_color = Color(0.756863, 0.141176, 0.141176, 0.494118)
 shader_parameter/flash_value = null
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0fg7g"]
-atlas = ExtResource("4_a8oxp")
-region = Rect2(0, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsobt"]
+atlas = ExtResource("4_shnam")
+region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yjus5"]
-atlas = ExtResource("4_a8oxp")
-region = Rect2(0, 16, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfxns"]
+atlas = ExtResource("4_shnam")
+region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ppgj1"]
-atlas = ExtResource("4_a8oxp")
-region = Rect2(0, 64, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_irmj8"]
+atlas = ExtResource("4_shnam")
+region = Rect2(0, 64, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fad5f"]
-atlas = ExtResource("4_a8oxp")
-region = Rect2(0, 48, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctm2x"]
+atlas = ExtResource("4_shnam")
+region = Rect2(0, 96, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_r4jbr"]
-atlas = ExtResource("4_a8oxp")
-region = Rect2(0, 80, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6ce0j"]
-atlas = ExtResource("4_a8oxp")
-region = Rect2(0, 112, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s71v7"]
-atlas = ExtResource("4_a8oxp")
-region = Rect2(0, 128, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xav17"]
-atlas = ExtResource("4_a8oxp")
-region = Rect2(0, 144, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nv1h3"]
-atlas = ExtResource("4_a8oxp")
-region = Rect2(0, 160, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lbidm"]
-atlas = ExtResource("4_a8oxp")
-region = Rect2(0, 192, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2cnxl"]
-atlas = ExtResource("4_a8oxp")
-region = Rect2(0, 224, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ld6te"]
-atlas = ExtResource("4_a8oxp")
-region = Rect2(0, 256, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hoi5j"]
-atlas = ExtResource("4_a8oxp")
-region = Rect2(0, 272, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_2nwhh"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_mha2i"]
 animations = [{
-"frames": [],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0fg7g")
+"texture": SubResource("AtlasTexture_wsobt")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yjus5")
+"texture": SubResource("AtlasTexture_wfxns")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ppgj1")
+"texture": SubResource("AtlasTexture_irmj8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fad5f")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r4jbr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6ce0j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s71v7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xav17")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nv1h3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lbidm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2cnxl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ld6te")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hoi5j")
+"texture": SubResource("AtlasTexture_ctm2x")
 }],
 "loop": true,
-"name": &"walk",
-"speed": 20.0
+"name": &"default",
+"speed": 6.98
 }]
 
 [sub_resource type="Animation" id="Animation_o8aix"]
@@ -208,11 +141,9 @@ drag = 2.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_mphvi")
 rotation = 1.5708
-scale = Vector2(20, 20)
-sprite_frames = SubResource("SpriteFrames_2nwhh")
-animation = &"walk"
-autoplay = "walk"
-frame_progress = 0.312612
+scale = Vector2(7.49386, 7.49386)
+sprite_frames = SubResource("SpriteFrames_mha2i")
+autoplay = "default"
 
 [node name="BlinkAnimation" type="AnimationPlayer" parent="AnimatedSprite2D"]
 libraries = {
@@ -235,6 +166,40 @@ money = 5
 libraries = {
 "": SubResource("AnimationLibrary_bi5k5")
 }
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(3, -633)
+scale = Vector2(4.93671, 4.93671)
+color = Color(0.613469, 0.363106, 1, 1)
+texture = ExtResource("8_00l8k")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(460, 462)
+rotation = 2.35619
+scale = Vector2(4.93671, 4.93671)
+color = Color(0.613469, 0.363106, 1, 1)
+texture = ExtResource("8_00l8k")
+
+[node name="PointLight2D3" type="PointLight2D" parent="."]
+position = Vector2(-556, 334)
+rotation = 4.18879
+scale = Vector2(4.93671, 4.93671)
+color = Color(0.613469, 0.363106, 1, 1)
+texture = ExtResource("8_00l8k")
+
+[node name="PointLight2D4" type="PointLight2D" parent="."]
+position = Vector2(-329, -546)
+rotation = 5.75959
+scale = Vector2(4.93671, 4.93671)
+color = Color(0.613469, 0.363106, 1, 1)
+texture = ExtResource("8_00l8k")
+
+[node name="PointLight2D5" type="PointLight2D" parent="."]
+position = Vector2(328, -561)
+rotation = 6.80678
+scale = Vector2(4.93671, 4.93671)
+color = Color(0.613469, 0.363106, 1, 1)
+texture = ExtResource("8_00l8k")
 
 [connection signal="Damage_Taken" from="Health System" to="AnimatedSprite2D/BlinkAnimation" method="_on_health_system_damage_taken"]
 [connection signal="Obliterate" from="Health System" to="." method="_on_health_system_obliterate"]
