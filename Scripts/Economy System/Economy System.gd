@@ -4,7 +4,7 @@ extends Node
 
 
 
-var money:int = 9999
+var money:int
 var upgrades = {
 	0: {
 		"Name": "Sword",
