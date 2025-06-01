@@ -24,7 +24,7 @@ func _on_health_system_obliterate() -> void:
 	var blood = BloodStainTypes[randomnumber].instantiate()
 	blood.position = position
 	blood.rotation_degrees = randf() * 360
-	blood.scale = Vector2.ONE * (0.8 + randf() * 0.4)
+	blood.scale = Vector2.ONE * (0.25 + randf() * 0.4)
 	get_tree().current_scene.get_node("Game/Map").add_child(blood)
 	queue_free()
 
