@@ -182,7 +182,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pily4"]
-radius = 41.0122
+radius = 13.0384
 
 [sub_resource type="Animation" id="Animation_gw77a"]
 resource_name = "Push"
