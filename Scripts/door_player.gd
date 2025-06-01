@@ -15,6 +15,7 @@ func _on_open_area_body_entered(body: Node2D) -> void:
 	
 	
 func _on_open_timer_timeout() -> void:
+	$"../../Player/Camera2D".apply_shake($"../../Player/Camera2D".scale.x * 10, $"../../Player/Camera2D".scale.y * 20)
 	animation_player.play("open")
 	close_timer.start()
 	open_timer.stop()

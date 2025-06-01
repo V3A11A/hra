@@ -38,9 +38,9 @@ color = Color(0, 0, 0, 1)
 [node name="VolumeLabel" type="Label" parent="Buttons"]
 layout_mode = 0
 offset_left = 264.0
-offset_top = 256.0
+offset_top = 190.0
 offset_right = 520.0
-offset_bottom = 321.0
+offset_bottom = 255.0
 theme_override_fonts/font = ExtResource("2_3kq58")
 theme_override_font_sizes/font_size = 50
 text = "Volume"
@@ -60,9 +60,9 @@ value = 0.25
 [node name="ScreenShakeToggleLabel2" type="Label" parent="Buttons"]
 layout_mode = 0
 offset_left = 32.0
-offset_top = 646.0
+offset_top = 580.0
 offset_right = 752.0
-offset_bottom = 703.0
+offset_bottom = 637.0
 theme_override_fonts/font = ExtResource("2_3kq58")
 theme_override_font_sizes/font_size = 50
 text = "Toggle Full Screen"
@@ -81,9 +81,9 @@ button_pressed = true
 [node name="CursorSizeLabel2" type="Label" parent="Buttons"]
 layout_mode = 0
 offset_left = 191.0
-offset_top = 801.0
+offset_top = 735.0
 offset_right = 604.0
-offset_bottom = 858.0
+offset_bottom = 792.0
 theme_override_fonts/font = ExtResource("2_3kq58")
 theme_override_font_sizes/font_size = 50
 text = "Cursor Size"
@@ -115,9 +115,9 @@ text = "Small               Medium                Large"
 [node name="ScreenShakeToggleLabel" type="Label" parent="Buttons"]
 layout_mode = 0
 offset_left = 32.0
-offset_top = 456.0
+offset_top = 390.0
 offset_right = 752.0
-offset_bottom = 513.0
+offset_bottom = 447.0
 theme_override_fonts/font = ExtResource("2_3kq58")
 theme_override_font_sizes/font_size = 50
 text = "Toggle Screen Shake"
