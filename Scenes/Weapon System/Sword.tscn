@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://ukkrukhf47ce"]
+[gd_scene load_steps=18 format=3 uid="uid://ukkrukhf47ce"]
 
 [ext_resource type="Script" path="res://Scripts/Weapon System/Sword.gd" id="1_f3xi3"]
 [ext_resource type="AudioStream" uid="uid://40ddm5bke7p5" path="res://Sounds/sword.mp3" id="3_kuenf"]
 [ext_resource type="Texture2D" uid="uid://rrwapx2a35yq" path="res://Sprites/sword_swing.png" id="3_sd3vc"]
+[ext_resource type="Script" path="res://Scripts/Pitch Variation.gd" id="4_srf74"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oefxt"]
 size = Vector2(350, 300)
@@ -166,3 +167,4 @@ speed_scale = 2.0
 
 [node name="sword_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_kuenf")
+script = ExtResource("4_srf74")

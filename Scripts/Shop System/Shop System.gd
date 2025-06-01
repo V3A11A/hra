@@ -9,8 +9,6 @@ var decide = 0
 @onready var health_system = get_tree().get_root().get_node("Main/Game/Player/Health System")
 @onready var bullets = get_tree().get_root().get_node("Main/Game/Player/Anchor/Weapon System/Bullets")
 @onready var hitbox = get_tree().get_root().get_node("Main/Game/Player/Anchor/Weapon System/Melee/Sword/Area2D/CollisionShape2D")
-#@onready var sword_collisionshape = get_tree().get_root().get_node("Main/Game/Player/Anchor/Weapon System/Melee/Sword/Area2D/CollisionShape2D").shape
-#@onready var sword_sprite = get_tree().get_root().get_node("Main/Game/Player/Anchor/Weapon System/Melee/Sword/AnimatedSprite2D")
 var inShop: bool = false
 @onready var sprites = get_node("Control/Shop Items").get_children()
 

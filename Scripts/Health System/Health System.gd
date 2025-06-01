@@ -10,7 +10,6 @@ signal Healed(amount : int)
 @export var max_health : int = 10:
 	set(value):
 		max_health = maxi(value, 1)
-		current_health = current_health
 var current_health : int = max_health:
 	set(value):
 		current_health = clampi(value, 0, max_health)
