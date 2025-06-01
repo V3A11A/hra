@@ -4,7 +4,7 @@ extends Node
 
 
 
-var money:int
+var money:int = 9999
 var upgrades = {
 	0: {
 		"Name": "Sword",
@@ -16,9 +16,9 @@ var upgrades = {
 	1: {
 		"Name": "Sword",
 		"Detail": "Area size up",
-		"Cost": [1, 2, 3, 4, 5],
+		"Cost": [50, 100, 150, 200, 300],
 		"Level": 0,
-		"Value": [4.2, 5.3, 6.7, 8, 9]
+		"Value": [1.30, 1.60, 1.90, 2.20, 2.50]
 	}, 
 	2: {
 		"Name": "Sword",
@@ -30,30 +30,30 @@ var upgrades = {
 	3:{
 		"Name": "Gun",
 		"Detail": "Damage up",
-		"Cost": [1, 2, 3, 4, 5],
+		"Cost": [10, 30, 45, 60, 75],
 		"Level": 0,
-		"Value": [1, 2, 3, 4, 5]
+		"Value": [2.4, 2.8, 3.2, 3.6, 4]
 	}, 
 	4: {
 		"Name": "Gun",
 		"Detail": "Firerate up",
-		"Cost": [1, 2, 3, 4, 5],
+		"Cost": [20, 35, 50, 65, 80],
 		"Level": 0,
 		"Value": [0.18, 0.16, 0.14, 0.12, 0.1]
 	}, 
 	5: {
 		"Name": "Boots",
 		"Detail": "Movement speed up",
-		"Cost": [1, 2, 3, 4, 5],
+		"Cost": [50, 90, 125, 165, 200],
 		"Level": 0,
-		"Value": [1.5, 2, 2.5, 3, 3.5]
+		"Value": [1.1, 1.2, 1.3, 1.4, 1.5]
 	}, 
 	6: {
 		"Name": "Potion",
 		"Detail": "HP heal",
-		"Cost": [1, 2, 3, 4, 5],
+		"Cost": [10, 15, 20, 25, 30, 35, 40, 45, 50, 55],
 		"Level": 0,
-		"Value": [999, 999, 999, 999, 999]
+		"Value": [999, 999, 999, 999, 999, 999, 999, 999, 999, 999]
 	}, 
 	7: {
 		"Name": "Magic Potion",
