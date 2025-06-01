@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://dwqjkaipvvtel"]
+[gd_scene load_steps=49 format=3 uid="uid://dwqjkaipvvtel"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy System/Enemy.gd" id="1_tlhmd"]
 [ext_resource type="PackedScene" uid="uid://c4ni0vy75q3fl" path="res://Scenes/Enemy System/Enemy Movement Core.tscn" id="2_2vjr8"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://6l3lle252i5w" path="res://Sprites/ghost.png" id="4_k8dbw"]
 [ext_resource type="Script" path="res://Scripts/Player/blink_animation.gd" id="5_s4dpp"]
 [ext_resource type="PackedScene" uid="uid://m0d1mkwvbmjy" path="res://Scenes/Health System/Health System.tscn" id="6_as58w"]
-[ext_resource type="Texture2D" uid="uid://wwc3ibru7jms" path="res://Sprites/light.png" id="6_qtp8q"]
 [ext_resource type="Texture2D" uid="uid://c5sh5l2jmlo13" path="res://Sprites/zombieanim.png" id="7_df202"]
 [ext_resource type="PackedScene" uid="uid://cst3ov4i06fqe" path="res://Scenes/Economy System/Money Holder.tscn" id="7_o3x01"]
 [ext_resource type="AudioStream" uid="uid://chqwg4fd3xbvx" path="res://Sounds/zombie_hurt.mp3" id="8_gxrpd"]
@@ -354,11 +353,6 @@ libraries = {
 "": SubResource("AnimationLibrary_8dife")
 }
 script = ExtResource("5_s4dpp")
-
-[node name="PointLight2D" type="PointLight2D" parent="AnimatedSprite2D2"]
-energy = 0.1
-texture = ExtResource("6_qtp8q")
-texture_scale = 3.25
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_rbyvl")

@@ -89,9 +89,9 @@ func _on_buy_pressed() -> void:
 	economy_system.money -= cost
 	get_node("Control/Message").text = "Bought upgrade!"
 	
-	if item_name == "Potion":
+	if item_name == "healthUP! drink":
 		health_system.Take_Damage(-value)
-	elif item_name == "Magic Potion":
+	elif item_name == "Mysterious\n\n\nSyringe":
 		health_system.Change_Max_Health(value, true)
 	elif item_name == "Boots":
 		movement.speed_multiplier = value

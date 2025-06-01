@@ -11,4 +11,4 @@ func _process(delta):
 	var minutes = int(elapsed_time / 60000)
 	var seconds = int((elapsed_time % 60000) / 1000)
 	var time_display = "%02d:%02d" % [minutes, seconds]
-	$"../CanvasLayer/Game Over Screen/CanvasLayer/PlayTime".text = "time alive: " + time_display
+	$"../CanvasLayer/Game Over Screen/CanvasLayer/PlayTime".text = "[wave]time alive: " + time_display

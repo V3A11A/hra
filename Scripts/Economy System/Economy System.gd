@@ -49,14 +49,14 @@ var upgrades = {
 		"Value": [1.1, 1.2, 1.3, 1.4, 1.5]
 	}, 
 	6: {
-		"Name": "Potion",
+		"Name": "healthUP! drink",
 		"Detail": "HP heal",
 		"Cost": [10, 15, 20, 25, 30, 35, 40, 45, 50, 55],
 		"Level": 0,
 		"Value": [999, 999, 999, 999, 999, 999, 999, 999, 999, 999]
 	}, 
 	7: {
-		"Name": "Magic Potion",
+		"Name": "Mysterious\n\n\nSyringe",
 		"Detail": "HP max heal up",
 		"Cost": [10, 30, 50, 70, 200],
 		"Level": 0,

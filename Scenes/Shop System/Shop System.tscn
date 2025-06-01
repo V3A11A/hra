@@ -38,11 +38,11 @@
 [ext_resource type="Texture2D" uid="uid://c8bcdx2go7sv4" path="res://Sprites/vending/Untitled00086432.jpg" id="34_dmlmp"]
 [ext_resource type="Texture2D" uid="uid://og1bqmvqyfi" path="res://Sprites/vending/Untitled00086433.jpg" id="35_xlust"]
 [ext_resource type="Texture2D" uid="uid://cn06lkegdghfl" path="res://Sprites/vending/Untitled00086434.jpg" id="36_xp4wg"]
-[ext_resource type="Texture2D" uid="uid://dandw3akhgcy1" path="res://Sprites/corpse.png" id="38_exy3x"]
-[ext_resource type="Texture2D" uid="uid://c1afsggsq5fk5" path="res://Sprites/alarm_light.png" id="39_ff30q"]
-[ext_resource type="Texture2D" uid="uid://bjx6p1mce3ssw" path="res://Sprites/blood2.png" id="40_oh2lv"]
-[ext_resource type="Texture2D" uid="uid://c7hjihbbi0w4l" path="res://Sprites/door_green.png" id="41_g7jyj"]
-[ext_resource type="Texture2D" uid="uid://b6xctuv8l0lv7" path="res://Sprites/flashlight.png" id="42_w1shv"]
+[ext_resource type="Texture2D" uid="uid://c1rh82jatwf8s" path="res://Sprites/sworddmgup.png" id="38_qkk7o"]
+[ext_resource type="Texture2D" uid="uid://dek6ee2v1uqs2" path="res://Sprites/swordrngup.png" id="39_m7xp3"]
+[ext_resource type="Texture2D" uid="uid://c65om8e728ly3" path="res://Sprites/swordatkspd.png" id="40_05x1a"]
+[ext_resource type="Texture2D" uid="uid://dgpd5f5svs37r" path="res://Sprites/gundmgup.png" id="41_pirtf"]
+[ext_resource type="Texture2D" uid="uid://cxc3ktbo0j1pf" path="res://Sprites/dmgrateup.png" id="42_fyml8"]
 [ext_resource type="Texture2D" uid="uid://chyvgwpwy5sjn" path="res://Sprites/boots.png" id="43_bcyxy"]
 [ext_resource type="Texture2D" uid="uid://bfx0xiv767f86" path="res://Sprites/healthup.png" id="44_l16l4"]
 [ext_resource type="Texture2D" uid="uid://equxtlbp7pto" path="res://Sprites/syringe.png" id="45_32nqs"]
@@ -261,7 +261,7 @@ offset_top = 289.436
 offset_right = 1115.44
 offset_bottom = 374.436
 theme_override_fonts/font = ExtResource("2_ml3kr")
-theme_override_font_sizes/font_size = 75
+theme_override_font_sizes/font_size = 64
 text = "Upgrade"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -309,42 +309,43 @@ text = "Buy"
 
 [node name="Message" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 734.436
-offset_top = 802.436
-offset_right = 886.436
-offset_bottom = 835.436
+offset_left = 734.0
+offset_top = 838.0
+offset_right = 886.0
+offset_bottom = 871.0
 theme_override_fonts/font = ExtResource("2_ml3kr")
 theme_override_font_sizes/font_size = 29
 
 [node name="Shop Items" type="Node" parent="Control"]
 
 [node name="Sword Dmg" type="Sprite2D" parent="Control/Shop Items"]
-position = Vector2(806, 554)
-scale = Vector2(10.4615, 5.06383)
-texture = ExtResource("38_exy3x")
+position = Vector2(812, 535)
+scale = Vector2(6.17788, 6.03191)
+texture = ExtResource("38_qkk7o")
 
 [node name="Sword Area" type="Sprite2D" parent="Control/Shop Items"]
 visible = false
-position = Vector2(811.688, 550.688)
-scale = Vector2(7.44257, 7.82661)
-texture = ExtResource("39_ff30q")
+position = Vector2(821, 544)
+scale = Vector2(7.16854, 7.15356)
+texture = ExtResource("39_m7xp3")
 
 [node name="Sword Atk Speed" type="Sprite2D" parent="Control/Shop Items"]
 visible = false
-position = Vector2(809, 559)
-texture = ExtResource("40_oh2lv")
+position = Vector2(816, 549)
+scale = Vector2(6.3125, 6.3125)
+texture = ExtResource("40_05x1a")
 
 [node name="Gun Dmg" type="Sprite2D" parent="Control/Shop Items"]
 visible = false
-position = Vector2(800, 552.25)
-scale = Vector2(2.21875, 16.9688)
-texture = ExtResource("41_g7jyj")
+position = Vector2(811, 540)
+scale = Vector2(4.21875, 2.64161)
+texture = ExtResource("41_pirtf")
 
 [node name="Gun firerate" type="Sprite2D" parent="Control/Shop Items"]
 visible = false
-position = Vector2(799, 555)
-scale = Vector2(1.79747, 1.07031)
-texture = ExtResource("42_w1shv")
+position = Vector2(814.62, 536.062)
+scale = Vector2(4.32437, 2.68945)
+texture = ExtResource("42_fyml8")
 
 [node name="Boots" type="Sprite2D" parent="Control/Shop Items"]
 visible = false
@@ -354,14 +355,14 @@ texture = ExtResource("43_bcyxy")
 
 [node name="Potion" type="Sprite2D" parent="Control/Shop Items"]
 visible = false
-position = Vector2(810, 561)
-scale = Vector2(3.21642, 2.01786)
+position = Vector2(810, 538.286)
+scale = Vector2(3.21642, 2.72768)
 texture = ExtResource("44_l16l4")
 
 [node name="Magic Potion" type="Sprite2D" parent="Control/Shop Items"]
 visible = false
-position = Vector2(809, 546.5)
-scale = Vector2(4.625, 3.70312)
+position = Vector2(814, 505)
+scale = Vector2(3.61719, 2.89619)
 texture = ExtResource("45_32nqs")
 
 [node name="click" type="AudioStreamPlayer2D" parent="."]
