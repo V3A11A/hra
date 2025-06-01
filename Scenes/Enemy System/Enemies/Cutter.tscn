@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://m0d1mkwvbmjy" path="res://Scenes/Health System/Health System.tscn" id="6_at7qn"]
 [ext_resource type="Texture2D" uid="uid://wwc3ibru7jms" path="res://Sprites/light.png" id="6_nwkve"]
 [ext_resource type="PackedScene" uid="uid://cst3ov4i06fqe" path="res://Scenes/Economy System/Money Holder.tscn" id="7_k8yv6"]
-[ext_resource type="AudioStream" uid="uid://chqwg4fd3xbvx" path="res://Sounds/zombie_hurt.mp3" id="9_g06gd"]
+[ext_resource type="AudioStream" uid="uid://utnu5xtuei37" path="res://Sounds/cutter.mp3" id="9_gt20c"]
 [ext_resource type="Script" path="res://Scripts/Pitch Variation.gd" id="10_x0kdq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tn1v4"]
@@ -174,7 +174,7 @@ libraries = {
 }
 
 [node name="hurt_sound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("9_g06gd")
+stream = ExtResource("9_gt20c")
 max_polyphony = 5
 script = ExtResource("10_x0kdq")
 
