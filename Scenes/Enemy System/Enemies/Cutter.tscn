@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://d0p2y7ccrdusg"]
+[gd_scene load_steps=23 format=3 uid="uid://d0p2y7ccrdusg"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy System/Enemy.gd" id="1_4wt6y"]
 [ext_resource type="PackedScene" uid="uid://c4ni0vy75q3fl" path="res://Scenes/Enemy System/Enemy Movement Core.tscn" id="2_we7dq"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://m0d1mkwvbmjy" path="res://Scenes/Health System/Health System.tscn" id="6_at7qn"]
 [ext_resource type="Texture2D" uid="uid://wwc3ibru7jms" path="res://Sprites/light.png" id="6_nwkve"]
 [ext_resource type="PackedScene" uid="uid://cst3ov4i06fqe" path="res://Scenes/Economy System/Money Holder.tscn" id="7_k8yv6"]
+[ext_resource type="AudioStream" uid="uid://chqwg4fd3xbvx" path="res://Sounds/zombie_hurt.mp3" id="9_g06gd"]
+[ext_resource type="Script" path="res://Scripts/Pitch Variation.gd" id="10_x0kdq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tn1v4"]
 shader = ExtResource("3_2l6h5")
@@ -170,6 +172,11 @@ money = 3
 libraries = {
 "": SubResource("AnimationLibrary_bi5k5")
 }
+
+[node name="hurt_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_g06gd")
+max_polyphony = 5
+script = ExtResource("10_x0kdq")
 
 [connection signal="Damage_Taken" from="Health System" to="AnimatedSprite2D/BlinkAnimation" method="_on_health_system_damage_taken"]
 [connection signal="Obliterate" from="Health System" to="." method="_on_health_system_obliterate"]

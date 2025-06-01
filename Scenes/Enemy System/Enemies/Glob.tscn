@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://baedfwx1gh3h2"]
+[gd_scene load_steps=38 format=3 uid="uid://baedfwx1gh3h2"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy System/Enemy.gd" id="1_akah7"]
 [ext_resource type="PackedScene" uid="uid://c4ni0vy75q3fl" path="res://Scenes/Enemy System/Enemy Movement Core.tscn" id="2_aj615"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://cst3ov4i06fqe" path="res://Scenes/Economy System/Money Holder.tscn" id="7_tyqfl"]
 [ext_resource type="Texture2D" uid="uid://bnpix1w65a47f" path="res://Sprites/fuzz_cropped.png" id="8_fvgpp"]
 [ext_resource type="Texture2D" uid="uid://wwc3ibru7jms" path="res://Sprites/light.png" id="9_kqwed"]
+[ext_resource type="AudioStream" uid="uid://chqwg4fd3xbvx" path="res://Sounds/zombie_hurt.mp3" id="10_4xrrq"]
+[ext_resource type="Script" path="res://Scripts/Pitch Variation.gd" id="11_lxxjt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lj2fk"]
 atlas = ExtResource("8_fvgpp")
@@ -266,6 +268,11 @@ scale = Vector2(1.84, 1.84)
 energy = 0.0
 texture = ExtResource("9_kqwed")
 height = 95.0
+
+[node name="hurt_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_4xrrq")
+max_polyphony = 5
+script = ExtResource("11_lxxjt")
 
 [connection signal="Damage_Taken" from="Health System" to="AnimatedSprite2D/BlinkAnimation" method="_on_health_system_damage_taken"]
 [connection signal="Obliterate" from="Health System" to="." method="_on_health_system_obliterate"]

@@ -19,6 +19,8 @@ func _exit_tree() -> void:
 
 
 func _on_health_system_obliterate() -> void:
+	set_collision_layer_value(2, false)
+	await $hurt_sound.finished
 	$"../../Player/UI/GameStats".enemies_killed += 1
 	var randomnumber = randi() % BloodStainTypes.size()
 	var blood = BloodStainTypes[randomnumber].instantiate()

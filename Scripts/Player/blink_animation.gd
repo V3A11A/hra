@@ -11,6 +11,8 @@ extends AnimationPlayer
 func _physics_process(delta: float) -> void:
 	$"..".material.set_shader_parameter("flash_value", amount_of_flash)
 
-
+@onready var hurt_sound: AudioStreamPlayer2D = $"../../hurt_sound"
 func _on_health_system_damage_taken(amount: int) -> void:
 	play("flash")
+	hurt_sound.play()
+	
