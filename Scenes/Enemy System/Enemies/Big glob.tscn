@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cst3ov4i06fqe" path="res://Scenes/Economy System/Money Holder.tscn" id="7_gpv17"]
 [ext_resource type="Texture2D" uid="uid://cnuvitmnqra74" path="res://Sprites/slimetest.png" id="7_qhs1d"]
 [ext_resource type="Texture2D" uid="uid://wwc3ibru7jms" path="res://Sprites/light.png" id="9_fi84a"]
-[ext_resource type="AudioStream" uid="uid://chqwg4fd3xbvx" path="res://Sounds/zombie_hurt.mp3" id="10_gexud"]
+[ext_resource type="AudioStream" uid="uid://b6hycpg0ykskr" path="res://Sounds/glob.mp3" id="10_fs1r1"]
 [ext_resource type="Script" path="res://Scripts/Pitch Variation.gd" id="11_mxagt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pily4"]
@@ -276,8 +276,9 @@ texture = ExtResource("9_fi84a")
 height = 95.0
 
 [node name="hurt_sound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("10_gexud")
+stream = ExtResource("10_fs1r1")
 max_polyphony = 5
+bus = &"Game Audio"
 script = ExtResource("11_mxagt")
 
 [connection signal="Damage_Taken" from="Health System" to="AnimatedSprite2D3/BlinkAnimation" method="_on_health_system_damage_taken"]
