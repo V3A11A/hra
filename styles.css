@@ -39,14 +39,7 @@ b {
 
 body {
   font-family: 'VHS Gothic';
-  background-image:repeating-linear-gradient(45deg, #e5e5e5 0, #d1cfcd 1px, #f8f7f5 0, #e3e0d8 50%);
-  zoom: 0%;
   text-align: center;
-  /*animation: bannerColor 10s infinite linear 
-  background-color: #e5e5f7;
-  opacity: 1;
-  background-size:10px 10px;
-  background-image:repeating-linear-gradient(45deg, #b2c8a5 0, #92b484 1px, #e5e5f7 0, #e5e5f7 50%);*/
 }
 
 
@@ -65,12 +58,22 @@ button {
   color:#14130f;
 }
 
+h1 {
+  text-decoration:underline;
+}
 
 p, label, h1 {
   font-family: 'VHS Gothic';
   font-size: 6ch;
   color:#14130f;
-  text-decoration:none;
+  
+}
+
+h2 {
+  font-family: 'VHS Gothic';
+  font-size: 4ch;
+  color:#14130f;
+  
 }
 
 
