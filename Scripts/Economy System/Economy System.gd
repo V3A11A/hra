@@ -9,9 +9,9 @@ var upgrades = {
 	0: {
 		"Name": "Sword",
 		"Detail": "Damage up",
-		"Cost": [1, 2, 3, 4, 5],
+		"Cost": [20, 40, 60, 80, 100],
 		"Level": 0,
-		"Value": [1, 2, 3, 4, 5]
+		"Value": [7, 9, 11, 13, 15]
 	}, 
 	1: {
 		"Name": "Sword",
@@ -23,9 +23,9 @@ var upgrades = {
 	2: {
 		"Name": "Sword",
 		"Detail": "Attack Speed up",
-		"Cost": [1, 2, 3, 4, 5],
+		"Cost": [10, 30, 45, 60, 75],
 		"Level": 0,
-		"Value": [0.5, 2, 3.9, 5.5, 7.5]
+		"Value": [0.45, 0.40, 0.35, 0.30, 0.25]
 	}, 
 	3:{
 		"Name": "Gun",
@@ -53,14 +53,14 @@ var upgrades = {
 		"Detail": "HP heal",
 		"Cost": [1, 2, 3, 4, 5],
 		"Level": 0,
-		"Value": [2, 2.7, 3, 3.9, 4.7]
+		"Value": [999, 999, 999, 999, 999]
 	}, 
 	7: {
 		"Name": "Magic Potion",
 		"Detail": "HP max heal up",
-		"Cost": [1, 2, 3, 4, 5],
+		"Cost": [10, 30, 50, 70, 200],
 		"Level": 0,
-		"Value": [1, 2, 3, 4, 5]
+		"Value": [5, 10, 15, 20, 35]
 	}
 }
 

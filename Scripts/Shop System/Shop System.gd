@@ -88,9 +88,8 @@ func _on_buy_pressed() -> void:
 			get_node("Control/Message").text = "Bought upgrade!"
 			if economy_system.upgrades[decide]["Name"] == "Potion":
 				health_system.Take_Damage(-(economy_system.upgrades[decide]["Value"][economy_system.upgrades[decide]["Level"]]))
-			elif economy_system.upgrades[decide]["Name"] == "healthUP! health drink":
-				pass #health_system.Change_Max_Health(economy_system.upgrades[decide]["Cost"][economy_system.upgrades[decide]["Level"]], true)
-				#potřebuje opravit
+			elif economy_system.upgrades[decide]["Name"] == "Magic Potion":
+				health_system.Change_Max_Health(economy_system.upgrades[decide]["Value"][economy_system.upgrades[decide]["Level"]], true)
 			elif economy_system.upgrades[decide]["Name"] == "Boots":
 				movement.speed_multiplier = economy_system.upgrades[decide]["Value"][economy_system.upgrades[decide]["Level"]]
 			elif economy_system.upgrades[decide]["Name"] == "Gun":
