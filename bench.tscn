@@ -9,7 +9,7 @@ size = Vector2(69, 28)
 z_index = 1
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
-collision_layer = 5
+collision_layer = 0
 mass = 0.001
 gravity_scale = 0.0
 can_sleep = false

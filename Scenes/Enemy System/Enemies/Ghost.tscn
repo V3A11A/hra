@@ -240,6 +240,7 @@ libraries = {
 [node name="hurt_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_gf2og")
 max_polyphony = 5
+bus = &"Game Audio"
 script = ExtResource("9_ikyr7")
 
 [connection signal="Damage_Taken" from="Health System" to="AnimatedSprite2D/BlinkAnimation" method="_on_health_system_damage_taken"]

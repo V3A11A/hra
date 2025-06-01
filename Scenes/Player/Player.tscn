@@ -160,6 +160,7 @@ collision_mask = 4
 script = ExtResource("1_sfaps")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
 rotation = 1.5708
 scale = Vector2(10.0706, 10.0706)
 sprite_frames = SubResource("SpriteFrames_ofxsw")

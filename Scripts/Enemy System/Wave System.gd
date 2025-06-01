@@ -15,10 +15,10 @@ const Enemy_List : Dictionary = {
 	4 : preload("res://Scenes/Enemy System/Enemies/Breaker.tscn"),
 	5 : preload("res://Scenes/Enemy System/Enemies/Monster.tscn"),
 	6 : preload("res://Scenes/Enemy System/Enemies/Ghost.tscn"),
-	7 : preload("res://Scenes/Enemy System/Enemies/Mosquito.tscn"),
+	#7 : preload("res://Scenes/Enemy System/Enemies/Mosquito.tscn"),
 	8 : preload("res://Scenes/Enemy System/Enemies/Baby Ghost.tscn"),
-	9 : preload("res://Scenes/Enemy System/Enemies/Wall.tscn"),
-	10 : preload("res://Scenes/Enemy System/Enemies/Shrieker.tscn"),
+	#9 : preload("res://Scenes/Enemy System/Enemies/Wall.tscn"),
+	#10 : preload("res://Scenes/Enemy System/Enemies/Shrieker.tscn"),
 	15 : preload("res://Scenes/Enemy System/Enemies/Crusher.tscn"),
 	25 : preload("res://Scenes/Enemy System/Enemies/The Experiment.tscn"),
 }

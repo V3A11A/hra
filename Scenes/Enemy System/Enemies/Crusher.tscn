@@ -1,9 +1,9 @@
-[gd_scene load_steps=32 format=3 uid="uid://dxndswcpv78l"]
+[gd_scene load_steps=31 format=3 uid="uid://dxndswcpv78l"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy System/Enemy.gd" id="1_27orc"]
 [ext_resource type="PackedScene" uid="uid://c4ni0vy75q3fl" path="res://Scenes/Enemy System/Enemy Movement Core.tscn" id="2_wyprk"]
 [ext_resource type="Shader" path="res://Scenes/Player/damage_blink.gdshader" id="3_uhldh"]
-[ext_resource type="Texture2D" uid="uid://dovw47enupjug" path="res://Sprites/walkanim.png" id="4_u2a7r"]
+[ext_resource type="Texture2D" uid="uid://c5sh5l2jmlo13" path="res://Sprites/zombieanim.png" id="4_t71yv"]
 [ext_resource type="Script" path="res://Scripts/Player/blink_animation.gd" id="5_gl71r"]
 [ext_resource type="PackedScene" uid="uid://m0d1mkwvbmjy" path="res://Scenes/Health System/Health System.tscn" id="6_uxoyc"]
 [ext_resource type="PackedScene" uid="uid://cst3ov4i06fqe" path="res://Scenes/Economy System/Money Holder.tscn" id="7_v0xjp"]
@@ -15,56 +15,52 @@ shader = ExtResource("3_uhldh")
 shader_parameter/flash_color = Color(0.756863, 0.141176, 0.141176, 0.494118)
 shader_parameter/flash_value = null
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0fg7g"]
-atlas = ExtResource("4_u2a7r")
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8iek"]
+atlas = ExtResource("4_t71yv")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yjus5"]
-atlas = ExtResource("4_u2a7r")
+[sub_resource type="AtlasTexture" id="AtlasTexture_pi6ht"]
+atlas = ExtResource("4_t71yv")
 region = Rect2(0, 16, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ppgj1"]
-atlas = ExtResource("4_u2a7r")
-region = Rect2(0, 64, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_thvme"]
+atlas = ExtResource("4_t71yv")
+region = Rect2(0, 32, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fad5f"]
-atlas = ExtResource("4_u2a7r")
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0jj3"]
+atlas = ExtResource("4_t71yv")
 region = Rect2(0, 48, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_r4jbr"]
-atlas = ExtResource("4_u2a7r")
-region = Rect2(0, 80, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6ce0j"]
-atlas = ExtResource("4_u2a7r")
+[sub_resource type="AtlasTexture" id="AtlasTexture_72fuo"]
+atlas = ExtResource("4_t71yv")
 region = Rect2(0, 112, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s71v7"]
-atlas = ExtResource("4_u2a7r")
+[sub_resource type="AtlasTexture" id="AtlasTexture_kj0pa"]
+atlas = ExtResource("4_t71yv")
 region = Rect2(0, 128, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xav17"]
-atlas = ExtResource("4_u2a7r")
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3k4k"]
+atlas = ExtResource("4_t71yv")
 region = Rect2(0, 144, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nv1h3"]
-atlas = ExtResource("4_u2a7r")
+[sub_resource type="AtlasTexture" id="AtlasTexture_1a6ou"]
+atlas = ExtResource("4_t71yv")
 region = Rect2(0, 160, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lbidm"]
-atlas = ExtResource("4_u2a7r")
+[sub_resource type="AtlasTexture" id="AtlasTexture_6khbm"]
+atlas = ExtResource("4_t71yv")
+region = Rect2(0, 176, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yiplx"]
+atlas = ExtResource("4_t71yv")
 region = Rect2(0, 192, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2cnxl"]
-atlas = ExtResource("4_u2a7r")
-region = Rect2(0, 224, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ld6te"]
-atlas = ExtResource("4_u2a7r")
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbl21"]
+atlas = ExtResource("4_t71yv")
 region = Rect2(0, 256, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hoi5j"]
-atlas = ExtResource("4_u2a7r")
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ctvp"]
+atlas = ExtResource("4_t71yv")
 region = Rect2(0, 272, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2nwhh"]
@@ -76,43 +72,40 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0fg7g")
+"texture": SubResource("AtlasTexture_g8iek")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yjus5")
+"texture": SubResource("AtlasTexture_pi6ht")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ppgj1")
+"texture": SubResource("AtlasTexture_thvme")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fad5f")
+"texture": SubResource("AtlasTexture_w0jj3")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_r4jbr")
+"texture": SubResource("AtlasTexture_72fuo")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6ce0j")
+"texture": SubResource("AtlasTexture_kj0pa")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_s71v7")
+"texture": SubResource("AtlasTexture_i3k4k")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xav17")
+"texture": SubResource("AtlasTexture_1a6ou")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nv1h3")
+"texture": SubResource("AtlasTexture_6khbm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lbidm")
+"texture": SubResource("AtlasTexture_yiplx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2cnxl")
+"texture": SubResource("AtlasTexture_rbl21")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ld6te")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hoi5j")
+"texture": SubResource("AtlasTexture_1ctvp")
 }],
 "loop": true,
 "name": &"walk",
@@ -210,7 +203,7 @@ drag = 4.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_tenhe")
 rotation = 1.5708
-scale = Vector2(25, 25)
+scale = Vector2(36.4874, 36.4874)
 sprite_frames = SubResource("SpriteFrames_2nwhh")
 animation = &"walk"
 autoplay = "walk"
@@ -241,6 +234,7 @@ libraries = {
 [node name="hurt_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_3k3eh")
 max_polyphony = 5
+bus = &"Game Audio"
 script = ExtResource("9_w833w")
 
 [connection signal="Damage_Taken" from="Health System" to="AnimatedSprite2D/BlinkAnimation" method="_on_health_system_damage_taken"]
