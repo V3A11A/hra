@@ -5,5 +5,4 @@
 [node name="Enemy Movement Core" type="NavigationAgent2D"]
 path_desired_distance = 40.0
 path_postprocessing = 1
-debug_enabled = true
 script = ExtResource("1_ytc6p")

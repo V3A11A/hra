@@ -1,13 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://c21epopd520us"]
+[gd_scene load_steps=9 format=3 uid="uid://c21epopd520us"]
 
 [ext_resource type="PackedScene" uid="uid://cxbpxhsvewhoj" path="res://Scenes/MainMenu.tscn" id="1_f1dar"]
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_tq0nd"]
 [ext_resource type="PackedScene" uid="uid://5buiag2sfyl8" path="res://Scenes/Game.tscn" id="2_nbylt"]
 [ext_resource type="PackedScene" uid="uid://oy6hyed5oh53" path="res://Scenes/Options.tscn" id="3_px6rf"]
 [ext_resource type="PackedScene" uid="uid://ycv5ec1knv" path="res://Scenes/Game Over Screen.tscn" id="4_3ie56"]
 [ext_resource type="PackedScene" uid="uid://cm615enj1b85h" path="res://Scenes/EscapeMenu.tscn" id="4_jm3s0"]
+[ext_resource type="PackedScene" uid="uid://c6irwae12h1aw" path="res://tutorialScene.tscn" id="5_w8oai"]
 [ext_resource type="PackedScene" uid="uid://3u4busya5mei" path="res://Scenes/audio_manager.tscn" id="6_6pa53"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_tq0nd")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -21,6 +24,9 @@ visible = false
 
 [node name="Options" parent="CanvasLayer" instance=ExtResource("3_px6rf")]
 process_mode = 3
+visible = false
+
+[node name="Tutorial" parent="CanvasLayer" instance=ExtResource("5_w8oai")]
 visible = false
 
 [node name="Game" parent="." instance=ExtResource("2_nbylt")]

@@ -7,16 +7,23 @@ extends Node2D
 @onready var canvas_layer: CanvasLayer = $"../../Game/Player/EconomySystem/CanvasLayer"
 @onready var link_button: LinkButton = $LinkButton
 var inMenu: bool = true
+@onready var tutorial: Node2D = $"../Tutorial"
+@onready var link_button_2: LinkButton = $LinkButton2
 
 func _on_play_pressed() -> void:
 	$click.play()
-	start_game()
-	configure_processes()
-	update_ui()
-	
+	if !$"../..".tutorial:
+		tutorial.show()
+		inMenu = false
+	else:
+		start_game()
+		configure_processes()
+		update_ui()
+
 func _on_options_pressed() -> void:
 	$click.play()
 	link_button.hide()
+	link_button_2.hide()
 	$"../Options".show()
 
 func _on_quit_pressed() -> void:
@@ -39,8 +46,11 @@ func configure_processes() -> void:
 	self.hide()
 	self.process_mode = Node.PROCESS_MODE_DISABLED
 	link_button.hide()
+	link_button_2.hide()
 	
 func update_ui():
 	canvas_layer.show()
 	hpbar.show()
-	
+
+func _on_link_button_2_pressed() -> void:
+	$"../Tutorial".show()

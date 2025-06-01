@@ -64,3 +64,4 @@ func exit_pause_menu():
 	hpbar.visible = false
 	main_menu.inMenu = true
 	main_menu.link_button.show()
+	main_menu.link_button_2.show()
