@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://jqeqtboltjl0"]
+[gd_scene load_steps=24 format=3 uid="uid://jqeqtboltjl0"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy System/Enemy.gd" id="1_rcpq1"]
 [ext_resource type="PackedScene" uid="uid://c4ni0vy75q3fl" path="res://Scenes/Enemy System/Enemy Movement Core.tscn" id="2_77oqo"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://m0d1mkwvbmjy" path="res://Scenes/Health System/Health System.tscn" id="6_sx7aa"]
 [ext_resource type="PackedScene" uid="uid://cst3ov4i06fqe" path="res://Scenes/Economy System/Money Holder.tscn" id="7_b6ept"]
 [ext_resource type="Texture2D" uid="uid://b6xctuv8l0lv7" path="res://Sprites/flashlight.png" id="8_00l8k"]
+[ext_resource type="AudioStream" uid="uid://chqwg4fd3xbvx" path="res://Sounds/zombie_hurt.mp3" id="9_0kwtl"]
+[ext_resource type="Script" path="res://Scripts/Pitch Variation.gd" id="10_a2gmi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mphvi"]
 shader = ExtResource("3_4i3j3")
@@ -200,6 +202,11 @@ rotation = 6.80678
 scale = Vector2(4.93671, 4.93671)
 color = Color(0.613469, 0.363106, 1, 1)
 texture = ExtResource("8_00l8k")
+
+[node name="hurt_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_0kwtl")
+max_polyphony = 5
+script = ExtResource("10_a2gmi")
 
 [connection signal="Damage_Taken" from="Health System" to="AnimatedSprite2D/BlinkAnimation" method="_on_health_system_damage_taken"]
 [connection signal="Obliterate" from="Health System" to="." method="_on_health_system_obliterate"]
