@@ -3,18 +3,7 @@
   src: url(vhs-gothic.ttf);
 }
 
-html {
-  --s: 77px; /* control the size*/
-  --c1: #f4f4f4;
-  --c2: #e3e4e6;
-  --c3: #f0f0f0;
-  
-  background:
-    repeating-conic-gradient(from 30deg,#0000 0 120deg,var(--c3) 0 50%) 
-     calc(var(--s)/2) calc(var(--s)*tan(30deg)/2),
-    repeating-conic-gradient(from 30deg,var(--c1) 0 60deg,var(--c2) 0 120deg,var(--c3) 0 50%);
-  background-size: var(--s) calc(var(--s)*tan(30deg));
-}
+
 
 td,th {
     /*font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;*/
@@ -38,6 +27,16 @@ b {
 }
 
 body {
+  --s: 77px; /* control the size*/
+  --c1: #090e0e;
+  --c2: #070811;
+  --c3: #050f10;
+  
+  background:
+    repeating-conic-gradient(from 30deg,#0000 0 120deg,var(--c3) 0 50%) 
+     calc(var(--s)/2) calc(var(--s)*tan(30deg)/2),
+    repeating-conic-gradient(from 30deg,var(--c1) 0 60deg,var(--c2) 0 120deg,var(--c3) 0 50%);
+  background-size: var(--s) calc(var(--s)*tan(30deg));
   font-family: 'VHS Gothic';
   text-align: center;
 }
@@ -48,14 +47,20 @@ img {
   text-align: right;
 }
 
-button {
+a.button {
   font-family: 'VHS Gothic';
-  font-size: 5ch;
-  border: none;
-  background-color: #b3c7b9;
-  padding: 2.5%;
+  font-size: 2ch;
+  border: 2px outset ;
+  background-color: #95d9e2;
+  padding: 6px 6px;
   border-radius: 10px;
-  color:#14130f;
+  color:#95d9e2;
+}
+
+a.button:hover {
+  font-size: 2ch;
+  background-color: #6aa5ad;
+  padding: 8px 8px;
 }
 
 h1 {
@@ -65,14 +70,14 @@ h1 {
 p, label, h1 {
   font-family: 'VHS Gothic';
   font-size: 6ch;
-  color:#14130f;
+  color:#e4f3f5;
   
 }
 
 h2 {
   font-family: 'VHS Gothic';
   font-size: 4ch;
-  color:#14130f;
+  color:#e4f3f5;
   
 }
 
@@ -88,10 +93,10 @@ a {
 }
 
 .search {
-  width: 50%;
+  width: 20%;
   margin-left: auto;
   margin-right: auto;
-  background-color: #8caaa5;
+  background-color: #208491;
   text-align: center;
   border-radius: 12px;
   padding: 10px;
@@ -102,14 +107,14 @@ a {
 
 .slider { 
   animation: ram 5s infinite linear;
-  margin-top: 5ch;
-  margin-bottom: 5ch;
-  margin-left: 5ch;
-  margin-right: 5ch;
-  background-color: rgb(203, 202, 199);
+  margin-top: 2ch;
+  margin-bottom: 2ch;
+  margin-left: 2ch;
+  margin-right: 2ch;
+  background-color: #208491;
   text-align: center;
   border-radius: 12px;
-  padding: 2%;
+  padding: 1%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: smaller;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
